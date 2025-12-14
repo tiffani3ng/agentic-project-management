@@ -1,0 +1,76 @@
+{
+  "bottlenecks": [
+    {
+      "task_id": "T0003",
+      "total_hours": 245.13333333333333,
+      "handoffs": 2,
+      "longest_stage_hours": 174.0,
+      "flagged_reason": "Repeated handoffs increasing cycle time; Single stage exceeding 2 days"
+    },
+    {
+      "task_id": "T0001",
+      "total_hours": 93.0,
+      "handoffs": 0,
+      "longest_stage_hours": 93.0,
+      "flagged_reason": "Single stage exceeding 2 days"
+    },
+    {
+      "task_id": "T0004",
+      "total_hours": 92.5,
+      "handoffs": 0,
+      "longest_stage_hours": 92.5,
+      "flagged_reason": "Single stage exceeding 2 days"
+    },
+    {
+      "task_id": "T0002",
+      "total_hours": 77.75,
+      "handoffs": 0,
+      "longest_stage_hours": 77.75,
+      "flagged_reason": "Single stage exceeding 2 days"
+    }
+  ],
+  "stage_delays": [
+    {
+      "task_id": "T0001",
+      "stage_index": 0,
+      "duration_hours": 93.0,
+      "from_assignee": "E015",
+      "to_assignee": ""
+    },
+    {
+      "task_id": "T0002",
+      "stage_index": 0,
+      "duration_hours": 77.75,
+      "from_assignee": "E017",
+      "to_assignee": ""
+    },
+    {
+      "task_id": "T0003",
+      "stage_index": 0,
+      "duration_hours": 25.133333333333333,
+      "from_assignee": "E020",
+      "to_assignee": "E012"
+    },
+    {
+      "task_id": "T0003",
+      "stage_index": 1,
+      "duration_hours": 46.0,
+      "from_assignee": "E012",
+      "to_assignee": "E013"
+    },
+    {
+      "task_id": "T0003",
+      "stage_index": 2,
+      "duration_hours": 174.0,
+      "from_assignee": "E013",
+      "to_assignee": ""
+    },
+    {
+      "task_id": "T0004",
+      "stage_index": 0,
+      "duration_hours": 92.5,
+      "from_assignee": "E020",
+      "to_assignee": ""
+    }
+  ]
+}

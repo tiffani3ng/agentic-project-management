@@ -1,0 +1,179 @@
+{
+  "assignments": [
+    {
+      "task_id": "T0006",
+      "project_id": "P002",
+      "assignee": "E004",
+      "score": 3.9555555246913596,
+      "rationale": "skill_score=0.60, availability_score=0.28, balance_score=1.00, overtime_penalty=0.00"
+    },
+    {
+      "task_id": "T0007",
+      "project_id": "P003",
+      "assignee": "E001",
+      "score": 5.999999875000015,
+      "rationale": "skill_score=1.00, availability_score=0.50, balance_score=1.00, overtime_penalty=0.00"
+    },
+    {
+      "task_id": "T0008",
+      "project_id": "P005",
+      "assignee": "E005",
+      "score": 5.4621211565656616,
+      "rationale": "skill_score=1.00, availability_score=0.33, balance_score=0.80, overtime_penalty=0.00"
+    }
+  ],
+  "ai_opportunities": [
+    {
+      "task_id": "T0001",
+      "project_id": "P001",
+      "recommended": false,
+      "reviewer_required": false,
+      "reason": "No clear AI leverage.",
+      "suggested_prompt": ""
+    },
+    {
+      "task_id": "T0002",
+      "project_id": "P001",
+      "recommended": true,
+      "reviewer_required": true,
+      "reason": "AI can accelerate writing/analysis tasks with human-in-the-loop review.",
+      "suggested_prompt": "You are an assistant helping with task 'Returns Experience Overhaul (Self-Service + Policy Clarity)'. Draft deliverables, highlight assumptions, and list open questions for human review."
+    },
+    {
+      "task_id": "T0003",
+      "project_id": "P001",
+      "recommended": false,
+      "reviewer_required": false,
+      "reason": "No clear AI leverage.",
+      "suggested_prompt": ""
+    },
+    {
+      "task_id": "T0004",
+      "project_id": "P001",
+      "recommended": false,
+      "reviewer_required": false,
+      "reason": "No clear AI leverage.",
+      "suggested_prompt": ""
+    },
+    {
+      "task_id": "T0005",
+      "project_id": "P001",
+      "recommended": false,
+      "reviewer_required": false,
+      "reason": "No clear AI leverage.",
+      "suggested_prompt": ""
+    },
+    {
+      "task_id": "T0006",
+      "project_id": "P002",
+      "recommended": true,
+      "reviewer_required": true,
+      "reason": "AI can accelerate writing/analysis tasks with human-in-the-loop review.",
+      "suggested_prompt": "You are an assistant helping with task 'Warehouse Slotting Optimization heatmap refresh'. Draft deliverables, highlight assumptions, and list open questions for human review."
+    },
+    {
+      "task_id": "T0007",
+      "project_id": "P003",
+      "recommended": true,
+      "reviewer_required": true,
+      "reason": "AI can accelerate writing/analysis tasks with human-in-the-loop review.",
+      "suggested_prompt": "You are an assistant helping with task 'Draft influencer briefing toolkit'. Draft deliverables, highlight assumptions, and list open questions for human review."
+    },
+    {
+      "task_id": "T0008",
+      "project_id": "P005",
+      "recommended": false,
+      "reviewer_required": true,
+      "reason": "High-risk workflow (financial/checkout) requires human ownership; only draft assistance allowed.",
+      "suggested_prompt": ""
+    }
+  ],
+  "bottlenecks": [
+    {
+      "task_id": "T0003",
+      "total_hours": 245.13333333333333,
+      "handoffs": 2,
+      "longest_stage_hours": 174.0,
+      "flagged_reason": "Repeated handoffs increasing cycle time; Single stage exceeding 2 days"
+    },
+    {
+      "task_id": "T0001",
+      "total_hours": 93.0,
+      "handoffs": 0,
+      "longest_stage_hours": 93.0,
+      "flagged_reason": "Single stage exceeding 2 days"
+    },
+    {
+      "task_id": "T0004",
+      "total_hours": 92.5,
+      "handoffs": 0,
+      "longest_stage_hours": 92.5,
+      "flagged_reason": "Single stage exceeding 2 days"
+    },
+    {
+      "task_id": "T0002",
+      "total_hours": 77.75,
+      "handoffs": 0,
+      "longest_stage_hours": 77.75,
+      "flagged_reason": "Single stage exceeding 2 days"
+    }
+  ],
+  "stage_delays": [
+    {
+      "task_id": "T0001",
+      "stage_index": 0,
+      "duration_hours": 93.0,
+      "from_assignee": "E015",
+      "to_assignee": ""
+    },
+    {
+      "task_id": "T0002",
+      "stage_index": 0,
+      "duration_hours": 77.75,
+      "from_assignee": "E017",
+      "to_assignee": ""
+    },
+    {
+      "task_id": "T0003",
+      "stage_index": 0,
+      "duration_hours": 25.133333333333333,
+      "from_assignee": "E020",
+      "to_assignee": "E012"
+    },
+    {
+      "task_id": "T0003",
+      "stage_index": 1,
+      "duration_hours": 46.0,
+      "from_assignee": "E012",
+      "to_assignee": "E013"
+    },
+    {
+      "task_id": "T0003",
+      "stage_index": 2,
+      "duration_hours": 174.0,
+      "from_assignee": "E013",
+      "to_assignee": ""
+    },
+    {
+      "task_id": "T0004",
+      "stage_index": 0,
+      "duration_hours": 92.5,
+      "from_assignee": "E020",
+      "to_assignee": ""
+    }
+  ],
+  "recommendations": [
+    {
+      "title": "Limit handoffs",
+      "detail": "Tasks with repeated handoffs are delaying cycle time. Cap handoffs to 1 and keep ownership stable until QA."
+    },
+    {
+      "title": "Break down long stages",
+      "detail": "Split work into smaller steps with intermediate check-ins every 24-36 hours to prevent stalls."
+    },
+    {
+      "title": "Add AI copilots",
+      "detail": "Use AI to draft briefs, summaries, and outlines; enforce human review before sending externally."
+    }
+  ]
+}

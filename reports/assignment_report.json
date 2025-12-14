@@ -1,0 +1,23 @@
+[
+  {
+    "task_id": "T0006",
+    "project_id": "P002",
+    "assignee": "E004",
+    "score": 3.9555555246913596,
+    "rationale": "skill_score=0.60, availability_score=0.28, balance_score=1.00, overtime_penalty=0.00"
+  },
+  {
+    "task_id": "T0007",
+    "project_id": "P003",
+    "assignee": "E001",
+    "score": 5.999999875000015,
+    "rationale": "skill_score=1.00, availability_score=0.50, balance_score=1.00, overtime_penalty=0.00"
+  },
+  {
+    "task_id": "T0008",
+    "project_id": "P005",
+    "assignee": "E005",
+    "score": 5.4621211565656616,
+    "rationale": "skill_score=1.00, availability_score=0.33, balance_score=0.80, overtime_penalty=0.00"
+  }
+]

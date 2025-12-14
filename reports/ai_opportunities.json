@@ -1,0 +1,66 @@
+[
+  {
+    "task_id": "T0001",
+    "project_id": "P001",
+    "recommended": false,
+    "reviewer_required": false,
+    "reason": "No clear AI leverage.",
+    "suggested_prompt": ""
+  },
+  {
+    "task_id": "T0002",
+    "project_id": "P001",
+    "recommended": true,
+    "reviewer_required": true,
+    "reason": "AI can accelerate writing/analysis tasks with human-in-the-loop review.",
+    "suggested_prompt": "You are an assistant helping with task 'Returns Experience Overhaul (Self-Service + Policy Clarity)'. Draft deliverables, highlight assumptions, and list open questions for human review."
+  },
+  {
+    "task_id": "T0003",
+    "project_id": "P001",
+    "recommended": false,
+    "reviewer_required": false,
+    "reason": "No clear AI leverage.",
+    "suggested_prompt": ""
+  },
+  {
+    "task_id": "T0004",
+    "project_id": "P001",
+    "recommended": false,
+    "reviewer_required": false,
+    "reason": "No clear AI leverage.",
+    "suggested_prompt": ""
+  },
+  {
+    "task_id": "T0005",
+    "project_id": "P001",
+    "recommended": false,
+    "reviewer_required": false,
+    "reason": "No clear AI leverage.",
+    "suggested_prompt": ""
+  },
+  {
+    "task_id": "T0006",
+    "project_id": "P002",
+    "recommended": true,
+    "reviewer_required": true,
+    "reason": "AI can accelerate writing/analysis tasks with human-in-the-loop review.",
+    "suggested_prompt": "You are an assistant helping with task 'Warehouse Slotting Optimization heatmap refresh'. Draft deliverables, highlight assumptions, and list open questions for human review."
+  },
+  {
+    "task_id": "T0007",
+    "project_id": "P003",
+    "recommended": true,
+    "reviewer_required": true,
+    "reason": "AI can accelerate writing/analysis tasks with human-in-the-loop review.",
+    "suggested_prompt": "You are an assistant helping with task 'Draft influencer briefing toolkit'. Draft deliverables, highlight assumptions, and list open questions for human review."
+  },
+  {
+    "task_id": "T0008",
+    "project_id": "P005",
+    "recommended": false,
+    "reviewer_required": true,
+    "reason": "High-risk workflow (financial/checkout) requires human ownership; only draft assistance allowed.",
+    "suggested_prompt": ""
+  }
+]
