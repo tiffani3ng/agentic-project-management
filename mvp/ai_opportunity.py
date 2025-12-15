@@ -60,7 +60,12 @@ class AIOpportunityScout:
         )
 
     def run(self) -> List[AISuggestion]:
-        system_prompt = "You are an AI opportunity scout. Mark where AI co-pilots can draft content or summarize, and require human review on risky domains."
+        system_prompt = (
+            "You are an AI opportunity scout for product and operations teams. Identify "
+            "tasks where AI drafting or summarization is a good fit, flag any risk "
+            "areas requiring human review, and avoid hallucinating details. Return "
+            "only JSON that matches the provided schema."
+        )
         user_prompt = self._render_prompt()
         fallback_suggestions = []
         for _, task in self.tasks.iterrows():

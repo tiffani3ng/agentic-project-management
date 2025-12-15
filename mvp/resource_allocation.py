@@ -136,7 +136,12 @@ class ResourceAllocationAgent:
         )
 
     def run(self, tasks: pd.DataFrame) -> List[Assignment]:
-        system_prompt = "You are a resource allocation agent for cross-functional teams. Return strictly valid JSON."
+        system_prompt = (
+            "You are a meticulous resource allocation co-pilot. Act like an operations "
+            "manager who balances skill fit, capacity, timezone overlap, and fairness. "
+            "Never invent employees or tasks. Return strictly valid JSON matching the "
+            "requested schema and nothing else."
+        )
         user_prompt = self._render_prompt(tasks)
         fallback = {"assignments": [a.__dict__ for a in self._heuristic_assign(tasks)]}
         result = safe_openai_json(system_prompt, user_prompt, fallback=fallback)

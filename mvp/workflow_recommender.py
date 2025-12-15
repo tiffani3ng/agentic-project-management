@@ -33,7 +33,13 @@ class WorkflowRecommender:
         )
 
     def run(self) -> List[str]:
-        system_prompt = "You are a workflow design expert. Return JSON only."
+        system_prompt = (
+            "You are a pragmatic workflow design expert. Use only the supplied "
+            "assignments, AI suggestions, and bottlenecks to propose actionable next "
+            "steps. Prefer specific moves (WIP limits, resequencing, pairing) over "
+            "generic advice. Output JSON adhering to the response schema and nothing "
+            "else."
+        )
         user_prompt = self._render_prompt()
 
         fallback_recos: List[str] = []
