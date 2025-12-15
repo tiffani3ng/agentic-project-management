@@ -185,6 +185,12 @@ class AIOpportunityScout:
             f"{policy['review_requirement']}"
         )
         for item in result.get("suggestions", []):
+            prohibited_scope_value = item.get("prohibited_scope")
+            if isinstance(prohibited_scope_value, list):
+                prohibited_scope = [str(scope) for scope in prohibited_scope_value]
+            else:
+                prohibited_scope = policy["prohibited_autonomy"]
+
             suggestions.append(
                 AISuggestion(
                     task_id=str(item.get("task_id")),
@@ -198,7 +204,7 @@ class AIOpportunityScout:
                     safe_use_notes=str(item.get("safe_use_notes", "")) or default_safe_use,
                     redaction_instructions=str(item.get("redaction_instructions", ""))
                     or policy["pii_redaction"],
-                    prohibited_scope=[str(scope) for scope in item.get("prohibited_scope", policy["prohibited_autonomy"])],
+                    prohibited_scope=prohibited_scope,
                 )
             )
 
