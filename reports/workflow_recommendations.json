@@ -1,14 +1,5 @@
 [
-  {
-    "title": "Limit handoffs",
-    "detail": "Tasks with repeated handoffs are delaying cycle time. Cap handoffs to 1 and keep ownership stable until QA."
-  },
-  {
-    "title": "Break down long stages",
-    "detail": "Split work into smaller steps with intermediate check-ins every 24-36 hours to prevent stalls."
-  },
-  {
-    "title": "Add AI copilots",
-    "detail": "Use AI to draft briefs, summaries, and outlines; enforce human review before sending externally."
-  }
+  "Set WIP limits and add daily standups to relieve the top bottleneck stage.",
+  "Enable AI drafting for communication tasks with mandatory reviewer sign-off.",
+  "Rebalance workload by shifting low-skill tasks to underutilized team members."
 ]

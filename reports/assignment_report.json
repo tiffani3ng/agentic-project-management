@@ -1,23 +1,212 @@
 [
   {
-    "task_id": "T0006",
-    "project_id": "P002",
+    "task_id": "T0121",
+    "project_id": "P009",
+    "assignee": "E028",
+    "score": 2.676470583044983,
+    "rationale": "skill_score=1.00, availability_score=0.18, balance_score=1.00, timezone_overlap=0.50, capacity_penalty=0.00"
+  },
+  {
+    "task_id": "T0122",
+    "project_id": "P009",
+    "assignee": "E016",
+    "score": 3.49999990000001,
+    "rationale": "skill_score=1.00, availability_score=1.00, balance_score=1.00, timezone_overlap=0.50, capacity_penalty=0.00"
+  },
+  {
+    "task_id": "T0123",
+    "project_id": "P009",
+    "assignee": "E009",
+    "score": 2.899999840000032,
+    "rationale": "skill_score=1.00, availability_score=0.80, balance_score=0.60, timezone_overlap=0.50, capacity_penalty=0.00"
+  },
+  {
+    "task_id": "T0124",
+    "project_id": "P009",
+    "assignee": "E024",
+    "score": 2.7631578878116345,
+    "rationale": "skill_score=1.00, availability_score=0.26, balance_score=1.00, timezone_overlap=0.50, capacity_penalty=0.00"
+  },
+  {
+    "task_id": "T0125",
+    "project_id": "P009",
     "assignee": "E004",
-    "score": 3.9555555246913596,
-    "rationale": "skill_score=0.60, availability_score=0.28, balance_score=1.00, overtime_penalty=0.00"
+    "score": 2.0294117335640154,
+    "rationale": "skill_score=0.00, availability_score=0.53, balance_score=1.00, timezone_overlap=0.50, capacity_penalty=0.00"
   },
   {
-    "task_id": "T0007",
-    "project_id": "P003",
-    "assignee": "E001",
-    "score": 5.999999875000015,
-    "rationale": "skill_score=1.00, availability_score=0.50, balance_score=1.00, overtime_penalty=0.00"
+    "task_id": "T0126",
+    "project_id": "P009",
+    "assignee": "E027",
+    "score": 2.3316429968380863,
+    "rationale": "skill_score=1.00, availability_score=0.18, balance_score=1.00, timezone_overlap=0.50, capacity_penalty=0.34"
   },
   {
-    "task_id": "T0008",
-    "project_id": "P005",
+    "task_id": "T0127",
+    "project_id": "P009",
+    "assignee": "E024",
+    "score": 2.7083332083333493,
+    "rationale": "skill_score=1.00, availability_score=1.00, balance_score=0.21, timezone_overlap=0.50, capacity_penalty=0.00"
+  },
+  {
+    "task_id": "T0128",
+    "project_id": "P009",
+    "assignee": "E026",
+    "score": 2.7342341786786832,
+    "rationale": "skill_score=1.00, availability_score=0.67, balance_score=0.57, timezone_overlap=0.50, capacity_penalty=0.00"
+  },
+  {
+    "task_id": "T0129",
+    "project_id": "P009",
+    "assignee": "E013",
+    "score": 2.8999998000000398,
+    "rationale": "skill_score=0.40, availability_score=1.00, balance_score=1.00, timezone_overlap=0.50, capacity_penalty=0.00"
+  },
+  {
+    "task_id": "T0130",
+    "project_id": "P009",
+    "assignee": "E012",
+    "score": 3.3113206436058826,
+    "rationale": "skill_score=1.00, availability_score=1.00, balance_score=0.81, timezone_overlap=0.50, capacity_penalty=0.00"
+  },
+  {
+    "task_id": "T0131",
+    "project_id": "P009",
+    "assignee": "E012",
+    "score": 3.0415093439622733,
+    "rationale": "skill_score=1.00, availability_score=0.90, balance_score=0.64, timezone_overlap=0.50, capacity_penalty=0.00"
+  },
+  {
+    "task_id": "T0132",
+    "project_id": "P009",
+    "assignee": "E038",
+    "score": 2.8296702823330553,
+    "rationale": "skill_score=1.00, availability_score=0.62, balance_score=0.71, timezone_overlap=0.50, capacity_penalty=0.00"
+  },
+  {
+    "task_id": "T0133",
+    "project_id": "P009",
+    "assignee": "E013",
+    "score": 2.624999977777779,
+    "rationale": "skill_score=1.00, availability_score=0.33, balance_score=0.79, timezone_overlap=0.50, capacity_penalty=0.00"
+  },
+  {
+    "task_id": "T0134",
+    "project_id": "P009",
+    "assignee": "E014",
+    "score": 3.0833332847222263,
+    "rationale": "skill_score=1.00, availability_score=0.58, balance_score=1.00, timezone_overlap=0.50, capacity_penalty=0.00"
+  },
+  {
+    "task_id": "T0135",
+    "project_id": "P009",
+    "assignee": "E030",
+    "score": 2.9421768263038577,
+    "rationale": "skill_score=1.00, availability_score=0.67, balance_score=0.78, timezone_overlap=0.50, capacity_penalty=0.00"
+  },
+  {
+    "task_id": "T0136",
+    "project_id": "P010",
+    "assignee": "E003",
+    "score": 2.8999998000000398,
+    "rationale": "skill_score=0.40, availability_score=1.00, balance_score=1.00, timezone_overlap=0.50, capacity_penalty=0.00"
+  },
+  {
+    "task_id": "T0137",
+    "project_id": "P010",
+    "assignee": "E015",
+    "score": 2.416666555555568,
+    "rationale": "skill_score=0.00, availability_score=1.00, balance_score=0.92, timezone_overlap=0.50, capacity_penalty=0.00"
+  },
+  {
+    "task_id": "T0138",
+    "project_id": "P010",
+    "assignee": "E036",
+    "score": 3.03333329777778,
+    "rationale": "skill_score=1.00, availability_score=0.53, balance_score=1.00, timezone_overlap=0.50, capacity_penalty=0.00"
+  },
+  {
+    "task_id": "T0139",
+    "project_id": "P010",
     "assignee": "E005",
-    "score": 5.4621211565656616,
-    "rationale": "skill_score=1.00, availability_score=0.33, balance_score=0.80, overtime_penalty=0.00"
+    "score": 2.4999998571428774,
+    "rationale": "skill_score=0.00, availability_score=1.00, balance_score=1.00, timezone_overlap=0.50, capacity_penalty=0.00"
+  },
+  {
+    "task_id": "T0140",
+    "project_id": "P010",
+    "assignee": "E017",
+    "score": 1.9444444197530877,
+    "rationale": "skill_score=0.00, availability_score=0.44, balance_score=1.00, timezone_overlap=0.50, capacity_penalty=0.00"
+  },
+  {
+    "task_id": "T0141",
+    "project_id": "P010",
+    "assignee": "E029",
+    "score": 1.7051281998685077,
+    "rationale": "skill_score=0.00, availability_score=0.21, balance_score=1.00, timezone_overlap=0.50, capacity_penalty=0.00"
+  },
+  {
+    "task_id": "T0142",
+    "project_id": "P010",
+    "assignee": "E025",
+    "score": 1.9613635973011387,
+    "rationale": "skill_score=0.00, availability_score=0.62, balance_score=0.84, timezone_overlap=0.50, capacity_penalty=0.00"
+  },
+  {
+    "task_id": "T0143",
+    "project_id": "P010",
+    "assignee": "E003",
+    "score": 2.3936168962766113,
+    "rationale": "skill_score=0.00, availability_score=1.00, balance_score=0.89, timezone_overlap=0.50, capacity_penalty=0.00"
+  },
+  {
+    "task_id": "T0144",
+    "project_id": "P010",
+    "assignee": "E026",
+    "score": 2.7432431182432593,
+    "rationale": "skill_score=1.00, availability_score=1.00, balance_score=0.24, timezone_overlap=0.50, capacity_penalty=0.00"
+  },
+  {
+    "task_id": "T0145",
+    "project_id": "P010",
+    "assignee": "E010",
+    "score": 2.3968553014675082,
+    "rationale": "skill_score=0.40, availability_score=0.67, balance_score=0.83, timezone_overlap=0.50, capacity_penalty=0.00"
+  },
+  {
+    "task_id": "T0146",
+    "project_id": "P010",
+    "assignee": "E033",
+    "score": 2.853535270890733,
+    "rationale": "skill_score=1.00, availability_score=0.91, balance_score=0.44, timezone_overlap=0.50, capacity_penalty=0.00"
+  },
+  {
+    "task_id": "T0147",
+    "project_id": "P010",
+    "assignee": "E036",
+    "score": 3.0115383815384695,
+    "rationale": "skill_score=1.00, availability_score=0.80, balance_score=0.71, timezone_overlap=0.50, capacity_penalty=0.00"
+  },
+  {
+    "task_id": "T0148",
+    "project_id": "P010",
+    "assignee": "E014",
+    "score": 3.2209300658915003,
+    "rationale": "skill_score=1.00, availability_score=1.00, balance_score=0.72, timezone_overlap=0.50, capacity_penalty=0.00"
+  },
+  {
+    "task_id": "T0149",
+    "project_id": "P010",
+    "assignee": "E008",
+    "score": 2.449999920000008,
+    "rationale": "skill_score=0.40, availability_score=0.80, balance_score=0.75, timezone_overlap=0.50, capacity_penalty=0.00"
+  },
+  {
+    "task_id": "T0150",
+    "project_id": "P010",
+    "assignee": "E005",
+    "score": 2.315789330827088,
+    "rationale": "skill_score=0.00, availability_score=1.00, balance_score=0.82, timezone_overlap=0.50, capacity_penalty=0.00"
   }
 ]

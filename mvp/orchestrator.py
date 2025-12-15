@@ -31,15 +31,17 @@ class WorkflowState(TypedDict, total=False):
     stage_delays: object
     process_graph: object
     bottleneck_map: str
+    bottleneck_image: str
     recommendations: List[str]
 
 
 class Orchestrator:
-    def __init__(self, data_dir: Path, reports_dir: Path):
+    def __init__(self, data_dir: Path, reports_dir: Path, *, test_mode: bool = False):
         self.data_dir = data_dir
         self.reports_dir = reports_dir
         self.reports_dir.mkdir(parents=True, exist_ok=True)
         self.run_store = RunStore(self.reports_dir / "agent_runs.db")
+        self.test_mode = test_mode
 
     def _load_data(self) -> Dict[str, object]:
         employees = load_employees(self.data_dir / "employees.csv")
@@ -74,6 +76,7 @@ class Orchestrator:
                 run_store=self.run_store,
                 run_id=state["run_id"],
                 employees=state.get("employees"),
+                test_mode=self.test_mode,
             )
             suggestions = agent.run()
             return {"ai_opportunities": suggestions}
@@ -84,6 +87,7 @@ class Orchestrator:
                 state["employees"],
                 run_store=self.run_store,
                 run_id=state["run_id"],
+                reports_dir=self.reports_dir,
             )
             result = agent.run()
             return {
@@ -91,6 +95,7 @@ class Orchestrator:
                 "stage_delays": result["stage_delays"],
                 "process_graph": result.get("process_graph", {}),
                 "bottleneck_map": result.get("bottleneck_map", ""),
+                "bottleneck_image": result.get("bottleneck_image"),
             }
 
         def recommend(state: WorkflowState) -> WorkflowState:
@@ -141,6 +146,7 @@ class Orchestrator:
             "stage_delays": [asdict(d) for d in final_state.get("stage_delays", [])],
             "process_graph": final_state.get("process_graph", {}),
             "bottleneck_map": final_state.get("bottleneck_map", ""),
+            "bottleneck_image": final_state.get("bottleneck_image"),
             "recommendations": final_state.get("recommendations", []),
             "run_id": run_id,
         }
@@ -163,6 +169,7 @@ class Orchestrator:
             "stage_delays": report["stage_delays"],
             "process_graph": report.get("process_graph", {}),
             "bottleneck_map": report.get("bottleneck_map", ""),
+            "bottleneck_image": report.get("bottleneck_image"),
         }
         bottleneck_path.write_text(json.dumps(bottleneck_payload, indent=2))
         recommendations_path.write_text(json.dumps(report["recommendations"], indent=2))

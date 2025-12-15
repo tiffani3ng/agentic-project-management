@@ -1,76 +1,1292 @@
 {
   "bottlenecks": [
     {
-      "task_id": "T0003",
-      "total_hours": 245.13333333333333,
-      "handoffs": 2,
-      "longest_stage_hours": 174.0,
-      "flagged_reason": "Repeated handoffs increasing cycle time; Single stage exceeding 2 days"
-    },
-    {
-      "task_id": "T0001",
-      "total_hours": 93.0,
-      "handoffs": 0,
-      "longest_stage_hours": 93.0,
-      "flagged_reason": "Single stage exceeding 2 days"
-    },
-    {
-      "task_id": "T0004",
-      "total_hours": 92.5,
-      "handoffs": 0,
-      "longest_stage_hours": 92.5,
-      "flagged_reason": "Single stage exceeding 2 days"
-    },
-    {
-      "task_id": "T0002",
-      "total_hours": 77.75,
-      "handoffs": 0,
-      "longest_stage_hours": 77.75,
-      "flagged_reason": "Single stage exceeding 2 days"
+      "stage": "Copywriter (Creative Studio)",
+      "issue": "Sustained high service time/utilization",
+      "metric": 120.25,
+      "unit": "hours",
+      "recommendation": "Add WIP limits, parallelize reviews, and boost capacity at this stage."
     }
   ],
   "stage_delays": [
     {
-      "task_id": "T0001",
-      "stage_index": 0,
-      "duration_hours": 93.0,
-      "from_assignee": "E015",
-      "to_assignee": ""
+      "stage": "CX Operations Manager (Customer Experience (CX))",
+      "mean_service_hours": 50.75,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 108.25000000000006,
+      "p90_wait_hours": 0.0,
+      "handoffs": 5,
+      "utilization_hours": 355.25
     },
     {
-      "task_id": "T0002",
-      "stage_index": 0,
-      "duration_hours": 77.75,
-      "from_assignee": "E017",
-      "to_assignee": ""
+      "stage": "Growth Marketing Manager (CRO/LP Testing) (Performance Marketing)",
+      "mean_service_hours": 74.07666666666667,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 127.6,
+      "p90_wait_hours": 0.0,
+      "handoffs": 0,
+      "utilization_hours": 370.3833333333333
     },
     {
-      "task_id": "T0003",
-      "stage_index": 0,
-      "duration_hours": 25.133333333333333,
-      "from_assignee": "E020",
-      "to_assignee": "E012"
+      "stage": "Data Engineer (Data & Analytics)",
+      "mean_service_hours": 38.57017543859649,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 80.34999999999998,
+      "p90_wait_hours": 0.0,
+      "handoffs": 7,
+      "utilization_hours": 732.8333333333333
     },
     {
-      "task_id": "T0003",
-      "stage_index": 1,
-      "duration_hours": 46.0,
-      "from_assignee": "E012",
-      "to_assignee": "E013"
+      "stage": "Copywriter (Creative Studio)",
+      "mean_service_hours": 65.08666666666666,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 120.25,
+      "p90_wait_hours": 0.0,
+      "handoffs": 10,
+      "utilization_hours": 976.3
     },
     {
-      "task_id": "T0003",
-      "stage_index": 2,
-      "duration_hours": 174.0,
-      "from_assignee": "E013",
-      "to_assignee": ""
+      "stage": "PR & Communications Manager (Brand Marketing)",
+      "mean_service_hours": 42.083333333333336,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 61.410000000000004,
+      "p90_wait_hours": 0.0,
+      "handoffs": 1,
+      "utilization_hours": 168.33333333333334
     },
     {
-      "task_id": "T0004",
-      "stage_index": 0,
-      "duration_hours": 92.5,
-      "from_assignee": "E020",
-      "to_assignee": ""
+      "stage": "Fulfillment Process Improvement Manager (Warehouse & Fulfillment Ops)",
+      "mean_service_hours": 49.84166666666667,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 117.5,
+      "p90_wait_hours": 0.0,
+      "handoffs": 4,
+      "utilization_hours": 299.05
+    },
+    {
+      "stage": "Graphic Designer (Creative Studio)",
+      "mean_service_hours": 30.34375,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 80.39999999999999,
+      "p90_wait_hours": 0.0,
+      "handoffs": 5,
+      "utilization_hours": 242.75
+    },
+    {
+      "stage": "UX/UI Designer (Product Design (UX/UI))",
+      "mean_service_hours": 48.99333333333333,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 87.3,
+      "p90_wait_hours": 0.0,
+      "handoffs": 2,
+      "utilization_hours": 244.96666666666667
+    },
+    {
+      "stage": "UX Researcher (Product Design (UX/UI))",
+      "mean_service_hours": 114.75,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 114.75,
+      "p90_wait_hours": 0.0,
+      "handoffs": 0,
+      "utilization_hours": 114.75
+    },
+    {
+      "stage": "Engineering Manager (Engineering)",
+      "mean_service_hours": 8.061904761904762,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 22.343333333333337,
+      "p90_wait_hours": 0.0,
+      "handoffs": 1,
+      "utilization_hours": 56.43333333333334
+    },
+    {
+      "stage": "E-commerce Platform Engineer (Shopify) (Engineering)",
+      "mean_service_hours": 23.976666666666667,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 46.730000000000004,
+      "p90_wait_hours": 0.0,
+      "handoffs": 3,
+      "utilization_hours": 119.88333333333333
+    },
+    {
+      "stage": "Backend Engineer (Engineering)",
+      "mean_service_hours": 61.15333333333333,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 128.15666666666667,
+      "p90_wait_hours": 0.0,
+      "handoffs": 4,
+      "utilization_hours": 305.76666666666665
+    },
+    {
+      "stage": "Frontend Engineer (Engineering)",
+      "mean_service_hours": 43.9375,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 143.0283333333333,
+      "p90_wait_hours": 0.0,
+      "handoffs": 4,
+      "utilization_hours": 351.5
+    },
+    {
+      "stage": "Buyer (Accessories) (Merchandising & Buying)",
+      "mean_service_hours": 40.041666666666664,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 100.625,
+      "p90_wait_hours": 0.0,
+      "handoffs": 0,
+      "utilization_hours": 240.25
+    },
+    {
+      "stage": "Customer Support Specialist (Customer Experience (CX))",
+      "mean_service_hours": 25.927083333333332,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 49.825,
+      "p90_wait_hours": 0.0,
+      "handoffs": 2,
+      "utilization_hours": 207.41666666666666
+    },
+    {
+      "stage": "Product Manager (Personalization) (Product Management)",
+      "mean_service_hours": 31.73,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 70.39999999999999,
+      "p90_wait_hours": 0.0,
+      "handoffs": 0,
+      "utilization_hours": 158.64999999999998
+    },
+    {
+      "stage": "Pricing & Markdown Analyst (Merchandising & Buying)",
+      "mean_service_hours": 30.8625,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 66.135,
+      "p90_wait_hours": 0.0,
+      "handoffs": 2,
+      "utilization_hours": 123.45
+    },
+    {
+      "stage": "Returns Operations Supervisor (Warehouse & Fulfillment Ops)",
+      "mean_service_hours": 86.54583333333333,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 145.875,
+      "p90_wait_hours": 0.0,
+      "handoffs": 5,
+      "utilization_hours": 692.3666666666667
+    },
+    {
+      "stage": "Warehouse Operations Lead (Warehouse & Fulfillment Ops)",
+      "mean_service_hours": 25.666666666666668,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 28.85,
+      "p90_wait_hours": 0.0,
+      "handoffs": 1,
+      "utilization_hours": 77.0
+    },
+    {
+      "stage": "DevOps/SRE Engineer (Engineering)",
+      "mean_service_hours": 5.958333333333333,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 16.683333333333337,
+      "p90_wait_hours": 0.0,
+      "handoffs": 2,
+      "utilization_hours": 23.833333333333332
+    },
+    {
+      "stage": "Merchandise Planner (Merchandising & Buying)",
+      "mean_service_hours": 48.80833333333333,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 66.655,
+      "p90_wait_hours": 0.0,
+      "handoffs": 0,
+      "utilization_hours": 97.61666666666666
+    },
+    {
+      "stage": "Analytics Engineer (dbt) (Data & Analytics)",
+      "mean_service_hours": 37.69444444444444,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 98.4,
+      "p90_wait_hours": 0.0,
+      "handoffs": 3,
+      "utilization_hours": 339.25
+    },
+    {
+      "stage": "Supply Planner (Supply Chain)",
+      "mean_service_hours": 42.93888888888889,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 98.28,
+      "p90_wait_hours": 0.0,
+      "handoffs": 2,
+      "utilization_hours": 386.45
+    },
+    {
+      "stage": "Integration Engineer (ERP/WMS/3PL) (Engineering)",
+      "mean_service_hours": 22.008333333333336,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 51.25833333333333,
+      "p90_wait_hours": 0.0,
+      "handoffs": 4,
+      "utilization_hours": 132.05
+    },
+    {
+      "stage": "Creative Director (Creative Studio)",
+      "mean_service_hours": 18.4375,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 27.4,
+      "p90_wait_hours": 0.0,
+      "handoffs": 1,
+      "utilization_hours": 73.75
+    },
+    {
+      "stage": "Brand Marketing Manager (Brand Marketing)",
+      "mean_service_hours": 35.36944444444445,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 72.875,
+      "p90_wait_hours": 0.0,
+      "handoffs": 5,
+      "utilization_hours": 212.21666666666667
+    },
+    {
+      "stage": "Art Director (Creative Studio)",
+      "mean_service_hours": 47.25833333333333,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 68.465,
+      "p90_wait_hours": 0.0,
+      "handoffs": 0,
+      "utilization_hours": 94.51666666666667
+    },
+    {
+      "stage": "Brand Partnerships & Influencer Manager (Brand Marketing)",
+      "mean_service_hours": 28.65,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 44.155,
+      "p90_wait_hours": 0.0,
+      "handoffs": 1,
+      "utilization_hours": 114.6
+    },
+    {
+      "stage": "Experimentation Analyst (Data & Analytics)",
+      "mean_service_hours": 72.78125,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 148.92499999999995,
+      "p90_wait_hours": 0.0,
+      "handoffs": 4,
+      "utilization_hours": 582.25
+    },
+    {
+      "stage": "Data Analyst (Data & Analytics)",
+      "mean_service_hours": 46.7,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 46.7,
+      "p90_wait_hours": 0.0,
+      "handoffs": 0,
+      "utilization_hours": 46.7
+    },
+    {
+      "stage": "Buyer (Beauty) (Merchandising & Buying)",
+      "mean_service_hours": 13.0,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 20.0,
+      "p90_wait_hours": 0.0,
+      "handoffs": 0,
+      "utilization_hours": 26.0
+    },
+    {
+      "stage": "Paid Social Manager (Meta/TikTok) (Performance Marketing)",
+      "mean_service_hours": 47.0,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 64.0,
+      "p90_wait_hours": 0.0,
+      "handoffs": 1,
+      "utilization_hours": 94.0
+    },
+    {
+      "stage": "Demand Forecast Analyst (Supply Chain)",
+      "mean_service_hours": 10.633333333333333,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 22.66,
+      "p90_wait_hours": 0.0,
+      "handoffs": 0,
+      "utilization_hours": 31.9
+    },
+    {
+      "stage": "Performance Marketing Specialist (Performance Marketing)",
+      "mean_service_hours": 23.883333333333333,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 26.176666666666666,
+      "p90_wait_hours": 0.0,
+      "handoffs": 0,
+      "utilization_hours": 47.766666666666666
+    },
+    {
+      "stage": "Senior Product Manager (Checkout) (Product Management)",
+      "mean_service_hours": 15.636666666666667,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 26.673333333333332,
+      "p90_wait_hours": 0.0,
+      "handoffs": 1,
+      "utilization_hours": 78.18333333333334
+    },
+    {
+      "stage": "Vendor Management Lead (Supply Chain)",
+      "mean_service_hours": 46.25,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 46.25,
+      "p90_wait_hours": 0.0,
+      "handoffs": 1,
+      "utilization_hours": 46.25
+    },
+    {
+      "stage": "Technical Product Manager (Integrations) (Product Management)",
+      "mean_service_hours": 0.0,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 0.0,
+      "p90_wait_hours": 0.0,
+      "handoffs": 1,
+      "utilization_hours": 0.0
+    },
+    {
+      "stage": "Product Designer (Design Systems) (Product Design (UX/UI))",
+      "mean_service_hours": 147.81666666666666,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 147.81666666666666,
+      "p90_wait_hours": 0.0,
+      "handoffs": 0,
+      "utilization_hours": 147.81666666666666
+    },
+    {
+      "stage": "QA Automation Engineer (Engineering)",
+      "mean_service_hours": 28.5,
+      "mean_wait_hours": 0.0,
+      "p90_service_hours": 28.5,
+      "p90_wait_hours": 0.0,
+      "handoffs": 0,
+      "utilization_hours": 28.5
     }
-  ]
+  ],
+  "process_graph": {
+    "stage_metrics": {
+      "CX Operations Manager (Customer Experience (CX))": {
+        "mean_service_hours": 50.75,
+        "p90_service_hours": 108.25000000000006,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 5.0,
+        "instances": 7.0,
+        "utilization_hours": 355.25
+      },
+      "Growth Marketing Manager (CRO/LP Testing) (Performance Marketing)": {
+        "mean_service_hours": 74.07666666666667,
+        "p90_service_hours": 127.6,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 0.0,
+        "instances": 5.0,
+        "utilization_hours": 370.3833333333333
+      },
+      "Data Engineer (Data & Analytics)": {
+        "mean_service_hours": 38.57017543859649,
+        "p90_service_hours": 80.34999999999998,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 7.0,
+        "instances": 19.0,
+        "utilization_hours": 732.8333333333333
+      },
+      "Copywriter (Creative Studio)": {
+        "mean_service_hours": 65.08666666666666,
+        "p90_service_hours": 120.25,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 10.0,
+        "instances": 15.0,
+        "utilization_hours": 976.3
+      },
+      "PR & Communications Manager (Brand Marketing)": {
+        "mean_service_hours": 42.083333333333336,
+        "p90_service_hours": 61.410000000000004,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 1.0,
+        "instances": 4.0,
+        "utilization_hours": 168.33333333333334
+      },
+      "Fulfillment Process Improvement Manager (Warehouse & Fulfillment Ops)": {
+        "mean_service_hours": 49.84166666666667,
+        "p90_service_hours": 117.5,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 4.0,
+        "instances": 6.0,
+        "utilization_hours": 299.05
+      },
+      "Graphic Designer (Creative Studio)": {
+        "mean_service_hours": 30.34375,
+        "p90_service_hours": 80.39999999999999,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 5.0,
+        "instances": 8.0,
+        "utilization_hours": 242.75
+      },
+      "UX/UI Designer (Product Design (UX/UI))": {
+        "mean_service_hours": 48.99333333333333,
+        "p90_service_hours": 87.3,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 2.0,
+        "instances": 5.0,
+        "utilization_hours": 244.96666666666667
+      },
+      "UX Researcher (Product Design (UX/UI))": {
+        "mean_service_hours": 114.75,
+        "p90_service_hours": 114.75,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 0.0,
+        "instances": 1.0,
+        "utilization_hours": 114.75
+      },
+      "Engineering Manager (Engineering)": {
+        "mean_service_hours": 8.061904761904762,
+        "p90_service_hours": 22.343333333333337,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 1.0,
+        "instances": 7.0,
+        "utilization_hours": 56.43333333333334
+      },
+      "E-commerce Platform Engineer (Shopify) (Engineering)": {
+        "mean_service_hours": 23.976666666666667,
+        "p90_service_hours": 46.730000000000004,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 3.0,
+        "instances": 5.0,
+        "utilization_hours": 119.88333333333333
+      },
+      "Backend Engineer (Engineering)": {
+        "mean_service_hours": 61.15333333333333,
+        "p90_service_hours": 128.15666666666667,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 4.0,
+        "instances": 5.0,
+        "utilization_hours": 305.76666666666665
+      },
+      "Frontend Engineer (Engineering)": {
+        "mean_service_hours": 43.9375,
+        "p90_service_hours": 143.0283333333333,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 4.0,
+        "instances": 8.0,
+        "utilization_hours": 351.5
+      },
+      "Buyer (Accessories) (Merchandising & Buying)": {
+        "mean_service_hours": 40.041666666666664,
+        "p90_service_hours": 100.625,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 0.0,
+        "instances": 6.0,
+        "utilization_hours": 240.25
+      },
+      "Customer Support Specialist (Customer Experience (CX))": {
+        "mean_service_hours": 25.927083333333332,
+        "p90_service_hours": 49.825,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 2.0,
+        "instances": 8.0,
+        "utilization_hours": 207.41666666666666
+      },
+      "Product Manager (Personalization) (Product Management)": {
+        "mean_service_hours": 31.73,
+        "p90_service_hours": 70.39999999999999,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 0.0,
+        "instances": 5.0,
+        "utilization_hours": 158.64999999999998
+      },
+      "Pricing & Markdown Analyst (Merchandising & Buying)": {
+        "mean_service_hours": 30.8625,
+        "p90_service_hours": 66.135,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 2.0,
+        "instances": 4.0,
+        "utilization_hours": 123.45
+      },
+      "Returns Operations Supervisor (Warehouse & Fulfillment Ops)": {
+        "mean_service_hours": 86.54583333333333,
+        "p90_service_hours": 145.875,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 5.0,
+        "instances": 8.0,
+        "utilization_hours": 692.3666666666667
+      },
+      "Warehouse Operations Lead (Warehouse & Fulfillment Ops)": {
+        "mean_service_hours": 25.666666666666668,
+        "p90_service_hours": 28.85,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 1.0,
+        "instances": 3.0,
+        "utilization_hours": 77.0
+      },
+      "DevOps/SRE Engineer (Engineering)": {
+        "mean_service_hours": 5.958333333333333,
+        "p90_service_hours": 16.683333333333337,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 2.0,
+        "instances": 4.0,
+        "utilization_hours": 23.833333333333332
+      },
+      "Merchandise Planner (Merchandising & Buying)": {
+        "mean_service_hours": 48.80833333333333,
+        "p90_service_hours": 66.655,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 0.0,
+        "instances": 2.0,
+        "utilization_hours": 97.61666666666666
+      },
+      "Analytics Engineer (dbt) (Data & Analytics)": {
+        "mean_service_hours": 37.69444444444444,
+        "p90_service_hours": 98.4,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 3.0,
+        "instances": 9.0,
+        "utilization_hours": 339.25
+      },
+      "Supply Planner (Supply Chain)": {
+        "mean_service_hours": 42.93888888888889,
+        "p90_service_hours": 98.28,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 2.0,
+        "instances": 9.0,
+        "utilization_hours": 386.45
+      },
+      "Integration Engineer (ERP/WMS/3PL) (Engineering)": {
+        "mean_service_hours": 22.008333333333336,
+        "p90_service_hours": 51.25833333333333,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 4.0,
+        "instances": 6.0,
+        "utilization_hours": 132.05
+      },
+      "Creative Director (Creative Studio)": {
+        "mean_service_hours": 18.4375,
+        "p90_service_hours": 27.4,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 1.0,
+        "instances": 4.0,
+        "utilization_hours": 73.75
+      },
+      "Brand Marketing Manager (Brand Marketing)": {
+        "mean_service_hours": 35.36944444444445,
+        "p90_service_hours": 72.875,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 5.0,
+        "instances": 6.0,
+        "utilization_hours": 212.21666666666667
+      },
+      "Art Director (Creative Studio)": {
+        "mean_service_hours": 47.25833333333333,
+        "p90_service_hours": 68.465,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 0.0,
+        "instances": 2.0,
+        "utilization_hours": 94.51666666666667
+      },
+      "Brand Partnerships & Influencer Manager (Brand Marketing)": {
+        "mean_service_hours": 28.65,
+        "p90_service_hours": 44.155,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 1.0,
+        "instances": 4.0,
+        "utilization_hours": 114.6
+      },
+      "Experimentation Analyst (Data & Analytics)": {
+        "mean_service_hours": 72.78125,
+        "p90_service_hours": 148.92499999999995,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 4.0,
+        "instances": 8.0,
+        "utilization_hours": 582.25
+      },
+      "Data Analyst (Data & Analytics)": {
+        "mean_service_hours": 46.7,
+        "p90_service_hours": 46.7,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 0.0,
+        "instances": 1.0,
+        "utilization_hours": 46.7
+      },
+      "Buyer (Beauty) (Merchandising & Buying)": {
+        "mean_service_hours": 13.0,
+        "p90_service_hours": 20.0,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 0.0,
+        "instances": 2.0,
+        "utilization_hours": 26.0
+      },
+      "Paid Social Manager (Meta/TikTok) (Performance Marketing)": {
+        "mean_service_hours": 47.0,
+        "p90_service_hours": 64.0,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 1.0,
+        "instances": 2.0,
+        "utilization_hours": 94.0
+      },
+      "Demand Forecast Analyst (Supply Chain)": {
+        "mean_service_hours": 10.633333333333333,
+        "p90_service_hours": 22.66,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 0.0,
+        "instances": 3.0,
+        "utilization_hours": 31.9
+      },
+      "Performance Marketing Specialist (Performance Marketing)": {
+        "mean_service_hours": 23.883333333333333,
+        "p90_service_hours": 26.176666666666666,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 0.0,
+        "instances": 2.0,
+        "utilization_hours": 47.766666666666666
+      },
+      "Senior Product Manager (Checkout) (Product Management)": {
+        "mean_service_hours": 15.636666666666667,
+        "p90_service_hours": 26.673333333333332,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 1.0,
+        "instances": 5.0,
+        "utilization_hours": 78.18333333333334
+      },
+      "Vendor Management Lead (Supply Chain)": {
+        "mean_service_hours": 46.25,
+        "p90_service_hours": 46.25,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 1.0,
+        "instances": 1.0,
+        "utilization_hours": 46.25
+      },
+      "Technical Product Manager (Integrations) (Product Management)": {
+        "mean_service_hours": 0.0,
+        "p90_service_hours": 0.0,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 1.0,
+        "instances": 1.0,
+        "utilization_hours": 0.0
+      },
+      "Product Designer (Design Systems) (Product Design (UX/UI))": {
+        "mean_service_hours": 147.81666666666666,
+        "p90_service_hours": 147.81666666666666,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 0.0,
+        "instances": 1.0,
+        "utilization_hours": 147.81666666666666
+      },
+      "QA Automation Engineer (Engineering)": {
+        "mean_service_hours": 28.5,
+        "p90_service_hours": 28.5,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0,
+        "handoffs": 0.0,
+        "instances": 1.0,
+        "utilization_hours": 28.5
+      }
+    },
+    "edges": [
+      {
+        "from": "Growth Marketing Manager (CRO/LP Testing) (Performance Marketing)",
+        "to": "Data Engineer (Data & Analytics)",
+        "count": 2,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Copywriter (Creative Studio)",
+        "to": "PR & Communications Manager (Brand Marketing)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "PR & Communications Manager (Brand Marketing)",
+        "to": "Copywriter (Creative Studio)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Fulfillment Process Improvement Manager (Warehouse & Fulfillment Ops)",
+        "to": "Graphic Designer (Creative Studio)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Graphic Designer (Creative Studio)",
+        "to": "Fulfillment Process Improvement Manager (Warehouse & Fulfillment Ops)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Engineering Manager (Engineering)",
+        "to": "E-commerce Platform Engineer (Shopify) (Engineering)",
+        "count": 2,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "E-commerce Platform Engineer (Shopify) (Engineering)",
+        "to": "Backend Engineer (Engineering)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Warehouse Operations Lead (Warehouse & Fulfillment Ops)",
+        "to": "DevOps/SRE Engineer (Engineering)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "DevOps/SRE Engineer (Engineering)",
+        "to": "Pricing & Markdown Analyst (Merchandising & Buying)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Returns Operations Supervisor (Warehouse & Fulfillment Ops)",
+        "to": "Integration Engineer (ERP/WMS/3PL) (Engineering)",
+        "count": 3,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Product Manager (Personalization) (Product Management)",
+        "to": "Supply Planner (Supply Chain)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Buyer (Accessories) (Merchandising & Buying)",
+        "to": "Creative Director (Creative Studio)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Creative Director (Creative Studio)",
+        "to": "Copywriter (Creative Studio)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Copywriter (Creative Studio)",
+        "to": "CX Operations Manager (Customer Experience (CX))",
+        "count": 2,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "CX Operations Manager (Customer Experience (CX))",
+        "to": "Copywriter (Creative Studio)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Analytics Engineer (dbt) (Data & Analytics)",
+        "to": "Graphic Designer (Creative Studio)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Graphic Designer (Creative Studio)",
+        "to": "Supply Planner (Supply Chain)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Supply Planner (Supply Chain)",
+        "to": "Copywriter (Creative Studio)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Copywriter (Creative Studio)",
+        "to": "Brand Marketing Manager (Brand Marketing)",
+        "count": 4,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Brand Marketing Manager (Brand Marketing)",
+        "to": "Copywriter (Creative Studio)",
+        "count": 3,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Copywriter (Creative Studio)",
+        "to": "Graphic Designer (Creative Studio)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Graphic Designer (Creative Studio)",
+        "to": "CX Operations Manager (Customer Experience (CX))",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "CX Operations Manager (Customer Experience (CX))",
+        "to": "Graphic Designer (Creative Studio)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Art Director (Creative Studio)",
+        "to": "Graphic Designer (Creative Studio)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Supply Planner (Supply Chain)",
+        "to": "Data Engineer (Data & Analytics)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Data Engineer (Data & Analytics)",
+        "to": "Experimentation Analyst (Data & Analytics)",
+        "count": 2,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Buyer (Accessories) (Merchandising & Buying)",
+        "to": "Analytics Engineer (dbt) (Data & Analytics)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Buyer (Beauty) (Merchandising & Buying)",
+        "to": "Fulfillment Process Improvement Manager (Warehouse & Fulfillment Ops)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Fulfillment Process Improvement Manager (Warehouse & Fulfillment Ops)",
+        "to": "Copywriter (Creative Studio)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Copywriter (Creative Studio)",
+        "to": "Fulfillment Process Improvement Manager (Warehouse & Fulfillment Ops)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Paid Social Manager (Meta/TikTok) (Performance Marketing)",
+        "to": "Data Engineer (Data & Analytics)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Frontend Engineer (Engineering)",
+        "to": "Engineering Manager (Engineering)",
+        "count": 3,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Engineering Manager (Engineering)",
+        "to": "Backend Engineer (Engineering)",
+        "count": 2,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Warehouse Operations Lead (Warehouse & Fulfillment Ops)",
+        "to": "Analytics Engineer (dbt) (Data & Analytics)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Analytics Engineer (dbt) (Data & Analytics)",
+        "to": "Experimentation Analyst (Data & Analytics)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Buyer (Accessories) (Merchandising & Buying)",
+        "to": "Data Engineer (Data & Analytics)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Performance Marketing Specialist (Performance Marketing)",
+        "to": "Senior Product Manager (Checkout) (Product Management)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Senior Product Manager (Checkout) (Product Management)",
+        "to": "Customer Support Specialist (Customer Experience (CX))",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Buyer (Beauty) (Merchandising & Buying)",
+        "to": "Vendor Management Lead (Supply Chain)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Vendor Management Lead (Supply Chain)",
+        "to": "Technical Product Manager (Integrations) (Product Management)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Senior Product Manager (Checkout) (Product Management)",
+        "to": "DevOps/SRE Engineer (Engineering)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Frontend Engineer (Engineering)",
+        "to": "Backend Engineer (Engineering)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Backend Engineer (Engineering)",
+        "to": "E-commerce Platform Engineer (Shopify) (Engineering)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "E-commerce Platform Engineer (Shopify) (Engineering)",
+        "to": "Frontend Engineer (Engineering)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Graphic Designer (Creative Studio)",
+        "to": "DevOps/SRE Engineer (Engineering)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Frontend Engineer (Engineering)",
+        "to": "Frontend Engineer (Engineering)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Returns Operations Supervisor (Warehouse & Fulfillment Ops)",
+        "to": "Growth Marketing Manager (CRO/LP Testing) (Performance Marketing)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Growth Marketing Manager (CRO/LP Testing) (Performance Marketing)",
+        "to": "Integration Engineer (ERP/WMS/3PL) (Engineering)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Data Engineer (Data & Analytics)",
+        "to": "Returns Operations Supervisor (Warehouse & Fulfillment Ops)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Demand Forecast Analyst (Supply Chain)",
+        "to": "Returns Operations Supervisor (Warehouse & Fulfillment Ops)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Brand Partnerships & Influencer Manager (Brand Marketing)",
+        "to": "Fulfillment Process Improvement Manager (Warehouse & Fulfillment Ops)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Merchandise Planner (Merchandising & Buying)",
+        "to": "Customer Support Specialist (Customer Experience (CX))",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Customer Support Specialist (Customer Experience (CX))",
+        "to": "Pricing & Markdown Analyst (Merchandising & Buying)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Performance Marketing Specialist (Performance Marketing)",
+        "to": "Data Engineer (Data & Analytics)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Creative Director (Creative Studio)",
+        "to": "Returns Operations Supervisor (Warehouse & Fulfillment Ops)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Brand Marketing Manager (Brand Marketing)",
+        "to": "UX/UI Designer (Product Design (UX/UI))",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "UX/UI Designer (Product Design (UX/UI))",
+        "to": "CX Operations Manager (Customer Experience (CX))",
+        "count": 2,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "CX Operations Manager (Customer Experience (CX))",
+        "to": "UX/UI Designer (Product Design (UX/UI))",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Copywriter (Creative Studio)",
+        "to": "Paid Social Manager (Meta/TikTok) (Performance Marketing)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Paid Social Manager (Meta/TikTok) (Performance Marketing)",
+        "to": "Copywriter (Creative Studio)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Customer Support Specialist (Customer Experience (CX))",
+        "to": "Copywriter (Creative Studio)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Creative Director (Creative Studio)",
+        "to": "Data Engineer (Data & Analytics)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Brand Marketing Manager (Brand Marketing)",
+        "to": "Experimentation Analyst (Data & Analytics)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Integration Engineer (ERP/WMS/3PL) (Engineering)",
+        "to": "Brand Partnerships & Influencer Manager (Brand Marketing)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "QA Automation Engineer (Engineering)",
+        "to": "Analytics Engineer (dbt) (Data & Analytics)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Analytics Engineer (dbt) (Data & Analytics)",
+        "to": "Returns Operations Supervisor (Warehouse & Fulfillment Ops)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      },
+      {
+        "from": "Returns Operations Supervisor (Warehouse & Fulfillment Ops)",
+        "to": "Experimentation Analyst (Data & Analytics)",
+        "count": 1,
+        "mean_wait_hours": 0.0,
+        "p90_wait_hours": 0.0
+      }
+    ],
+    "critical_paths": [
+      {
+        "task_id": "T0034",
+        "total_hours": 427.25,
+        "stages": [
+          {
+            "role": "Buyer (Accessories) (Merchandising & Buying)",
+            "service_hours": 17.75,
+            "wait_hours": 0.0
+          },
+          {
+            "role": "Creative Director (Creative Studio)",
+            "service_hours": 28.0,
+            "wait_hours": 0.0
+          },
+          {
+            "role": "Copywriter (Creative Studio)",
+            "service_hours": 90.5,
+            "wait_hours": 0.0
+          },
+          {
+            "role": "CX Operations Manager (Customer Experience (CX))",
+            "service_hours": 24.0,
+            "wait_hours": 0.0
+          },
+          {
+            "role": "Copywriter (Creative Studio)",
+            "service_hours": 77.75,
+            "wait_hours": 0.0
+          },
+          {
+            "role": "CX Operations Manager (Customer Experience (CX))",
+            "service_hours": 189.25,
+            "wait_hours": 0.0
+          }
+        ]
+      },
+      {
+        "task_id": "T0035",
+        "total_hours": 388.75,
+        "stages": [
+          {
+            "role": "Analytics Engineer (dbt) (Data & Analytics)",
+            "service_hours": 4.75,
+            "wait_hours": 0.0
+          },
+          {
+            "role": "Graphic Designer (Creative Studio)",
+            "service_hours": 22.0,
+            "wait_hours": 0.0
+          },
+          {
+            "role": "Supply Planner (Supply Chain)",
+            "service_hours": 23.75,
+            "wait_hours": 0.0
+          },
+          {
+            "role": "Copywriter (Creative Studio)",
+            "service_hours": 125.25,
+            "wait_hours": 0.0
+          },
+          {
+            "role": "Brand Marketing Manager (Brand Marketing)",
+            "service_hours": 19.25,
+            "wait_hours": 0.0
+          },
+          {
+            "role": "Copywriter (Creative Studio)",
+            "service_hours": 75.75,
+            "wait_hours": 0.0
+          },
+          {
+            "role": "Brand Marketing Manager (Brand Marketing)",
+            "service_hours": 118.0,
+            "wait_hours": 0.0
+          }
+        ]
+      },
+      {
+        "task_id": "T0044",
+        "total_hours": 334.0,
+        "stages": [
+          {
+            "role": "Supply Planner (Supply Chain)",
+            "service_hours": 22.0,
+            "wait_hours": 0.0
+          },
+          {
+            "role": "Data Engineer (Data & Analytics)",
+            "service_hours": 44.25,
+            "wait_hours": 0.0
+          },
+          {
+            "role": "Experimentation Analyst (Data & Analytics)",
+            "service_hours": 267.75,
+            "wait_hours": 0.0
+          }
+        ]
+      }
+    ]
+  },
+  "bottleneck_map": "Process bottleneck map (roles as nodes, handoffs as edges):\n- CX Operations Manager (Customer Experience (CX)): wait \u03bc=0.0h p90=0.0h | service \u03bc=50.8h p90=108.3h | utilization=355.2h\n- Growth Marketing Manager (CRO/LP Testing) (Performance Marketing): wait \u03bc=0.0h p90=0.0h | service \u03bc=74.1h p90=127.6h | utilization=370.4h\n- Data Engineer (Data & Analytics): wait \u03bc=0.0h p90=0.0h | service \u03bc=38.6h p90=80.3h | utilization=732.8h\n- Copywriter (Creative Studio): wait \u03bc=0.0h p90=0.0h | service \u03bc=65.1h p90=120.2h | utilization=976.3h\n- PR & Communications Manager (Brand Marketing): wait \u03bc=0.0h p90=0.0h | service \u03bc=42.1h p90=61.4h | utilization=168.3h\n- Fulfillment Process Improvement Manager (Warehouse & Fulfillment Ops): wait \u03bc=0.0h p90=0.0h | service \u03bc=49.8h p90=117.5h | utilization=299.1h\n- Graphic Designer (Creative Studio): wait \u03bc=0.0h p90=0.0h | service \u03bc=30.3h p90=80.4h | utilization=242.8h\n- UX/UI Designer (Product Design (UX/UI)): wait \u03bc=0.0h p90=0.0h | service \u03bc=49.0h p90=87.3h | utilization=245.0h\n- UX Researcher (Product Design (UX/UI)): wait \u03bc=0.0h p90=0.0h | service \u03bc=114.8h p90=114.8h | utilization=114.8h\n- Engineering Manager (Engineering): wait \u03bc=0.0h p90=0.0h | service \u03bc=8.1h p90=22.3h | utilization=56.4h\n- E-commerce Platform Engineer (Shopify) (Engineering): wait \u03bc=0.0h p90=0.0h | service \u03bc=24.0h p90=46.7h | utilization=119.9h\n- Backend Engineer (Engineering): wait \u03bc=0.0h p90=0.0h | service \u03bc=61.2h p90=128.2h | utilization=305.8h\n- Frontend Engineer (Engineering): wait \u03bc=0.0h p90=0.0h | service \u03bc=43.9h p90=143.0h | utilization=351.5h\n- Buyer (Accessories) (Merchandising & Buying): wait \u03bc=0.0h p90=0.0h | service \u03bc=40.0h p90=100.6h | utilization=240.2h\n- Customer Support Specialist (Customer Experience (CX)): wait \u03bc=0.0h p90=0.0h | service \u03bc=25.9h p90=49.8h | utilization=207.4h\n- Product Manager (Personalization) (Product Management): wait \u03bc=0.0h p90=0.0h | service \u03bc=31.7h p90=70.4h | utilization=158.6h\n- Pricing & Markdown Analyst (Merchandising & Buying): wait \u03bc=0.0h p90=0.0h | service \u03bc=30.9h p90=66.1h | utilization=123.5h\n- Returns Operations Supervisor (Warehouse & Fulfillment Ops): wait \u03bc=0.0h p90=0.0h | service \u03bc=86.5h p90=145.9h | utilization=692.4h\n- Warehouse Operations Lead (Warehouse & Fulfillment Ops): wait \u03bc=0.0h p90=0.0h | service \u03bc=25.7h p90=28.9h | utilization=77.0h\n- DevOps/SRE Engineer (Engineering): wait \u03bc=0.0h p90=0.0h | service \u03bc=6.0h p90=16.7h | utilization=23.8h\n- Merchandise Planner (Merchandising & Buying): wait \u03bc=0.0h p90=0.0h | service \u03bc=48.8h p90=66.7h | utilization=97.6h\n- Analytics Engineer (dbt) (Data & Analytics): wait \u03bc=0.0h p90=0.0h | service \u03bc=37.7h p90=98.4h | utilization=339.2h\n- Supply Planner (Supply Chain): wait \u03bc=0.0h p90=0.0h | service \u03bc=42.9h p90=98.3h | utilization=386.4h\n- Integration Engineer (ERP/WMS/3PL) (Engineering): wait \u03bc=0.0h p90=0.0h | service \u03bc=22.0h p90=51.3h | utilization=132.1h\n- Creative Director (Creative Studio): wait \u03bc=0.0h p90=0.0h | service \u03bc=18.4h p90=27.4h | utilization=73.8h\n- Brand Marketing Manager (Brand Marketing): wait \u03bc=0.0h p90=0.0h | service \u03bc=35.4h p90=72.9h | utilization=212.2h\n- Art Director (Creative Studio): wait \u03bc=0.0h p90=0.0h | service \u03bc=47.3h p90=68.5h | utilization=94.5h\n- Brand Partnerships & Influencer Manager (Brand Marketing): wait \u03bc=0.0h p90=0.0h | service \u03bc=28.6h p90=44.2h | utilization=114.6h\n- Experimentation Analyst (Data & Analytics): wait \u03bc=0.0h p90=0.0h | service \u03bc=72.8h p90=148.9h | utilization=582.2h\n- Data Analyst (Data & Analytics): wait \u03bc=0.0h p90=0.0h | service \u03bc=46.7h p90=46.7h | utilization=46.7h\n- Buyer (Beauty) (Merchandising & Buying): wait \u03bc=0.0h p90=0.0h | service \u03bc=13.0h p90=20.0h | utilization=26.0h\n- Paid Social Manager (Meta/TikTok) (Performance Marketing): wait \u03bc=0.0h p90=0.0h | service \u03bc=47.0h p90=64.0h | utilization=94.0h\n- Demand Forecast Analyst (Supply Chain): wait \u03bc=0.0h p90=0.0h | service \u03bc=10.6h p90=22.7h | utilization=31.9h\n- Performance Marketing Specialist (Performance Marketing): wait \u03bc=0.0h p90=0.0h | service \u03bc=23.9h p90=26.2h | utilization=47.8h\n- Senior Product Manager (Checkout) (Product Management): wait \u03bc=0.0h p90=0.0h | service \u03bc=15.6h p90=26.7h | utilization=78.2h\n- Vendor Management Lead (Supply Chain): wait \u03bc=0.0h p90=0.0h | service \u03bc=46.2h p90=46.2h | utilization=46.2h\n- Technical Product Manager (Integrations) (Product Management): wait \u03bc=0.0h p90=0.0h | service \u03bc=0.0h p90=0.0h | utilization=0.0h\n- Product Designer (Design Systems) (Product Design (UX/UI)): wait \u03bc=0.0h p90=0.0h | service \u03bc=147.8h p90=147.8h | utilization=147.8h\n- QA Automation Engineer (Engineering): wait \u03bc=0.0h p90=0.0h | service \u03bc=28.5h p90=28.5h | utilization=28.5h\n- Handoffs:\n  Growth Marketing Manager (CRO/LP Testing) (Performance Marketing) -> Data Engineer (Data & Analytics): count=2, wait \u03bc=0.0h p90=0.0h\n  Copywriter (Creative Studio) -> PR & Communications Manager (Brand Marketing): count=1, wait \u03bc=0.0h p90=0.0h\n  PR & Communications Manager (Brand Marketing) -> Copywriter (Creative Studio): count=1, wait \u03bc=0.0h p90=0.0h\n  Fulfillment Process Improvement Manager (Warehouse & Fulfillment Ops) -> Graphic Designer (Creative Studio): count=1, wait \u03bc=0.0h p90=0.0h\n  Graphic Designer (Creative Studio) -> Fulfillment Process Improvement Manager (Warehouse & Fulfillment Ops): count=1, wait \u03bc=0.0h p90=0.0h\n  Engineering Manager (Engineering) -> E-commerce Platform Engineer (Shopify) (Engineering): count=2, wait \u03bc=0.0h p90=0.0h\n  E-commerce Platform Engineer (Shopify) (Engineering) -> Backend Engineer (Engineering): count=1, wait \u03bc=0.0h p90=0.0h\n  Warehouse Operations Lead (Warehouse & Fulfillment Ops) -> DevOps/SRE Engineer (Engineering): count=1, wait \u03bc=0.0h p90=0.0h\n  DevOps/SRE Engineer (Engineering) -> Pricing & Markdown Analyst (Merchandising & Buying): count=1, wait \u03bc=0.0h p90=0.0h\n  Returns Operations Supervisor (Warehouse & Fulfillment Ops) -> Integration Engineer (ERP/WMS/3PL) (Engineering): count=3, wait \u03bc=0.0h p90=0.0h\n  Product Manager (Personalization) (Product Management) -> Supply Planner (Supply Chain): count=1, wait \u03bc=0.0h p90=0.0h\n  Buyer (Accessories) (Merchandising & Buying) -> Creative Director (Creative Studio): count=1, wait \u03bc=0.0h p90=0.0h\n  Creative Director (Creative Studio) -> Copywriter (Creative Studio): count=1, wait \u03bc=0.0h p90=0.0h\n  Copywriter (Creative Studio) -> CX Operations Manager (Customer Experience (CX)): count=2, wait \u03bc=0.0h p90=0.0h\n  CX Operations Manager (Customer Experience (CX)) -> Copywriter (Creative Studio): count=1, wait \u03bc=0.0h p90=0.0h\n  Analytics Engineer (dbt) (Data & Analytics) -> Graphic Designer (Creative Studio): count=1, wait \u03bc=0.0h p90=0.0h\n  Graphic Designer (Creative Studio) -> Supply Planner (Supply Chain): count=1, wait \u03bc=0.0h p90=0.0h\n  Supply Planner (Supply Chain) -> Copywriter (Creative Studio): count=1, wait \u03bc=0.0h p90=0.0h\n  Copywriter (Creative Studio) -> Brand Marketing Manager (Brand Marketing): count=4, wait \u03bc=0.0h p90=0.0h\n  Brand Marketing Manager (Brand Marketing) -> Copywriter (Creative Studio): count=3, wait \u03bc=0.0h p90=0.0h\n  Copywriter (Creative Studio) -> Graphic Designer (Creative Studio): count=1, wait \u03bc=0.0h p90=0.0h\n  Graphic Designer (Creative Studio) -> CX Operations Manager (Customer Experience (CX)): count=1, wait \u03bc=0.0h p90=0.0h\n  CX Operations Manager (Customer Experience (CX)) -> Graphic Designer (Creative Studio): count=1, wait \u03bc=0.0h p90=0.0h\n  Art Director (Creative Studio) -> Graphic Designer (Creative Studio): count=1, wait \u03bc=0.0h p90=0.0h\n  Supply Planner (Supply Chain) -> Data Engineer (Data & Analytics): count=1, wait \u03bc=0.0h p90=0.0h\n  Data Engineer (Data & Analytics) -> Experimentation Analyst (Data & Analytics): count=2, wait \u03bc=0.0h p90=0.0h\n  Buyer (Accessories) (Merchandising & Buying) -> Analytics Engineer (dbt) (Data & Analytics): count=1, wait \u03bc=0.0h p90=0.0h\n  Buyer (Beauty) (Merchandising & Buying) -> Fulfillment Process Improvement Manager (Warehouse & Fulfillment Ops): count=1, wait \u03bc=0.0h p90=0.0h\n  Fulfillment Process Improvement Manager (Warehouse & Fulfillment Ops) -> Copywriter (Creative Studio): count=1, wait \u03bc=0.0h p90=0.0h\n  Copywriter (Creative Studio) -> Fulfillment Process Improvement Manager (Warehouse & Fulfillment Ops): count=1, wait \u03bc=0.0h p90=0.0h\n  Paid Social Manager (Meta/TikTok) (Performance Marketing) -> Data Engineer (Data & Analytics): count=1, wait \u03bc=0.0h p90=0.0h\n  Frontend Engineer (Engineering) -> Engineering Manager (Engineering): count=3, wait \u03bc=0.0h p90=0.0h\n  Engineering Manager (Engineering) -> Backend Engineer (Engineering): count=2, wait \u03bc=0.0h p90=0.0h\n  Warehouse Operations Lead (Warehouse & Fulfillment Ops) -> Analytics Engineer (dbt) (Data & Analytics): count=1, wait \u03bc=0.0h p90=0.0h\n  Analytics Engineer (dbt) (Data & Analytics) -> Experimentation Analyst (Data & Analytics): count=1, wait \u03bc=0.0h p90=0.0h\n  Buyer (Accessories) (Merchandising & Buying) -> Data Engineer (Data & Analytics): count=1, wait \u03bc=0.0h p90=0.0h\n  Performance Marketing Specialist (Performance Marketing) -> Senior Product Manager (Checkout) (Product Management): count=1, wait \u03bc=0.0h p90=0.0h\n  Senior Product Manager (Checkout) (Product Management) -> Customer Support Specialist (Customer Experience (CX)): count=1, wait \u03bc=0.0h p90=0.0h\n  Buyer (Beauty) (Merchandising & Buying) -> Vendor Management Lead (Supply Chain): count=1, wait \u03bc=0.0h p90=0.0h\n  Vendor Management Lead (Supply Chain) -> Technical Product Manager (Integrations) (Product Management): count=1, wait \u03bc=0.0h p90=0.0h\n  Senior Product Manager (Checkout) (Product Management) -> DevOps/SRE Engineer (Engineering): count=1, wait \u03bc=0.0h p90=0.0h\n  Frontend Engineer (Engineering) -> Backend Engineer (Engineering): count=1, wait \u03bc=0.0h p90=0.0h\n  Backend Engineer (Engineering) -> E-commerce Platform Engineer (Shopify) (Engineering): count=1, wait \u03bc=0.0h p90=0.0h\n  E-commerce Platform Engineer (Shopify) (Engineering) -> Frontend Engineer (Engineering): count=1, wait \u03bc=0.0h p90=0.0h\n  Graphic Designer (Creative Studio) -> DevOps/SRE Engineer (Engineering): count=1, wait \u03bc=0.0h p90=0.0h\n  Frontend Engineer (Engineering) -> Frontend Engineer (Engineering): count=1, wait \u03bc=0.0h p90=0.0h\n  Returns Operations Supervisor (Warehouse & Fulfillment Ops) -> Growth Marketing Manager (CRO/LP Testing) (Performance Marketing): count=1, wait \u03bc=0.0h p90=0.0h\n  Growth Marketing Manager (CRO/LP Testing) (Performance Marketing) -> Integration Engineer (ERP/WMS/3PL) (Engineering): count=1, wait \u03bc=0.0h p90=0.0h\n  Data Engineer (Data & Analytics) -> Returns Operations Supervisor (Warehouse & Fulfillment Ops): count=1, wait \u03bc=0.0h p90=0.0h\n  Demand Forecast Analyst (Supply Chain) -> Returns Operations Supervisor (Warehouse & Fulfillment Ops): count=1, wait \u03bc=0.0h p90=0.0h\n  Brand Partnerships & Influencer Manager (Brand Marketing) -> Fulfillment Process Improvement Manager (Warehouse & Fulfillment Ops): count=1, wait \u03bc=0.0h p90=0.0h\n  Merchandise Planner (Merchandising & Buying) -> Customer Support Specialist (Customer Experience (CX)): count=1, wait \u03bc=0.0h p90=0.0h\n  Customer Support Specialist (Customer Experience (CX)) -> Pricing & Markdown Analyst (Merchandising & Buying): count=1, wait \u03bc=0.0h p90=0.0h\n  Performance Marketing Specialist (Performance Marketing) -> Data Engineer (Data & Analytics): count=1, wait \u03bc=0.0h p90=0.0h\n  Creative Director (Creative Studio) -> Returns Operations Supervisor (Warehouse & Fulfillment Ops): count=1, wait \u03bc=0.0h p90=0.0h\n  Brand Marketing Manager (Brand Marketing) -> UX/UI Designer (Product Design (UX/UI)): count=1, wait \u03bc=0.0h p90=0.0h\n  UX/UI Designer (Product Design (UX/UI)) -> CX Operations Manager (Customer Experience (CX)): count=2, wait \u03bc=0.0h p90=0.0h\n  CX Operations Manager (Customer Experience (CX)) -> UX/UI Designer (Product Design (UX/UI)): count=1, wait \u03bc=0.0h p90=0.0h\n  Copywriter (Creative Studio) -> Paid Social Manager (Meta/TikTok) (Performance Marketing): count=1, wait \u03bc=0.0h p90=0.0h\n  Paid Social Manager (Meta/TikTok) (Performance Marketing) -> Copywriter (Creative Studio): count=1, wait \u03bc=0.0h p90=0.0h\n  Customer Support Specialist (Customer Experience (CX)) -> Copywriter (Creative Studio): count=1, wait \u03bc=0.0h p90=0.0h\n  Creative Director (Creative Studio) -> Data Engineer (Data & Analytics): count=1, wait \u03bc=0.0h p90=0.0h\n  Brand Marketing Manager (Brand Marketing) -> Experimentation Analyst (Data & Analytics): count=1, wait \u03bc=0.0h p90=0.0h\n  Integration Engineer (ERP/WMS/3PL) (Engineering) -> Brand Partnerships & Influencer Manager (Brand Marketing): count=1, wait \u03bc=0.0h p90=0.0h\n  QA Automation Engineer (Engineering) -> Analytics Engineer (dbt) (Data & Analytics): count=1, wait \u03bc=0.0h p90=0.0h\n  Analytics Engineer (dbt) (Data & Analytics) -> Returns Operations Supervisor (Warehouse & Fulfillment Ops): count=1, wait \u03bc=0.0h p90=0.0h\n  Returns Operations Supervisor (Warehouse & Fulfillment Ops) -> Experimentation Analyst (Data & Analytics): count=1, wait \u03bc=0.0h p90=0.0h\n- Critical paths (longest tasks):\n  Task T0034: 427.2h across Buyer (Accessories) (Merchandising & Buying) -> Creative Director (Creative Studio) -> Copywriter (Creative Studio) -> CX Operations Manager (Customer Experience (CX)) -> Copywriter (Creative Studio) -> CX Operations Manager (Customer Experience (CX))\n  Task T0035: 388.8h across Analytics Engineer (dbt) (Data & Analytics) -> Graphic Designer (Creative Studio) -> Supply Planner (Supply Chain) -> Copywriter (Creative Studio) -> Brand Marketing Manager (Brand Marketing) -> Copywriter (Creative Studio) -> Brand Marketing Manager (Brand Marketing)\n  Task T0044: 334.0h across Supply Planner (Supply Chain) -> Data Engineer (Data & Analytics) -> Experimentation Analyst (Data & Analytics)",
+  "bottleneck_image": "reports/bottleneck_map.png"
 }

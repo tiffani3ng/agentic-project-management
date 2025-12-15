@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import dataclass
 from datetime import datetime, time, timedelta
 from typing import Dict, List, Optional
@@ -43,6 +44,55 @@ class ResourceAllocationAgent:
         self.availability = availability.copy()
         self.run_store = run_store
         self.run_id = run_id
+
+    @staticmethod
+    def _normalize_skill_text(value: object) -> str:
+        text = "" if value is None else str(value)
+        text = re.sub(r"\s+", " ", text.strip().lower())
+        return text
+
+    @classmethod
+    def _tokenize_skill_text(cls, value: object) -> List[str]:
+        normalized = cls._normalize_skill_text(value)
+        if not normalized:
+            return []
+        return [token for token in re.split(r"[^a-z0-9]+", normalized) if token]
+
+    def _skill_match_score(self, employee_skills: object, needed: object) -> float:
+        normalized_needed = self._normalize_skill_text(needed)
+        if not normalized_needed:
+            return 0.0
+
+        if isinstance(employee_skills, list):
+            skills_iterable = employee_skills
+        elif employee_skills:
+            skills_iterable = [employee_skills]
+        else:
+            skills_iterable = []
+
+        normalized_skills = [self._normalize_skill_text(skill) for skill in skills_iterable if str(skill).strip()]
+        if normalized_needed in normalized_skills:
+            return 1.0
+
+        needed_tokens = set(self._tokenize_skill_text(normalized_needed))
+        if not needed_tokens:
+            return 0.0
+
+        best_overlap = 0.0
+        for skill in normalized_skills:
+            tokens = set(self._tokenize_skill_text(skill))
+            if not tokens:
+                continue
+            overlap = len(needed_tokens & tokens) / len(needed_tokens | tokens)
+            best_overlap = max(best_overlap, overlap)
+
+        if best_overlap >= 0.65:
+            return 0.8
+        if best_overlap >= 0.4:
+            return 0.6
+        if best_overlap >= 0.2:
+            return 0.4
+        return 0.0
 
     def _availability_score(
         self, employee_id: str, est_hours: float, task_start: Optional[pd.Timestamp], task_due: Optional[pd.Timestamp]
@@ -143,18 +193,29 @@ class ResourceAllocationAgent:
 
             for _, employee in self.employees.iterrows():
                 emp_id = employee["id"]
-                skills = [s.lower() for s in employee["skills"]]
                 needed = str(task["skill_needed"]).lower()
                 max_hours = float(employee["max_hours"])
                 current_load = existing_workload.get(emp_id, 0.0) + incremental_load.get(emp_id, 0.0)
                 est_hours = float(task["est_hours"])
 
-                skill_score = 1.0 if needed in skills else (0.6 if any(needed in s or s in needed for s in skills) else 0.0)
+                skill_score = self._skill_match_score(employee.get("skills", []), task["skill_needed"])
                 availability_score = self._availability_score(emp_id, est_hours, task["start"], task["due"])
-                balance_score = max(0.0, (max_hours - current_load) / max_hours)
+                remaining_capacity = max_hours - current_load
+                balance_score = max(0.0, remaining_capacity / max_hours)
                 timezone_score = self._timezone_overlap_score(task["start"], task["due"], employee.get("timezone", "UTC"))
-                overtime_risk = max(0.0, (current_load + est_hours - max_hours) / max_hours)
-                score = (skill_score + availability_score + balance_score + timezone_score) - overtime_risk
+                projected_load = current_load + est_hours
+                if max_hours <= 0:
+                    overload_ratio = float("inf")
+                else:
+                    overload_ratio = max(0.0, projected_load - max_hours) / max_hours
+                if overload_ratio >= 0.25:
+                    penalty = 2.0 + overload_ratio * 4
+                else:
+                    penalty = overload_ratio * 2
+                score = (skill_score + availability_score + balance_score + timezone_score) - penalty
+
+                if remaining_capacity <= 0:
+                    score -= 5.0
 
                 if score > best_score:
                     best_score = score
@@ -162,7 +223,7 @@ class ResourceAllocationAgent:
                     rationale = (
                         f"skill_score={skill_score:.2f}, availability_score={availability_score:.2f}, "
                         f"balance_score={balance_score:.2f}, timezone_overlap={timezone_score:.2f}, "
-                        f"overtime_risk={overtime_risk:.2f}"
+                        f"capacity_penalty={penalty:.2f}"
                     )
 
             if best_candidate:
@@ -261,6 +322,8 @@ class ResourceAllocationAgent:
         system_prompt = (
             "You are a meticulous resource allocation co-pilot. Act like an operations "
             "manager who balances skill fit, capacity, timezone overlap, and fairness. "
+            "Every unstarted task must be routed to the best available real employee; "
+            "never skip or leave an assignment empty unless literally no employees exist. "
             "Never invent employees or tasks. Return strictly valid JSON matching the "
             "requested schema and nothing else."
         )

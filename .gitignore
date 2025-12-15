@@ -1,4 +1,16 @@
+# Python
 __pycache__/
 *.pyc
 generated_data/
 *.db
+.sqlite
+.venv/
+venv/
+reports/*.json
+# Plotting artifacts
+reports/.matplotlib_cache/
+# Environment files
+.env
+# IDE files
+.vscode/
+.idea/

@@ -3,64 +3,2700 @@
     "task_id": "T0001",
     "project_id": "P001",
     "recommended": false,
-    "reviewer_required": false,
-    "reason": "No clear AI leverage.",
-    "suggested_prompt": ""
+    "reviewer_required": true,
+    "reviewer": "Customer Experience (CX) lead reviewer",
+    "department": "Customer Experience (CX)",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Customer Experience (CX) lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Customer Experience (CX) lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
   },
   {
     "task_id": "T0002",
     "project_id": "P001",
-    "recommended": true,
+    "recommended": false,
     "reviewer_required": true,
-    "reason": "AI can accelerate writing/analysis tasks with human-in-the-loop review.",
-    "suggested_prompt": "You are an assistant helping with task 'Returns Experience Overhaul (Self-Service + Policy Clarity)'. Draft deliverables, highlight assumptions, and list open questions for human review."
+    "reviewer": "Performance marketing manager",
+    "department": "Performance Marketing",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Prepare UTM-clean copy blocks, ad variants, and reporting summaries with spend/CPA placeholders. Include a risk log and route to Performance marketing manager for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Performance marketing manager for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
   },
   {
     "task_id": "T0003",
     "project_id": "P001",
     "recommended": false,
-    "reviewer_required": false,
-    "reason": "No clear AI leverage.",
-    "suggested_prompt": ""
+    "reviewer_required": true,
+    "reviewer": "Creative Studio lead reviewer",
+    "department": "Creative Studio",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Creative Studio lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Creative Studio lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
   },
   {
     "task_id": "T0004",
     "project_id": "P001",
     "recommended": false,
-    "reviewer_required": false,
-    "reason": "No clear AI leverage.",
-    "suggested_prompt": ""
+    "reviewer_required": true,
+    "reviewer": "Creative Studio lead reviewer",
+    "department": "Creative Studio",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Creative Studio lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Creative Studio lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
   },
   {
     "task_id": "T0005",
     "project_id": "P001",
     "recommended": false,
-    "reviewer_required": false,
-    "reason": "No clear AI leverage.",
-    "suggested_prompt": ""
+    "reviewer_required": true,
+    "reviewer": "Fulfillment operations lead",
+    "department": "Warehouse & Fulfillment Ops",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Summarize logistics updates, SOP drafts, and inventory notes. Include a risk log and route to Fulfillment operations lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Fulfillment operations lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
   },
   {
     "task_id": "T0006",
-    "project_id": "P002",
-    "recommended": true,
+    "project_id": "P001",
+    "recommended": false,
     "reviewer_required": true,
-    "reason": "AI can accelerate writing/analysis tasks with human-in-the-loop review.",
-    "suggested_prompt": "You are an assistant helping with task 'Warehouse Slotting Optimization heatmap refresh'. Draft deliverables, highlight assumptions, and list open questions for human review."
+    "reviewer": "Creative Studio lead reviewer",
+    "department": "Creative Studio",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Creative Studio lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Creative Studio lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
   },
   {
     "task_id": "T0007",
-    "project_id": "P003",
-    "recommended": true,
+    "project_id": "P001",
+    "recommended": false,
     "reviewer_required": true,
-    "reason": "AI can accelerate writing/analysis tasks with human-in-the-loop review.",
-    "suggested_prompt": "You are an assistant helping with task 'Draft influencer briefing toolkit'. Draft deliverables, highlight assumptions, and list open questions for human review."
+    "reviewer": "Product Design (UX/UI) lead reviewer",
+    "department": "Product Design (UX/UI)",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Product Design (UX/UI) lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Product Design (UX/UI) lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
   },
   {
     "task_id": "T0008",
+    "project_id": "P001",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Product Design (UX/UI) lead reviewer",
+    "department": "Product Design (UX/UI)",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Product Design (UX/UI) lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Product Design (UX/UI) lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0009",
+    "project_id": "P001",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Tech lead",
+    "department": "Engineering",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Create design doc skeletons, API specs, and risk logs without executing deployments or access changes. Include a risk log and route to Tech lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Tech lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0010",
+    "project_id": "P001",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Tech lead",
+    "department": "Engineering",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Create design doc skeletons, API specs, and risk logs without executing deployments or access changes. Include a risk log and route to Tech lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Tech lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0011",
+    "project_id": "P001",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Merchandising lead reviewer",
+    "department": "Merchandising & Buying",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Summarize product performance, vendor negotiation points, and SKU rationalization notes. Include a risk log and route to Merchandising lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Merchandising lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0012",
+    "project_id": "P001",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Tech lead",
+    "department": "Engineering",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Create design doc skeletons, API specs, and risk logs without executing deployments or access changes. Include a risk log and route to Tech lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Tech lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0013",
+    "project_id": "P001",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Customer Experience (CX) lead reviewer",
+    "department": "Customer Experience (CX)",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Customer Experience (CX) lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Customer Experience (CX) lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0014",
+    "project_id": "P001",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Product Management lead reviewer",
+    "department": "Product Management",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Product Management lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Product Management lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0015",
+    "project_id": "P001",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Merchandising lead reviewer",
+    "department": "Merchandising & Buying",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Summarize product performance, vendor negotiation points, and SKU rationalization notes. Include a risk log and route to Merchandising lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Merchandising lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0016",
+    "project_id": "P002",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Data & Analytics lead reviewer",
+    "department": "Data & Analytics",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Data & Analytics lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Data & Analytics lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0017",
+    "project_id": "P002",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Merchandising lead reviewer",
+    "department": "Merchandising & Buying",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Summarize product performance, vendor negotiation points, and SKU rationalization notes. Include a risk log and route to Merchandising lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Merchandising lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0018",
+    "project_id": "P002",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Fulfillment operations lead",
+    "department": "Warehouse & Fulfillment Ops",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Summarize logistics updates, SOP drafts, and inventory notes. Include a risk log and route to Fulfillment operations lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Fulfillment operations lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0019",
+    "project_id": "P002",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Tech lead",
+    "department": "Engineering",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Create design doc skeletons, API specs, and risk logs without executing deployments or access changes. Include a risk log and route to Tech lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Tech lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0020",
+    "project_id": "P002",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Merchandising lead reviewer",
+    "department": "Merchandising & Buying",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Summarize product performance, vendor negotiation points, and SKU rationalization notes. Include a risk log and route to Merchandising lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Merchandising lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0021",
+    "project_id": "P002",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Product Design (UX/UI) lead reviewer",
+    "department": "Product Design (UX/UI)",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Product Design (UX/UI) lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Product Design (UX/UI) lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0022",
+    "project_id": "P002",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Fulfillment operations lead",
+    "department": "Warehouse & Fulfillment Ops",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Summarize logistics updates, SOP drafts, and inventory notes. Include a risk log and route to Fulfillment operations lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Fulfillment operations lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0023",
+    "project_id": "P002",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Fulfillment operations lead",
+    "department": "Warehouse & Fulfillment Ops",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Summarize logistics updates, SOP drafts, and inventory notes. Include a risk log and route to Fulfillment operations lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Fulfillment operations lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0024",
+    "project_id": "P002",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Data & Analytics lead reviewer",
+    "department": "Data & Analytics",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Data & Analytics lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Data & Analytics lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0025",
+    "project_id": "P002",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Supply Chain lead reviewer",
+    "department": "Supply Chain",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Supply Chain lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Supply Chain lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0026",
+    "project_id": "P002",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Supply Chain lead reviewer",
+    "department": "Supply Chain",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Supply Chain lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Supply Chain lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0027",
+    "project_id": "P002",
+    "recommended": true,
+    "reviewer_required": true,
+    "reviewer": "Data & Analytics lead reviewer",
+    "department": "Data & Analytics",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Data & Analytics lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Data & Analytics lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0028",
+    "project_id": "P002",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Fulfillment operations lead",
+    "department": "Warehouse & Fulfillment Ops",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Summarize logistics updates, SOP drafts, and inventory notes. Include a risk log and route to Fulfillment operations lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Fulfillment operations lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0029",
+    "project_id": "P002",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Customer Experience (CX) lead reviewer",
+    "department": "Customer Experience (CX)",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Customer Experience (CX) lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Customer Experience (CX) lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0030",
+    "project_id": "P002",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Product Management lead reviewer",
+    "department": "Product Management",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Product Management lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Product Management lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0031",
+    "project_id": "P003",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Brand lead reviewer",
+    "department": "Brand Marketing",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft campaign briefs, taglines, and stakeholder emails tailored to brand voice. Include a risk log and route to Brand lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Brand lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0032",
+    "project_id": "P003",
+    "recommended": true,
+    "reviewer_required": true,
+    "reviewer": "Brand lead reviewer",
+    "department": "Brand Marketing",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft campaign briefs, taglines, and stakeholder emails tailored to brand voice. Include a risk log and route to Brand lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Brand lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0033",
+    "project_id": "P003",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Brand lead reviewer",
+    "department": "Brand Marketing",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft campaign briefs, taglines, and stakeholder emails tailored to brand voice. Include a risk log and route to Brand lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Brand lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0034",
+    "project_id": "P003",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Merchandising lead reviewer",
+    "department": "Merchandising & Buying",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Summarize product performance, vendor negotiation points, and SKU rationalization notes. Include a risk log and route to Merchandising lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Merchandising lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0035",
+    "project_id": "P003",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Data & Analytics lead reviewer",
+    "department": "Data & Analytics",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Data & Analytics lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Data & Analytics lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0036",
+    "project_id": "P003",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Creative Studio lead reviewer",
+    "department": "Creative Studio",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Creative Studio lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Creative Studio lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0037",
+    "project_id": "P003",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Tech lead",
+    "department": "Engineering",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Create design doc skeletons, API specs, and risk logs without executing deployments or access changes. Include a risk log and route to Tech lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Tech lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0038",
+    "project_id": "P003",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Supply Chain lead reviewer",
+    "department": "Supply Chain",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Supply Chain lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Supply Chain lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0039",
+    "project_id": "P003",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Creative Studio lead reviewer",
+    "department": "Creative Studio",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Creative Studio lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Creative Studio lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0040",
+    "project_id": "P003",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Brand lead reviewer",
+    "department": "Brand Marketing",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft campaign briefs, taglines, and stakeholder emails tailored to brand voice. Include a risk log and route to Brand lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Brand lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0041",
+    "project_id": "P003",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Data & Analytics lead reviewer",
+    "department": "Data & Analytics",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Data & Analytics lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Data & Analytics lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0042",
+    "project_id": "P003",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Data & Analytics lead reviewer",
+    "department": "Data & Analytics",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Data & Analytics lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Data & Analytics lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0043",
+    "project_id": "P003",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Creative Studio lead reviewer",
+    "department": "Creative Studio",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Creative Studio lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Creative Studio lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0044",
+    "project_id": "P003",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Supply Chain lead reviewer",
+    "department": "Supply Chain",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Supply Chain lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Supply Chain lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0045",
+    "project_id": "P003",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Data & Analytics lead reviewer",
+    "department": "Data & Analytics",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Data & Analytics lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Data & Analytics lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0046",
+    "project_id": "P004",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Customer Experience (CX) lead reviewer",
+    "department": "Customer Experience (CX)",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Customer Experience (CX) lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Customer Experience (CX) lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0047",
+    "project_id": "P004",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Merchandising lead reviewer",
+    "department": "Merchandising & Buying",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Summarize product performance, vendor negotiation points, and SKU rationalization notes. Include a risk log and route to Merchandising lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Merchandising lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0048",
+    "project_id": "P004",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Tech lead",
+    "department": "Engineering",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Create design doc skeletons, API specs, and risk logs without executing deployments or access changes. Include a risk log and route to Tech lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Tech lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0049",
+    "project_id": "P004",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Data & Analytics lead reviewer",
+    "department": "Data & Analytics",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Data & Analytics lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Data & Analytics lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0050",
+    "project_id": "P004",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Merchandising lead reviewer",
+    "department": "Merchandising & Buying",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Summarize product performance, vendor negotiation points, and SKU rationalization notes. Include a risk log and route to Merchandising lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Merchandising lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0051",
+    "project_id": "P004",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Tech lead",
+    "department": "Engineering",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Create design doc skeletons, API specs, and risk logs without executing deployments or access changes. Include a risk log and route to Tech lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Tech lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0052",
+    "project_id": "P004",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Performance marketing manager",
+    "department": "Performance Marketing",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Prepare UTM-clean copy blocks, ad variants, and reporting summaries with spend/CPA placeholders. Include a risk log and route to Performance marketing manager for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Performance marketing manager for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0053",
+    "project_id": "P004",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Tech lead",
+    "department": "Engineering",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Create design doc skeletons, API specs, and risk logs without executing deployments or access changes. Include a risk log and route to Tech lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Tech lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0054",
+    "project_id": "P004",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Product Management lead reviewer",
+    "department": "Product Management",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Product Management lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Product Management lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0055",
+    "project_id": "P004",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Data & Analytics lead reviewer",
+    "department": "Data & Analytics",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Data & Analytics lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Data & Analytics lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0056",
+    "project_id": "P004",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Fulfillment operations lead",
+    "department": "Warehouse & Fulfillment Ops",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Summarize logistics updates, SOP drafts, and inventory notes. Include a risk log and route to Fulfillment operations lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Fulfillment operations lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0057",
+    "project_id": "P004",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Merchandising lead reviewer",
+    "department": "Merchandising & Buying",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Summarize product performance, vendor negotiation points, and SKU rationalization notes. Include a risk log and route to Merchandising lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Merchandising lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0058",
+    "project_id": "P004",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Supply Chain lead reviewer",
+    "department": "Supply Chain",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Supply Chain lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Supply Chain lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0059",
+    "project_id": "P004",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Tech lead",
+    "department": "Engineering",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Create design doc skeletons, API specs, and risk logs without executing deployments or access changes. Include a risk log and route to Tech lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Tech lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0060",
+    "project_id": "P004",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Performance marketing manager",
+    "department": "Performance Marketing",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Prepare UTM-clean copy blocks, ad variants, and reporting summaries with spend/CPA placeholders. Include a risk log and route to Performance marketing manager for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Performance marketing manager for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0061",
     "project_id": "P005",
     "recommended": false,
     "reviewer_required": true,
-    "reason": "High-risk workflow (financial/checkout) requires human ownership; only draft assistance allowed.",
-    "suggested_prompt": ""
+    "reviewer": "Data & Analytics lead reviewer",
+    "department": "Data & Analytics",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Data & Analytics lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Data & Analytics lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0062",
+    "project_id": "P005",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Product Management lead reviewer",
+    "department": "Product Management",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Product Management lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Product Management lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0063",
+    "project_id": "P005",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Merchandising lead reviewer",
+    "department": "Merchandising & Buying",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Summarize product performance, vendor negotiation points, and SKU rationalization notes. Include a risk log and route to Merchandising lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Merchandising lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0064",
+    "project_id": "P005",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Product Design (UX/UI) lead reviewer",
+    "department": "Product Design (UX/UI)",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Product Design (UX/UI) lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Product Design (UX/UI) lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0065",
+    "project_id": "P005",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Product Management lead reviewer",
+    "department": "Product Management",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Product Management lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Product Management lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0066",
+    "project_id": "P005",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Tech lead",
+    "department": "Engineering",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Create design doc skeletons, API specs, and risk logs without executing deployments or access changes. Include a risk log and route to Tech lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Tech lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0067",
+    "project_id": "P005",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Creative Studio lead reviewer",
+    "department": "Creative Studio",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Creative Studio lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Creative Studio lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0068",
+    "project_id": "P005",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Data & Analytics lead reviewer",
+    "department": "Data & Analytics",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Data & Analytics lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Data & Analytics lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0069",
+    "project_id": "P005",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Tech lead",
+    "department": "Engineering",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Create design doc skeletons, API specs, and risk logs without executing deployments or access changes. Include a risk log and route to Tech lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Tech lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0070",
+    "project_id": "P005",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Product Management lead reviewer",
+    "department": "Product Management",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Product Management lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Product Management lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0071",
+    "project_id": "P005",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Performance marketing manager",
+    "department": "Performance Marketing",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Prepare UTM-clean copy blocks, ad variants, and reporting summaries with spend/CPA placeholders. Include a risk log and route to Performance marketing manager for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Performance marketing manager for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0072",
+    "project_id": "P005",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Tech lead",
+    "department": "Engineering",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Create design doc skeletons, API specs, and risk logs without executing deployments or access changes. Include a risk log and route to Tech lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Tech lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0073",
+    "project_id": "P005",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Product Management lead reviewer",
+    "department": "Product Management",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Product Management lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Product Management lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0074",
+    "project_id": "P005",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Data & Analytics lead reviewer",
+    "department": "Data & Analytics",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Data & Analytics lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Data & Analytics lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0075",
+    "project_id": "P005",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Merchandising lead reviewer",
+    "department": "Merchandising & Buying",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Summarize product performance, vendor negotiation points, and SKU rationalization notes. Include a risk log and route to Merchandising lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Merchandising lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0076",
+    "project_id": "P006",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Performance marketing manager",
+    "department": "Performance Marketing",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Prepare UTM-clean copy blocks, ad variants, and reporting summaries with spend/CPA placeholders. Include a risk log and route to Performance marketing manager for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Performance marketing manager for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0077",
+    "project_id": "P006",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Supply Chain lead reviewer",
+    "department": "Supply Chain",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Supply Chain lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Supply Chain lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0078",
+    "project_id": "P006",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Data & Analytics lead reviewer",
+    "department": "Data & Analytics",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Data & Analytics lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Data & Analytics lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0079",
+    "project_id": "P006",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Brand lead reviewer",
+    "department": "Brand Marketing",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft campaign briefs, taglines, and stakeholder emails tailored to brand voice. Include a risk log and route to Brand lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Brand lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0080",
+    "project_id": "P006",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Supply Chain lead reviewer",
+    "department": "Supply Chain",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Supply Chain lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Supply Chain lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0081",
+    "project_id": "P006",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Data & Analytics lead reviewer",
+    "department": "Data & Analytics",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Data & Analytics lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Data & Analytics lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0082",
+    "project_id": "P006",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Brand lead reviewer",
+    "department": "Brand Marketing",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft campaign briefs, taglines, and stakeholder emails tailored to brand voice. Include a risk log and route to Brand lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Brand lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0083",
+    "project_id": "P006",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Merchandising lead reviewer",
+    "department": "Merchandising & Buying",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Summarize product performance, vendor negotiation points, and SKU rationalization notes. Include a risk log and route to Merchandising lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Merchandising lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0084",
+    "project_id": "P006",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Fulfillment operations lead",
+    "department": "Warehouse & Fulfillment Ops",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Summarize logistics updates, SOP drafts, and inventory notes. Include a risk log and route to Fulfillment operations lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Fulfillment operations lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0085",
+    "project_id": "P006",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Supply Chain lead reviewer",
+    "department": "Supply Chain",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Supply Chain lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Supply Chain lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0086",
+    "project_id": "P006",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Performance marketing manager",
+    "department": "Performance Marketing",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Prepare UTM-clean copy blocks, ad variants, and reporting summaries with spend/CPA placeholders. Include a risk log and route to Performance marketing manager for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Performance marketing manager for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0087",
+    "project_id": "P006",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Product Design (UX/UI) lead reviewer",
+    "department": "Product Design (UX/UI)",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Product Design (UX/UI) lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Product Design (UX/UI) lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0088",
+    "project_id": "P006",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Creative Studio lead reviewer",
+    "department": "Creative Studio",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Creative Studio lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Creative Studio lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0089",
+    "project_id": "P006",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Supply Chain lead reviewer",
+    "department": "Supply Chain",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Supply Chain lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Supply Chain lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0090",
+    "project_id": "P006",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Merchandising lead reviewer",
+    "department": "Merchandising & Buying",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Summarize product performance, vendor negotiation points, and SKU rationalization notes. Include a risk log and route to Merchandising lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Merchandising lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0091",
+    "project_id": "P007",
+    "recommended": true,
+    "reviewer_required": true,
+    "reviewer": "Data & Analytics lead reviewer",
+    "department": "Data & Analytics",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Data & Analytics lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Data & Analytics lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0092",
+    "project_id": "P007",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Customer Experience (CX) lead reviewer",
+    "department": "Customer Experience (CX)",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Customer Experience (CX) lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Customer Experience (CX) lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0093",
+    "project_id": "P007",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Tech lead",
+    "department": "Engineering",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Create design doc skeletons, API specs, and risk logs without executing deployments or access changes. Include a risk log and route to Tech lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Tech lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0094",
+    "project_id": "P007",
+    "recommended": true,
+    "reviewer_required": true,
+    "reviewer": "Brand lead reviewer",
+    "department": "Brand Marketing",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft campaign briefs, taglines, and stakeholder emails tailored to brand voice. Include a risk log and route to Brand lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Brand lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0095",
+    "project_id": "P007",
+    "recommended": true,
+    "reviewer_required": true,
+    "reviewer": "Creative Studio lead reviewer",
+    "department": "Creative Studio",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Creative Studio lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Creative Studio lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0096",
+    "project_id": "P007",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Performance marketing manager",
+    "department": "Performance Marketing",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Prepare UTM-clean copy blocks, ad variants, and reporting summaries with spend/CPA placeholders. Include a risk log and route to Performance marketing manager for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Performance marketing manager for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0097",
+    "project_id": "P007",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Customer Experience (CX) lead reviewer",
+    "department": "Customer Experience (CX)",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Customer Experience (CX) lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Customer Experience (CX) lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0098",
+    "project_id": "P007",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Data & Analytics lead reviewer",
+    "department": "Data & Analytics",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Data & Analytics lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Data & Analytics lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0099",
+    "project_id": "P007",
+    "recommended": true,
+    "reviewer_required": true,
+    "reviewer": "Product Management lead reviewer",
+    "department": "Product Management",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Product Management lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Product Management lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0100",
+    "project_id": "P007",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Data & Analytics lead reviewer",
+    "department": "Data & Analytics",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Data & Analytics lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Data & Analytics lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0101",
+    "project_id": "P007",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Performance marketing manager",
+    "department": "Performance Marketing",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Prepare UTM-clean copy blocks, ad variants, and reporting summaries with spend/CPA placeholders. Include a risk log and route to Performance marketing manager for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Performance marketing manager for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0102",
+    "project_id": "P007",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Data & Analytics lead reviewer",
+    "department": "Data & Analytics",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Data & Analytics lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Data & Analytics lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0103",
+    "project_id": "P007",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Data & Analytics lead reviewer",
+    "department": "Data & Analytics",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Data & Analytics lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Data & Analytics lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0104",
+    "project_id": "P007",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Customer Experience (CX) lead reviewer",
+    "department": "Customer Experience (CX)",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Customer Experience (CX) lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Customer Experience (CX) lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0105",
+    "project_id": "P007",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Creative Studio lead reviewer",
+    "department": "Creative Studio",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Creative Studio lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Creative Studio lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0106",
+    "project_id": "P008",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Product Management lead reviewer",
+    "department": "Product Management",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Product Management lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Product Management lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0107",
+    "project_id": "P008",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Data & Analytics lead reviewer",
+    "department": "Data & Analytics",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Data & Analytics lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Data & Analytics lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0108",
+    "project_id": "P008",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Creative Studio lead reviewer",
+    "department": "Creative Studio",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Creative Studio lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Creative Studio lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0109",
+    "project_id": "P008",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Creative Studio lead reviewer",
+    "department": "Creative Studio",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Creative Studio lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Creative Studio lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0110",
+    "project_id": "P008",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Supply Chain lead reviewer",
+    "department": "Supply Chain",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Supply Chain lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Supply Chain lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0111",
+    "project_id": "P008",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Creative Studio lead reviewer",
+    "department": "Creative Studio",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Creative Studio lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Creative Studio lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0112",
+    "project_id": "P008",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Tech lead",
+    "department": "Engineering",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Create design doc skeletons, API specs, and risk logs without executing deployments or access changes. Include a risk log and route to Tech lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Tech lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0113",
+    "project_id": "P008",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Tech lead",
+    "department": "Engineering",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Create design doc skeletons, API specs, and risk logs without executing deployments or access changes. Include a risk log and route to Tech lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Tech lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0114",
+    "project_id": "P008",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Tech lead",
+    "department": "Engineering",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Create design doc skeletons, API specs, and risk logs without executing deployments or access changes. Include a risk log and route to Tech lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Tech lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0115",
+    "project_id": "P008",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Tech lead",
+    "department": "Engineering",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Create design doc skeletons, API specs, and risk logs without executing deployments or access changes. Include a risk log and route to Tech lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Tech lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0116",
+    "project_id": "P008",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Data & Analytics lead reviewer",
+    "department": "Data & Analytics",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Data & Analytics lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Data & Analytics lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0117",
+    "project_id": "P008",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Tech lead",
+    "department": "Engineering",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Create design doc skeletons, API specs, and risk logs without executing deployments or access changes. Include a risk log and route to Tech lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Tech lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0118",
+    "project_id": "P008",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Data & Analytics lead reviewer",
+    "department": "Data & Analytics",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Data & Analytics lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Data & Analytics lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0119",
+    "project_id": "P008",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Customer Experience (CX) lead reviewer",
+    "department": "Customer Experience (CX)",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Customer Experience (CX) lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Customer Experience (CX) lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0120",
+    "project_id": "P008",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Data & Analytics lead reviewer",
+    "department": "Data & Analytics",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Data & Analytics lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Data & Analytics lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0121",
+    "project_id": "P009",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Tech lead",
+    "department": "Engineering",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Create design doc skeletons, API specs, and risk logs without executing deployments or access changes. Include a risk log and route to Tech lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Tech lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0122",
+    "project_id": "P009",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Product Design (UX/UI) lead reviewer",
+    "department": "Product Design (UX/UI)",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Product Design (UX/UI) lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Product Design (UX/UI) lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0123",
+    "project_id": "P009",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Merchandising lead reviewer",
+    "department": "Merchandising & Buying",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Summarize product performance, vendor negotiation points, and SKU rationalization notes. Include a risk log and route to Merchandising lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Merchandising lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0124",
+    "project_id": "P009",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Tech lead",
+    "department": "Engineering",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Create design doc skeletons, API specs, and risk logs without executing deployments or access changes. Include a risk log and route to Tech lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Tech lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0125",
+    "project_id": "P009",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Tech lead",
+    "department": "Engineering",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Create design doc skeletons, API specs, and risk logs without executing deployments or access changes. Include a risk log and route to Tech lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Tech lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0126",
+    "project_id": "P009",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Tech lead",
+    "department": "Engineering",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Create design doc skeletons, API specs, and risk logs without executing deployments or access changes. Include a risk log and route to Tech lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Tech lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0127",
+    "project_id": "P009",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Tech lead",
+    "department": "Engineering",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Create design doc skeletons, API specs, and risk logs without executing deployments or access changes. Include a risk log and route to Tech lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Tech lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0128",
+    "project_id": "P009",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Tech lead",
+    "department": "Engineering",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Create design doc skeletons, API specs, and risk logs without executing deployments or access changes. Include a risk log and route to Tech lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Tech lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0129",
+    "project_id": "P009",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Tech lead",
+    "department": "Engineering",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Create design doc skeletons, API specs, and risk logs without executing deployments or access changes. Include a risk log and route to Tech lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Tech lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0130",
+    "project_id": "P009",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Product Management lead reviewer",
+    "department": "Product Management",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Product Management lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Product Management lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0131",
+    "project_id": "P009",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Product Management lead reviewer",
+    "department": "Product Management",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Product Management lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Product Management lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0132",
+    "project_id": "P009",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Product Management lead reviewer",
+    "department": "Product Management",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Product Management lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Product Management lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0133",
+    "project_id": "P009",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Product Management lead reviewer",
+    "department": "Product Management",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Product Management lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Product Management lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0134",
+    "project_id": "P009",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Product Management lead reviewer",
+    "department": "Product Management",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Product Management lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Product Management lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0135",
+    "project_id": "P009",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Data & Analytics lead reviewer",
+    "department": "Data & Analytics",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Data & Analytics lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Data & Analytics lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0136",
+    "project_id": "P010",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Department lead",
+    "department": "General",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Department lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Department lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0137",
+    "project_id": "P010",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Tech lead",
+    "department": "Engineering",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Create design doc skeletons, API specs, and risk logs without executing deployments or access changes. Include a risk log and route to Tech lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Tech lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0138",
+    "project_id": "P010",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Fulfillment operations lead",
+    "department": "Warehouse & Fulfillment Ops",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Summarize logistics updates, SOP drafts, and inventory notes. Include a risk log and route to Fulfillment operations lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Fulfillment operations lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0139",
+    "project_id": "P010",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Chief legal counsel",
+    "department": "Legal & Compliance",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft policy summaries, risk memos, and compliance checklists without committing to approvals. Include a risk log and route to Chief legal counsel for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Chief legal counsel for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0140",
+    "project_id": "P010",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Tech lead",
+    "department": "Engineering",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Create design doc skeletons, API specs, and risk logs without executing deployments or access changes. Include a risk log and route to Tech lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Tech lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0141",
+    "project_id": "P010",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Tech lead",
+    "department": "Engineering",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Create design doc skeletons, API specs, and risk logs without executing deployments or access changes. Include a risk log and route to Tech lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Tech lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0142",
+    "project_id": "P010",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Product Design (UX/UI) lead reviewer",
+    "department": "Product Design (UX/UI)",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Product Design (UX/UI) lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Product Design (UX/UI) lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0143",
+    "project_id": "P010",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Customer Experience (CX) lead reviewer",
+    "department": "Customer Experience (CX)",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Customer Experience (CX) lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Customer Experience (CX) lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0144",
+    "project_id": "P010",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Tech lead",
+    "department": "Engineering",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Create design doc skeletons, API specs, and risk logs without executing deployments or access changes. Include a risk log and route to Tech lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Tech lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0145",
+    "project_id": "P010",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Brand lead reviewer",
+    "department": "Brand Marketing",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft campaign briefs, taglines, and stakeholder emails tailored to brand voice. Include a risk log and route to Brand lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Brand lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0146",
+    "project_id": "P010",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Supply Chain lead reviewer",
+    "department": "Supply Chain",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Supply Chain lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Supply Chain lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0147",
+    "project_id": "P010",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Product Management lead reviewer",
+    "department": "Product Management",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Product Management lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Product Management lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0148",
+    "project_id": "P010",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Product Management lead reviewer",
+    "department": "Product Management",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Product Management lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Product Management lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0149",
+    "project_id": "P010",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Customer Experience (CX) lead reviewer",
+    "department": "Customer Experience (CX)",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Customer Experience (CX) lead reviewer for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Customer Experience (CX) lead reviewer for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
+  },
+  {
+    "task_id": "T0150",
+    "project_id": "P010",
+    "recommended": false,
+    "reviewer_required": true,
+    "reviewer": "Department lead",
+    "department": "General",
+    "reason": "Rule-based fallback classification",
+    "suggested_prompt": "Draft the first version tailored to the audience. Include a risk log and route to Department lead for approval. Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "safe_use_notes": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs. Avoid autonomy on payments or refunds, access control changes, credential resets, production deployment approvals. Send draft to Department lead for sign-off.",
+    "redaction_instructions": "Mask or remove PII (names, emails, phone, address, order IDs) in prompts and outputs.",
+    "prohibited_scope": [
+      "payments or refunds",
+      "access control changes",
+      "credential resets",
+      "production deployment approvals"
+    ]
   }
 ]

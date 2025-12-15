@@ -19,8 +19,11 @@ Render as a table with the following columns:
 Include a one-line takeaway on overload or spare capacity.
 
 ## Unstarted Task Assignments
-List only tasks with `status=not_started` that were assigned in this run.
-- `<Task name> [T####] → <Assignee name (ID)> | est <hours>h | rationale: <agent rationale>`
+List only tasks with `status=not_started` that were assigned in this run. Render them as a fixed table (no bullet lists) so every row shows a single task and the rationale stays readable.
+
+| Task (ID) | Skill Need | Est Hours | Assignee | Rationale |
+| --- | --- | --- | --- | --- |
+| `Task name [T####]` | `Skill / capability` | `12` | `Name (E###)` | `Why this person is a fit (respecting availability/skill)` |
 
 ## AI-Assist Flags (Human-in-the-loop)
 Highlight tasks where AI drafting/summarization is recommended. Always state reviewer requirements.

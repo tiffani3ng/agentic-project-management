@@ -1,21 +1,41 @@
 id,name,department,role,skills,max_hours,timezone
-E001,Liam Nguyen,Brand Marketing,Brand Marketing Manager,"['Brief-to-launch execution', 'Creative briefing', 'Pitch decks', 'Brand guidelines', 'Brand voice', 'Campaign planning']",43,America/Denver
-E002,Sofia Singh,Performance Marketing,Performance Marketing Specialist,"['UTM governance', 'GA4 reporting', 'Pixel troubleshooting', 'Excel modeling', 'Paid social (Meta)', 'CAC/LTV analysis']",27,Europe/London
-E003,Ava Chen,Merchandising & Buying,Merchandise Planner,"['Newness cadence', 'Google Ads', 'Markdown optimization', 'SKU rationalization', 'Vendor negotiations', 'Pricing strategy']",42,America/Los_Angeles
-E004,Mia Anderson,Merchandising & Buying,Buyer (Accessories),"['Sell-through analysis', 'Newness cadence', 'ROI modeling', 'Trend analysis', 'Markdown optimization', 'Open-to-buy (OTB)']",37,America/New_York
-E005,Mia Rodriguez,Product Management,Product Manager,"['PRDs', 'KPI definition', 'Postmortems', 'Incident triage', 'Experimentation', 'Retouching']",44,America/Denver
-E006,Olivia Williams,Product Design (UX/UI),UX/UI Designer,"['Journey mapping', 'UX writing', 'Prototyping', 'Component libraries', 'Damage control', 'Wireframing']",42,Europe/Paris
-E007,Maya Rodriguez,Creative Studio,Graphic Designer,"['Asset versioning', 'Adobe Illustrator', 'Production coordination', 'Copy editing', 'Graphic design', 'UGC curation']",41,America/Denver
-E008,Jade Lee,Creative Studio,Copywriter,"['Retouching', 'Prototyping', 'UGC curation', 'Copywriting', 'Adobe Photoshop', 'PDP imagery']",26,Europe/Paris
-E009,Jade Davis,Engineering,Frontend Engineer,"['JavaScript/TypeScript', 'Node.js', 'Docker', 'React', 'CI/CD', 'TikTok Ads']",31,America/Chicago
-E010,Amir Davis,Engineering,Backend Engineer,"['CI/CD', 'REST APIs', 'JavaScript/TypeScript', 'Incident response', 'QA automation', 'Budgeting']",39,America/Los_Angeles
-E011,Liam Brown,Engineering,E-commerce Platform Engineer (Shopify),"['Performance optimization', 'WMS basics', 'Feature flags', 'Docker', 'REST APIs', 'JavaScript/TypeScript']",33,America/Chicago
-E012,Evelyn Taylor,Data & Analytics,Data Analyst,"['Launch planning', 'Event tracking specs', 'Cohort analysis', 'GA4', 'Warehouse (Snowflake/BigQuery)', 'dbt']",26,America/Chicago
-E013,Zoe Rodriguez,Data & Analytics,Analytics Engineer (dbt),"['Stakeholder enablement', 'Event tracking specs', 'Looker', 'Incrementality thinking', 'Data QA', 'ETL pipelines']",21,America/Chicago
-E014,Maya Chen,Supply Chain,Supply Planner,"['ERP basics', 'PO management', 'Safety stock', 'Inbound scheduling', 'S&OP basics', 'Data processing addenda']",28,Europe/London
-E015,Hana Moore,Warehouse & Fulfillment Ops,Warehouse Operations Lead,"['Labor planning', 'Cycle counts', '3PL management', 'Refund workflows', 'Warehouse slotting', 'Escalation handling']",34,America/New_York
-E016,Mia Rodriguez,Customer Experience (CX),Customer Support Specialist,"['Process documentation', 'Journey mapping', 'Macros & automation', 'Returns policy support', 'QA rubrics', 'Refund workflows']",22,America/New_York
-E017,Isabella Thomas,Customer Experience (CX),CX Operations Manager,"['Macros & automation', 'CSAT analysis', 'Process documentation', 'Returns policy support', 'PDP imagery', 'Order troubleshooting']",45,America/Los_Angeles
-E018,Mia Davis,Sales & Partnerships,Partnerships Manager,"['Outbound prospecting', 'Pitch decks', 'Partner onboarding', 'Requirements gathering', 'Reporting', 'Co-marketing']",43,America/Denver
-E019,Hana Rodriguez,Finance,FP&A Analyst,"['Excel modeling', 'Budgeting', 'FP&A', 'AP/AR basics', 'Refund workflows', 'Month-end close coordination']",47,America/New_York
-E020,Chloe Thomas,Legal & Compliance,Legal & Compliance Manager,"['Training enablement', 'Contracting', 'Recordkeeping', 'REST APIs', 'Compliance', 'Vendor terms']",26,America/Los_Angeles
+E001,Liam Nguyen,Brand Marketing,Brand Marketing Manager,"['Creative briefing', 'Brand guidelines', 'Scenario modeling', 'Campaign planning', 'Brand voice', 'Consumer insights']",37,America/Chicago
+E002,Sofia Singh,Brand Marketing,Brand Partnerships & Influencer Manager,"['Launch planning', 'Consumer insights', 'PR coordination', 'Excel modeling', 'Brand positioning', 'Brand voice']",34,Europe/London
+E003,Ava Chen,Brand Marketing,PR & Communications Manager,"['Trend analysis', 'Creative briefing', 'Content calendar', 'Campaign planning', 'Brand voice', 'Influencer strategy']",47,America/Denver
+E004,Mia Anderson,Performance Marketing,Performance Marketing Specialist,"['Pixel troubleshooting', 'SQL for marketing', 'ROI modeling', 'Budget pacing', 'Attribution basics', 'Google Ads']",54,America/New_York
+E005,Mia Rodriguez,Performance Marketing,Paid Social Manager (Meta/TikTok),"['Budget pacing', 'Looker dashboards', 'Attribution basics', 'Cross-dock coordination', 'CAC/LTV analysis', 'Google Ads']",38,America/New_York
+E006,Aria Kim,Performance Marketing,Growth Marketing Manager (CRO/LP Testing),"['TikTok Ads', 'CAC/LTV analysis', 'Inbound scheduling', 'Pixel troubleshooting', 'SQL for marketing', 'Experiment design']",58,Europe/Paris
+E007,Mia Rodriguez,Merchandising & Buying,Merchandise Planner,"['Trend analysis', 'Gross margin analysis', 'Open-to-buy (OTB)', 'Allocation', 'Pricing strategy', 'Markdown optimization']",22,America/Denver
+E008,Noah Williams,Merchandising & Buying,Buyer (Accessories),"['Sell-through analysis', 'Stakeholder enablement', 'Margin management', 'PLM coordination', 'Markdown optimization', 'Allocation']",28,America/Chicago
+E009,Evelyn Thomas,Merchandising & Buying,Buyer (Beauty),"['Advertising compliance', 'SKU rationalization', 'Open-to-buy (OTB)', 'PLM coordination', 'Seasonal planning', 'Forecasting basics']",25,America/New_York
+E010,Sam Anderson,Merchandising & Buying,Pricing & Markdown Analyst,"['Forecasting basics', 'PLM coordination', 'Sell-through analysis', 'Stakeholder management', 'Assortment planning', 'Open-to-buy (OTB)']",53,America/Denver
+E011,Nina Chen,Product Management,Senior Product Manager (Checkout),"['Backlog grooming', 'Requirements gathering', 'Escalation handling', 'Postmortems', 'User stories', 'Analytics interpretation']",49,America/New_York
+E012,Ethan Jackson,Product Management,Product Manager (Personalization),"['PRDs', 'Incident response', 'Roadmapping', 'Cross-functional leadership', 'Stakeholder alignment', 'Launch management']",53,America/New_York
+E013,Sofia Thomas,Product Management,Product Manager (Loyalty),"['Backlog grooming', 'Pick/pack optimization', 'Prioritization (RICE)', 'Customer interviews', 'Launch management', 'Incident triage']",24,Europe/London
+E014,Zoe Davis,Product Management,Technical Product Manager (Integrations),"['PRDs', 'Experimentation', 'Wireframing', 'Requirements gathering', 'Postmortems', 'Launch management']",43,America/Los_Angeles
+E015,Ava Kim,Product Design (UX/UI),UX/UI Designer,"['Handoff to engineering', 'Design systems', '3PL management', 'Wireframing', 'Interaction design', 'Figma']",60,America/New_York
+E016,Jade Martin,Product Design (UX/UI),Product Designer (Design Systems),"['Mobile-first design', 'Design systems', 'Accessibility basics', 'Component libraries', 'Information architecture', 'Google Ads']",50,America/Chicago
+E017,Hana Patel,Product Design (UX/UI),UX Researcher,"['Interaction design', 'Information architecture', 'Experimentation', 'Heuristic evaluation', 'Wireframing', 'Design systems']",26,America/New_York
+E018,Aria Anderson,Creative Studio,Creative Director,"['Social content design', 'Art direction', 'Graphic design', 'Asset versioning', 'Pipeline management', 'Retouching']",35,America/New_York
+E019,Chloe Thomas,Creative Studio,Art Director,"['UGC curation', 'Graphic design', 'Production coordination', 'Experimentation analysis', 'Adobe Photoshop', 'PDP imagery']",33,America/Los_Angeles
+E020,Noah Singh,Creative Studio,Graphic Designer,"['Storyboarding', 'UGC curation', 'Creative QA', 'Social content design', 'Gross margin analysis', 'Graphic design']",38,America/Chicago
+E021,Mia Moore,Creative Studio,Copywriter,"['Looker', 'Copywriting', 'UGC curation', 'Art direction', 'Storyboarding', 'Adobe Illustrator']",25,America/Chicago
+E022,Nina Martin,Engineering,Engineering Manager,"['Shopify Liquid', 'User stories', 'Incident response', 'Python', 'REST APIs', 'QA automation']",56,Europe/London
+E023,Sofia Nguyen,Engineering,Frontend Engineer,"['Python', 'Returns processing', 'CI/CD', 'Observability (logs/metrics)', 'Data integrations', 'React']",49,Europe/London
+E024,Zoe Chen,Engineering,Backend Engineer,"['Consumer insights', 'REST APIs', 'QA automation', 'Feature flags', 'Observability (logs/metrics)', 'CI/CD']",48,Europe/London
+E025,Liam Garcia,Engineering,E-commerce Platform Engineer (Shopify),"['Shopify Liquid', 'REST APIs', 'Incident response', 'Python', 'Observability (logs/metrics)', 'Customer interviews']",55,America/Chicago
+E026,Sofia Wilson,Engineering,DevOps/SRE Engineer,"['Shopify Liquid', 'JavaScript/TypeScript', 'Performance optimization', 'QA automation', 'Node.js', 'Prototyping']",37,America/New_York
+E027,Liam Kim,Engineering,QA Automation Engineer,"['Observability (logs/metrics)', 'CI/CD', 'Trend analysis', 'Shopify Liquid', 'JavaScript/TypeScript', 'Data integrations']",29,Europe/London
+E028,Leo Singh,Engineering,Integration Engineer (ERP/WMS/3PL),"['Performance optimization', 'CI/CD', 'React', 'Kubernetes', 'Tagging taxonomy', 'Shopify Liquid']",35,Europe/Paris
+E029,Ava Chen,Data & Analytics,Data Analyst,"['Cohort analysis', 'Dashboards', 'Experimentation analysis', 'Metric definitions', 'Event tracking specs', 'Seasonal planning']",41,America/Los_Angeles
+E030,Isabella Singh,Data & Analytics,Analytics Engineer (dbt),"['Cohort analysis', 'Experimentation analysis', 'Consumer insights', 'Event tracking specs', 'Metric definitions', 'Documentation']",49,America/Denver
+E031,Aria Martinez,Data & Analytics,Data Engineer,"['SQL', 'GA4', 'Dashboards', 'SQL for marketing', 'Documentation', 'Warehouse (Snowflake/BigQuery)']",52,America/Los_Angeles
+E032,Sam Wilson,Data & Analytics,Experimentation Analyst,"['Data QA', 'Budget pacing', 'Event tracking specs', 'Data modeling', 'GA4', 'Warehouse (Snowflake/BigQuery)']",42,Europe/Paris
+E033,Ava Moore,Supply Chain,Supply Planner,"['KPI tracking', 'PDP imagery', 'Cross-dock coordination', 'PO management', 'ERP basics', 'Constraint management']",54,Europe/Paris
+E034,Zoe Moore,Supply Chain,Demand Forecast Analyst,"['Pick/pack optimization', 'Inbound scheduling', 'KPI tracking', 'Vendor management', 'Constraint management', 'MOQ analysis']",39,Europe/Paris
+E035,Sam Martin,Supply Chain,Vendor Management Lead,"['Safety stock', 'Vendor management', 'ERP basics', 'Supply planning', 'KPI definition', 'Constraint management']",39,America/Los_Angeles
+E036,Hana Singh,Warehouse & Fulfillment Ops,Warehouse Operations Lead,"['Escalation handling', 'Pick/pack optimization', 'WMS basics', 'Damage control', 'Attribution basics', 'Carrier coordination']",52,America/Los_Angeles
+E037,Zoe Rodriguez,Warehouse & Fulfillment Ops,Fulfillment Process Improvement Manager,"['Warehouse slotting', 'Shipping exceptions', '3PL management', 'Escalation handling', 'Legal review', 'Process improvement']",32,America/Chicago
+E038,Chloe Davis,Warehouse & Fulfillment Ops,Returns Operations Supervisor,"['Damage control', 'Warehouse slotting', 'Carrier coordination', 'Cycle counts', 'SOP documentation', 'Backlog grooming']",35,America/Chicago
+E039,Liam Anderson,Customer Experience (CX),Customer Support Specialist,"['Order troubleshooting', 'Refund workflows', 'Process documentation', 'Training enablement', 'QA rubrics', 'Fraud screening basics']",28,America/Los_Angeles
+E040,Ethan Thomas,Customer Experience (CX),CX Operations Manager,"['Refund workflows', 'Dashboards', 'Call/chat handling', 'Tone-of-voice support', 'Order troubleshooting', 'Returns policy support']",48,America/Denver
