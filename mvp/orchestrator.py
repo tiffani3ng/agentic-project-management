@@ -25,6 +25,7 @@ class WorkflowState(TypedDict, total=False):
     tasks: object
     events: object
     assignments: List[Assignment]
+    workloads: object
     ai_opportunities: object
     bottlenecks: object
     stage_delays: object
@@ -64,8 +65,8 @@ class Orchestrator:
                 run_store=self.run_store,
                 run_id=state["run_id"],
             )
-            assignments = agent.run(state["tasks"])
-            return {"assignments": assignments}
+            result = agent.run(state["tasks"])
+            return {"assignments": result["assignments"], "workloads": result["workloads"]}
 
         def scout(state: WorkflowState) -> WorkflowState:
             agent = AIOpportunityScout(
@@ -134,6 +135,7 @@ class Orchestrator:
 
         report = {
             "assignments": [asdict(a) for a in final_state.get("assignments", [])],
+            "workloads": [asdict(w) for w in final_state.get("workloads", [])],
             "ai_opportunities": [asdict(s) for s in final_state.get("ai_opportunities", [])],
             "bottlenecks": [asdict(b) for b in final_state.get("bottlenecks", [])],
             "stage_delays": [asdict(d) for d in final_state.get("stage_delays", [])],
@@ -147,12 +149,14 @@ class Orchestrator:
 
     def _persist_reports(self, report: Dict[str, object]) -> None:
         assignment_path = self.reports_dir / "assignment_report.json"
+        workload_path = self.reports_dir / "workload_report.json"
         ai_path = self.reports_dir / "ai_opportunities.json"
         bottleneck_path = self.reports_dir / "bottleneck_report.json"
         recommendations_path = self.reports_dir / "workflow_recommendations.json"
         full_run_path = self.reports_dir / "full_run.json"
 
         assignment_path.write_text(json.dumps(report["assignments"], indent=2))
+        workload_path.write_text(json.dumps(report["workloads"], indent=2))
         ai_path.write_text(json.dumps(report["ai_opportunities"], indent=2))
         bottleneck_payload = {
             "bottlenecks": report["bottlenecks"],
