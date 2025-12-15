@@ -66,7 +66,12 @@ class Orchestrator:
             return {"assignments": assignments}
 
         def scout(state: WorkflowState) -> WorkflowState:
-            agent = AIOpportunityScout(state["tasks"], run_store=self.run_store, run_id=state["run_id"])
+            agent = AIOpportunityScout(
+                state["tasks"],
+                run_store=self.run_store,
+                run_id=state["run_id"],
+                employees=state.get("employees"),
+            )
             suggestions = agent.run()
             return {"ai_opportunities": suggestions}
 
