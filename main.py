@@ -12,6 +12,9 @@ def main() -> None:
     reports_dir = Path("reports")
     orchestrator = Orchestrator(data_dir=data_dir, reports_dir=reports_dir)
     report = orchestrator.run()
+    bottleneck_map = report.get("bottleneck_map")
+    if bottleneck_map:
+        print(bottleneck_map)
     print(json.dumps(report, indent=2))
 
 
