@@ -162,6 +162,9 @@ def main() -> None:
     reports_dir = Path("reports")
     orchestrator = Orchestrator(data_dir=data_dir, reports_dir=reports_dir)
     report = orchestrator.run()
+    bottleneck_map = report.get("bottleneck_map")
+    if bottleneck_map:
+        print(bottleneck_map)
 
     employees_df = load_employees(data_dir / "employees.csv")
     tasks_df = load_tasks(data_dir / "tasks.csv")

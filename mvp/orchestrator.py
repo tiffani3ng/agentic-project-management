@@ -28,6 +28,8 @@ class WorkflowState(TypedDict, total=False):
     ai_opportunities: object
     bottlenecks: object
     stage_delays: object
+    process_graph: object
+    bottleneck_map: str
     recommendations: List[str]
 
 
@@ -76,9 +78,19 @@ class Orchestrator:
             return {"ai_opportunities": suggestions}
 
         def detect(state: WorkflowState) -> WorkflowState:
-            agent = BottleneckDetector(state["events"], run_store=self.run_store, run_id=state["run_id"])
+            agent = BottleneckDetector(
+                state["events"],
+                state["employees"],
+                run_store=self.run_store,
+                run_id=state["run_id"],
+            )
             result = agent.run()
-            return {"bottlenecks": result["bottlenecks"], "stage_delays": result["stage_delays"]}
+            return {
+                "bottlenecks": result["bottlenecks"],
+                "stage_delays": result["stage_delays"],
+                "process_graph": result.get("process_graph", {}),
+                "bottleneck_map": result.get("bottleneck_map", ""),
+            }
 
         def recommend(state: WorkflowState) -> WorkflowState:
             agent = WorkflowRecommender(
@@ -125,6 +137,8 @@ class Orchestrator:
             "ai_opportunities": [asdict(s) for s in final_state.get("ai_opportunities", [])],
             "bottlenecks": [asdict(b) for b in final_state.get("bottlenecks", [])],
             "stage_delays": [asdict(d) for d in final_state.get("stage_delays", [])],
+            "process_graph": final_state.get("process_graph", {}),
+            "bottleneck_map": final_state.get("bottleneck_map", ""),
             "recommendations": final_state.get("recommendations", []),
             "run_id": run_id,
         }
@@ -143,6 +157,8 @@ class Orchestrator:
         bottleneck_payload = {
             "bottlenecks": report["bottlenecks"],
             "stage_delays": report["stage_delays"],
+            "process_graph": report.get("process_graph", {}),
+            "bottleneck_map": report.get("bottleneck_map", ""),
         }
         bottleneck_path.write_text(json.dumps(bottleneck_payload, indent=2))
         recommendations_path.write_text(json.dumps(report["recommendations"], indent=2))
