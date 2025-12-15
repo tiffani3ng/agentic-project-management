@@ -87,7 +87,12 @@ class BottleneckDetector:
         metrics = self._compute_metrics()
         stage_delays = [StageDelay(stage=s, mean_hours=v.get("mean_hours", 0.0), handoffs=int(v.get("handoffs", 0))) for s, v in metrics.items()]
 
-        system_prompt = "You are a bottleneck detector analyzing workflow event metrics. Return JSON only."
+        system_prompt = (
+            "You are a sober workflow diagnostics expert. Use only the provided metrics to "
+            "spot the top bottlenecks, quantify them, and suggest pragmatic fixes. Do not "
+            "invent stages or metrics. Respond with JSON that matches the schema and "
+            "nothing else."
+        )
         user_prompt = self._render_prompt(metrics)
 
         fallback_bottlenecks = []
