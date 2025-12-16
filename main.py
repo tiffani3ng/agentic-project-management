@@ -12,17 +12,13 @@ from mvp.llm_utils import safe_openai_json
 
 
 def _format_table(headers: Sequence[str], rows: Sequence[Sequence[str]]) -> str:
-    """Render a simple fixed-width table for console output."""
+    """Render a Markdown table for CLI readability."""
     if not rows:
         return "No rows to display."
 
-    widths = [len(header) for header in headers]
-    for row in rows:
-        widths = [max(width, len(str(cell))) for width, cell in zip(widths, row)]
-
-    header_line = " | ".join(header.ljust(width) for header, width in zip(headers, widths))
-    separator = "-+-".join("-" * width for width in widths)
-    row_lines = [" | ".join(str(cell).ljust(width) for cell, width in zip(row, widths)) for row in rows]
+    header_line = "| " + " | ".join(headers) + " |"
+    separator = "| " + " | ".join("---" for _ in headers) + " |"
+    row_lines = ["| " + " | ".join(str(cell) for cell in row) + " |" for row in rows]
     return "\n".join([header_line, separator, *row_lines])
 
 
@@ -46,7 +42,7 @@ def _build_workload_table(workloads: List[Dict[str, object]], employees_df) -> s
                 f"{new_hours:.1f}",
                 f"{projected:.1f}",
                 f"{capacity:.1f}",
-                f"{load_pct:>5.1f}%",
+                f"{load_pct:.1f}%",
                 status,
             ]
         )
@@ -111,11 +107,11 @@ def _summarize_ai_flags(ai_flags: List[Dict[str, object]], tasks_df, employees_d
         prompt = flag.get("suggested_prompt", "").strip() or "N/A"
         reason = flag.get("reason", "")
         entry_lines = [
-            f"- {task_name} [{flag.get('task_id')}]",
-            f"  owner: {owner_label}",
-            f"  reviewer: {reviewer} ({reviewer_required})",
-            f"  prompt: {prompt}",
-            f"  reason: {reason}",
+            f"- **{task_name} [{flag.get('task_id')}]**",
+            f"  - Owner: {owner_label}",
+            f"  - Reviewer: {reviewer} ({reviewer_required})",
+            f"  - Prompt: {prompt}",
+            f"  - Reason: {reason}",
         ]
         lines.append("\n".join(entry_lines))
 
@@ -123,33 +119,57 @@ def _summarize_ai_flags(ai_flags: List[Dict[str, object]], tasks_df, employees_d
 
 
 def _summarize_bottlenecks(bottlenecks: List[Dict[str, object]], stage_delays: List[Dict[str, object]]) -> str:
-    """Describe stage-level bottlenecks and handoff pressure."""
-    bottlenecks_by_stage: Dict[str, List[Dict[str, object]]] = {}
-    for b in bottlenecks:
-        bottlenecks_by_stage.setdefault(str(b.get("stage")), []).append(b)
+    """Highlight flagged bottlenecks first, then list throughput metrics for all stages."""
+    flagged_lines: List[str] = []
+    for entry in bottlenecks:
+        stage = str(entry.get("stage"))
+        issue = entry.get("issue", "Issue not specified")
+        metric = str(entry.get("metric") or "").strip()
+        unit = str(entry.get("unit") or "").strip()
+        if metric and unit:
+            metric_value = f"{metric} {unit}"
+        elif metric:
+            metric_value = metric
+        elif unit:
+            metric_value = unit
+        else:
+            metric_value = "N/A"
+        recommendation = entry.get("recommendation", "Recommendation pending.")
+        flagged_lines.append(f"- **{stage}**: {issue} ({metric_value}); Recommendation: {recommendation}")
 
-    lines: List[str] = []
+    if not flagged_lines:
+        flagged_lines = ["No bottlenecks flagged; continue monitoring throughput."]
+
     sorted_delays = sorted(stage_delays, key=lambda s: float(s.get("mean_service_hours", 0.0)), reverse=True)
+    delay_rows: List[List[str]] = []
     for delay in sorted_delays:
         stage = str(delay.get("stage"))
         mean_service = float(delay.get("mean_service_hours", 0.0))
         mean_wait = float(delay.get("mean_wait_hours", 0.0))
         handoffs = int(delay.get("handoffs", 0))
-        stage_lines = [
-            (
-                f"Stage {stage}: service μ~{mean_service:.1f}h, wait μ~{mean_wait:.1f}h, "
-                f"handoffs={handoffs}"
-            )
-        ]
-        for b in bottlenecks_by_stage.get(stage, []):
-            stage_lines.append(
-                f"  • Issue: {b.get('issue')} ({b.get('metric')} {b.get('unit')}); Recommendation: {b.get('recommendation')}"
-            )
-        if len(stage_lines) == 1:
-            stage_lines.append("  • No bottleneck flagged; monitor handoffs for delays.")
-        lines.append("\n".join(stage_lines))
+        delay_rows.append(
+            [
+                stage,
+                f"{mean_service:.1f}h",
+                f"{mean_wait:.1f}h",
+                str(handoffs),
+            ]
+        )
 
-    return "\n".join(lines) if lines else "No bottleneck metrics available."
+    delay_table = _format_table(
+        ["Stage", "Mean service", "Mean wait", "Handoffs"],
+        delay_rows,
+    ) if delay_rows else "No stage-level delay metrics available."
+
+    return "\n".join(
+        [
+            "### Flagged bottlenecks",
+            "\n".join(flagged_lines),
+            "",
+            "### Stage service + wait by role",
+            delay_table,
+        ]
+    )
 
 
 def _build_summary_context(report: Dict[str, object], employees_df, tasks_df) -> Dict[str, object]:
@@ -275,29 +295,29 @@ def _render_console_report(
     bottlenecks_block = _summarize_bottlenecks(report.get("bottlenecks", []), report.get("stage_delays", []))
 
     sections = [
-        "=== Human-readable run summary ===",
-        f"Run ID: {report.get('run_id', 'N/A')}",
+        "# Human-readable run summary",
+        f"- **Run ID:** `{report.get('run_id', 'N/A')}`",
     ]
     if executive_summary:
         sections.extend(
             [
                 "",
-                "-- AI-generated executive summary --",
+                "## AI-generated executive summary",
                 executive_summary,
             ]
         )
     sections += [
         "",
-        "-- Per-person workload (assigned vs capacity) --",
+        "## Per-person workload (assigned vs capacity)",
         workload_table,
         "",
-        "-- Unstarted task routing (with rationales) --",
+        "## Unstarted task routing (with rationales)",
         unstarted_block,
         "",
-        "-- AI-assist flags (with reviewer guardrails) --",
+        "## AI-assist flags (with reviewer guardrails)",
         ai_block,
         "",
-        "-- Bottleneck map (stage delays and handoffs) --",
+        "## Bottleneck map (stage delays and handoffs)",
         bottlenecks_block,
     ]
     return "\n".join(sections)
