@@ -270,24 +270,27 @@ class BottleneckDetector:
                 "title": "Bottleneck flow (wait hotspots & handoffs)",
                 "max_nodes": 12,
                 "edge_color": "#9db4c0",
-                "background": "#ffffff",
+                "background": "#fefefe",
                 "node": {
                     "color_scale": ["#d0e2ff", "#a5c8ff", "#7baaf0", "#3c74d4", "#144272"],
                 },
-            },
-            "table": {
-                "max_rows": 8,
-                "columns": [
-                    {"id": "stage", "label": "Stage", "align": "left"},
-                    {"id": "mean_wait_hours", "label": "Wait μ (h)", "format": "{:.1f}", "align": "right"},
-                    {"id": "p90_wait_hours", "label": "Wait p90 (h)", "format": "{:.1f}", "align": "right"},
-                    {"id": "mean_service_hours", "label": "Service μ (h)", "format": "{:.1f}", "align": "right"},
-                    {"id": "utilization_hours", "label": "Utilization (h)", "format": "{:.1f}", "align": "right"},
+                "palette": [
+                    "#a1c9f4",
+                    "#ffb482",
+                    "#8de5a1",
+                    "#ff9f9b",
+                    "#d0bbff",
+                    "#debb9b",
+                    "#fab0e4",
+                    "#cfcfcf",
+                    "#fffea3",
+                    "#b9f2f0",
                 ],
-                "header_fill": "#14213d",
-                "header_font_color": "#ffffff",
-                "row_fill": "#f1faee",
-                "alt_row_fill": "#ffffff",
+                "font": {"family": "Cambria", "size": 13, "label_size": 11, "title_size": 17},
+                "inner_radius": 0.9,
+                "outer_radius": 1.1,
+                "tick_length": 0.05,
+                "gap_degrees": 2.0,
             },
         }
 
@@ -299,81 +302,6 @@ class BottleneckDetector:
         ratio = (value - min_value) / (max_value - min_value)
         idx = min(int(ratio * (len(scale) - 1)), len(scale) - 1)
         return scale[idx]
-
-    def _build_table_rows(
-        self,
-        stage_metrics: Dict[str, Dict[str, float]],
-        template: Dict[str, object],
-    ) -> Tuple[List[str], List[List[object]], List[str]]:
-        table_cfg: Dict[str, object] = template.get("table", {})  # type: ignore[assignment]
-        cols: List[Dict[str, object]] = table_cfg.get("columns") or []  # type: ignore[assignment]
-        if not cols:
-            cols = [
-                {"id": "stage", "label": "Stage", "align": "left"},
-                {"id": "mean_wait_hours", "label": "Wait μ (h)", "format": "{:.1f}", "align": "right"},
-                {"id": "mean_service_hours", "label": "Service μ (h)", "format": "{:.1f}", "align": "right"},
-                {"id": "handoffs", "label": "Handoffs", "format": "{:.0f}", "align": "right"},
-            ]
-
-        max_rows = int(table_cfg.get("max_rows", 10))
-        sorted_rows = sorted(
-            stage_metrics.items(),
-            key=lambda kv: kv[1].get("mean_wait_hours", 0.0),
-            reverse=True,
-        )[:max_rows]
-
-        header_values = [str(col.get("label", col.get("id", ""))) for col in cols]
-        alignments = [str(col.get("align", "left")) for col in cols]
-        rows: List[List[object]] = []
-        for stage, stats in sorted_rows:
-            row_values: List[object] = []
-            for col in cols:
-                key = str(col.get("id", ""))
-                fmt = col.get("format")
-                if key == "stage":
-                    row_values.append(stage)
-                    continue
-                raw_value = stats.get(key, 0.0)
-                if isinstance(raw_value, (int, float)) and fmt:
-                    try:
-                        row_values.append(fmt.format(raw_value))
-                    except Exception:
-                        row_values.append(raw_value)
-                else:
-                    row_values.append(raw_value)
-            rows.append(row_values)
-
-        return header_values, rows, alignments
-
-    def _render_table(
-        self,
-        ax,
-        headers: List[str],
-        rows: List[List[object]],
-        alignments: List[str],
-        template: Dict[str, object],
-    ) -> None:
-        table_cfg: Dict[str, object] = template.get("table", {})  # type: ignore[assignment]
-        table = ax.table(
-            cellText=rows,
-            colLabels=headers,
-            cellLoc="left",
-            loc="center",
-        )
-        table.auto_set_font_size(False)
-        table.set_fontsize(9)
-        table.scale(1, 1.3)
-        for (row_idx, col_idx), cell in table.get_celld().items():
-            if row_idx == 0:
-                cell.set_facecolor(table_cfg.get("header_fill", "#14213d"))
-                cell.get_text().set_color(table_cfg.get("header_font_color", "#ffffff"))
-            else:
-                fill_color = table_cfg.get("row_fill", "#f8f9fa") if row_idx % 2 else table_cfg.get("alt_row_fill", "#ffffff")
-                cell.set_facecolor(fill_color)
-                desired_align = alignments[col_idx] if col_idx < len(alignments) else "left"
-                cell._loc = "right" if desired_align == "right" else "left"
-
-        ax.axis("off")
 
     def _generate_bottleneck_image(self, metrics: Dict[str, object]) -> str | None:
         stage_metrics: Dict[str, Dict[str, float]] = metrics.get("stage_metrics", {})  # type: ignore[assignment]
@@ -401,75 +329,196 @@ class BottleneckDetector:
         if not filtered_edges:
             return None
 
-        node_waits = [stage_metrics[stage].get("mean_wait_hours", 0.0) for stage in nodes]
-        min_wait = min(node_waits) if node_waits else 0.0
-        max_wait = max(node_waits) if node_waits else 1.0
-        color_scale: List[str] = diagram_cfg.get("node", {}).get("color_scale", [])  # type: ignore[assignment]
-        node_colors = [
-            self._resolve_node_color(stage_metrics[stage].get("mean_wait_hours", 0.0), color_scale, min_wait, max_wait)
-            for stage in nodes
-        ]
+        palette: List[str] = diagram_cfg.get("palette", [])  # type: ignore[assignment]
+        if not palette:
+            palette = ["#a1c9f4", "#ffb482", "#8de5a1", "#ff9f9b", "#d0bbff", "#debb9b", "#fab0e4", "#cfcfcf"]
 
-        fig = plt.figure(figsize=(12, 10))
-        gs = fig.add_gridspec(2, 1, height_ratios=[3, 1], hspace=0.15)
-        ax_flow = fig.add_subplot(gs[0])
-        ax_flow.set_facecolor(diagram_cfg.get("background", "#ffffff"))
+        font_cfg: Dict[str, object] = diagram_cfg.get("font", {})  # type: ignore[assignment]
+        font_family = str(font_cfg.get("family", "Cambria"))
+        title_size = float(font_cfg.get("title_size", font_cfg.get("size", 15)))
+        label_size = float(font_cfg.get("label_size", font_cfg.get("size", 12)))
+
+        def polar(angle: float, radius: float) -> Tuple[float, float]:
+            return (radius * math.cos(angle), radius * math.sin(angle))
+
+        def lighten(color: str, amount: float) -> Tuple[float, float, float]:
+            r, g, b = mcolors.to_rgb(color)
+            return tuple(min(1.0, c + (1.0 - c) * amount) for c in (r, g, b))  # type: ignore[return-value]
+
+        def darken(color: str, factor: float) -> Tuple[float, float, float]:
+            r, g, b = mcolors.to_rgb(color)
+            return tuple(max(0.0, c * factor) for c in (r, g, b))  # type: ignore[return-value]
+
+        matrix = [[0.0 for _ in nodes] for _ in nodes]
+        for edge in filtered_edges:
+            src = str(edge.get("from"))
+            dst = str(edge.get("to"))
+            if src == dst:
+                continue
+            src_idx = nodes.index(src)
+            dst_idx = nodes.index(dst)
+            base = float(edge.get("count", 1)) * max(float(edge.get("mean_wait_hours", 0.0)), 0.25)
+            if base <= 0:
+                continue
+            matrix[src_idx][dst_idx] += base
+            matrix[dst_idx][src_idx] += base
+
+        row_totals = [sum(row) for row in matrix]
+        total_flow = sum(row_totals)
+        if total_flow <= 0:
+            return None
+
+        inner_radius = float(diagram_cfg.get("inner_radius", 0.9))
+        outer_radius = float(diagram_cfg.get("outer_radius", 1.15))
+        tick_length = float(diagram_cfg.get("tick_length", 0.05))
+        gap_radians = math.radians(float(diagram_cfg.get("gap_degrees", 2.0)))
+        total_gap = gap_radians * len(nodes)
+        available_angle = max(2 * math.pi - total_gap, 0.1)
+
+        fig = plt.figure(figsize=(9, 9))
+        ax_flow = fig.add_subplot(111)
+        ax_flow.set_facecolor(diagram_cfg.get("background", "#fefefe"))
+        fig.patch.set_facecolor(diagram_cfg.get("background", "#fefefe"))
         ax_flow.axis("off")
 
-        angles = {stage: 2 * math.pi * idx / len(nodes) for idx, stage in enumerate(nodes)}
-        radius = 1.0
+        node_colors = [palette[idx % len(palette)] for idx in range(len(nodes))]
+        arc_angles: Dict[str, Dict[str, float]] = {}
+        current_angle = 0.0
         for idx, stage in enumerate(nodes):
-            angle = angles[stage]
-            x = radius * math.cos(angle)
-            y = radius * math.sin(angle)
-            ax_flow.scatter(x, y, s=300, color=node_colors[idx], edgecolors="#ffffff", linewidths=1.5, zorder=3)
-            label = textwrap.fill(stage, width=25)
-            align = "left" if x >= 0 else "right"
-            ax_flow.text(
-                x * 1.15,
-                y * 1.15,
-                label,
-                ha=align,
-                va="center",
-                fontsize=9,
-                color="#1f1f1f",
-            )
+            frac = row_totals[idx] / total_flow if total_flow else 0.0
+            arc_span = frac * available_angle
+            start_angle = current_angle
+            end_angle = start_angle + arc_span
+            arc_angles[stage] = {"start": start_angle, "end": end_angle, "extent": arc_span}
+            current_angle = end_angle + gap_radians
 
-        edge_values = [
-            float(edge.get("count", 1)) * max(float(edge.get("mean_wait_hours", 0.0)), 0.1)
-            for edge in filtered_edges
-        ]
-        max_value = max(edge_values) if edge_values else 1.0
-        edge_color = diagram_cfg.get("edge_color", "#9db4c0")
+        def ribbon_patch(source: Tuple[float, float], target: Tuple[float, float]) -> Path:
+            src_start, src_end = source
+            dst_start, dst_end = target
+            control_r = inner_radius * 0.55
+            verts = [
+                polar(src_start, inner_radius),
+                polar(src_start, control_r),
+                polar(dst_start, control_r),
+                polar(dst_start, inner_radius),
+                polar(dst_end, inner_radius),
+                polar(dst_end, control_r),
+                polar(src_end, control_r),
+                polar(src_end, inner_radius),
+                polar(src_start, inner_radius),
+            ]
+            codes = [
+                Path.MOVETO,
+                Path.CURVE4,
+                Path.CURVE4,
+                Path.CURVE4,
+                Path.LINETO,
+                Path.CURVE4,
+                Path.CURVE4,
+                Path.CURVE4,
+                Path.CLOSEPOLY,
+            ]
+            return Path(verts, codes)
 
-        for edge, value in zip(filtered_edges, edge_values):
-            src_stage = str(edge.get("from"))
-            dst_stage = str(edge.get("to"))
-            src_angle = angles.get(src_stage)
-            dst_angle = angles.get(dst_stage)
-            if src_angle is None or dst_angle is None:
+        node_progress = {stage: arc_angles[stage]["start"] for stage in nodes}
+        sub_arcs: Dict[Tuple[int, int], Tuple[float, float]] = {}
+        for i, stage in enumerate(nodes):
+            extent = arc_angles[stage]["extent"]
+            if extent <= 0 or row_totals[i] <= 0:
                 continue
-            src_pos = (radius * math.cos(src_angle), radius * math.sin(src_angle))
-            dst_pos = (radius * math.cos(dst_angle), radius * math.sin(dst_angle))
-            rad = 0.2 if src_angle <= dst_angle else -0.2
-            width = 0.5 + 4.0 * (value / max_value)
-            arrow = patches.FancyArrowPatch(
-                src_pos,
-                dst_pos,
-                connectionstyle=f"arc3,rad={rad}",
-                arrowstyle="-",
-                linewidth=width,
-                color=edge_color,
-                alpha=0.5,
-                zorder=1,
+            for j, value in enumerate(matrix[i]):
+                if value <= 0:
+                    continue
+                angle_start = node_progress[stage]
+                angle_end = angle_start + (value / row_totals[i]) * extent
+                sub_arcs[(i, j)] = (angle_start, angle_end)
+                node_progress[stage] = angle_end
+
+        drawn_pairs = set()
+        for i in range(len(nodes)):
+            for j in range(i, len(nodes)):
+                if i == j:
+                    continue
+                if (i, j) not in sub_arcs or (j, i) not in sub_arcs:
+                    continue
+                pair_key = (i, j)
+                if pair_key in drawn_pairs:
+                    continue
+                drawn_pairs.add(pair_key)
+                path = ribbon_patch(sub_arcs[(i, j)], sub_arcs[(j, i)])
+                color = node_colors[i]
+                edge_color = darken(color, 0.7)
+                patch = patches.PathPatch(
+                    path,
+                    facecolor=lighten(color, 0.35),
+                    edgecolor=edge_color,
+                    lw=0.8,
+                    alpha=0.9,
+                    zorder=2,
+                )
+                ax_flow.add_patch(patch)
+
+        for idx, stage in enumerate(nodes):
+            angles = arc_angles[stage]
+            start = math.degrees(angles["start"])
+            end = math.degrees(angles["end"])
+            if end <= start:
+                continue
+            arc = patches.Wedge(
+                center=(0, 0),
+                r=outer_radius,
+                theta1=start,
+                theta2=end,
+                width=outer_radius - inner_radius,
+                facecolor=node_colors[idx],
+                edgecolor=darken(node_colors[idx], 0.65),
+                lw=1.0,
+                zorder=3,
             )
-            ax_flow.add_patch(arrow)
+            ax_flow.add_patch(arc)
 
-        ax_flow.set_title(str(diagram_cfg.get("title", "Process bottleneck map")), fontsize=14, pad=20)
+            ticks = max(2, int(round(row_totals[idx] / total_flow * 12)))
+            for t in range(ticks + 1):
+                frac = t / ticks
+                tick_angle = angles["start"] + frac * (angles["end"] - angles["start"])
+                tick_start = polar(tick_angle, outer_radius)
+                tick_end = polar(tick_angle, outer_radius + tick_length)
+                ax_flow.plot(
+                    [tick_start[0], tick_end[0]],
+                    [tick_start[1], tick_end[1]],
+                    color=darken(node_colors[idx], 0.7),
+                    linewidth=0.6,
+                    zorder=4,
+                )
 
-        headers, rows, alignments = self._build_table_rows(stage_metrics, template)
-        ax_table = fig.add_subplot(gs[1])
-        self._render_table(ax_table, headers, rows, alignments, template)
+            mid_angle = (angles["start"] + angles["end"]) / 2
+            label_radius = outer_radius + 0.15
+            label_x, label_y = polar(mid_angle, label_radius)
+            alignment = "left" if math.cos(mid_angle) >= 0 else "right"
+            label = textwrap.fill(stage, width=18)
+            ax_flow.text(
+                label_x,
+                label_y,
+                label,
+                ha=alignment,
+                va="center",
+                fontsize=label_size,
+                fontname=font_family,
+                color="#2f2f2f",
+                zorder=5,
+            )
+
+        limit = outer_radius + 0.4
+        ax_flow.set_xlim(-limit, limit)
+        ax_flow.set_ylim(-limit, limit)
+        title = str(diagram_cfg.get("title", "Bottleneck flow (wait hotspots & handoffs)"))
+        ax_flow.set_title(
+            title,
+            fontsize=title_size,
+            fontname=font_family,
+            pad=30,
+            color="#1b263b",
+        )
 
         image_path = self.reports_dir / "bottleneck_map.png"
         fig.savefig(image_path, dpi=200, bbox_inches="tight")
