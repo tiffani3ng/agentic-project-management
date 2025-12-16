@@ -286,7 +286,7 @@ class BottleneckDetector:
                     "#fffea3",
                     "#b9f2f0",
                 ],
-                "font": {"family": "Cambria", "size": 13, "label_size": 11, "title_size": 17},
+                "font": {"family": "Georgia", "size": 13, "label_size": 11, "title_size": 17},
                 "inner_radius": 0.9,
                 "outer_radius": 1.1,
                 "tick_length": 0.05,
@@ -458,6 +458,11 @@ class BottleneckDetector:
                 )
                 ax_flow.add_patch(patch)
 
+        label_entries: List[Dict[str, object]] = []
+        label_radius = outer_radius + 0.2
+        label_x_offset = outer_radius + 0.65
+        min_label_gap = 0.12
+
         for idx, stage in enumerate(nodes):
             angles = arc_angles[stage]
             start = math.degrees(angles["start"])
@@ -492,15 +497,57 @@ class BottleneckDetector:
                 )
 
             mid_angle = (angles["start"] + angles["end"]) / 2
-            label_radius = outer_radius + 0.15
-            label_x, label_y = polar(mid_angle, label_radius)
-            alignment = "left" if math.cos(mid_angle) >= 0 else "right"
-            label = textwrap.fill(stage, width=18)
+            label_y = polar(mid_angle, label_radius)[1]
+            side = "right" if math.cos(mid_angle) >= 0 else "left"
+            alignment = "left" if side == "right" else "right"
+            label_entries.append(
+                {
+                    "stage": stage,
+                    "text": textwrap.fill(stage, width=18),
+                    "side": side,
+                    "alignment": alignment,
+                    "anchor": polar(mid_angle, outer_radius + 0.02),
+                    "color": node_colors[idx],
+                    "y": label_y,
+                }
+            )
+
+        for side in ("right", "left"):
+            subset = [entry for entry in label_entries if entry["side"] == side]
+            subset.sort(key=lambda e: e["y"], reverse=True)
+            for idx in range(1, len(subset)):
+                prev_entry = subset[idx - 1]
+                curr_entry = subset[idx]
+                delta = prev_entry["y"] - curr_entry["y"]
+                if delta < min_label_gap:
+                    curr_entry["y"] = prev_entry["y"] - min_label_gap
+            for idx in range(len(subset) - 2, -1, -1):
+                next_entry = subset[idx + 1]
+                curr_entry = subset[idx]
+                delta = curr_entry["y"] - next_entry["y"]
+                if delta < min_label_gap:
+                    curr_entry["y"] = next_entry["y"] + min_label_gap
+            x_value = label_x_offset if side == "right" else -label_x_offset
+            for entry in subset:
+                entry["x"] = x_value
+
+        label_pad = 0.08
+        for entry in label_entries:
+            anchor_x, anchor_y = entry["anchor"]
+            connector_x = entry["x"] - label_pad if entry["side"] == "right" else entry["x"] + label_pad
+            ax_flow.plot(
+                [anchor_x, connector_x, entry["x"]],
+                [anchor_y, entry["y"], entry["y"]],
+                color=darken(entry["color"], 0.75),
+                linewidth=0.7,
+                alpha=0.8,
+                zorder=4,
+            )
             ax_flow.text(
-                label_x,
-                label_y,
-                label,
-                ha=alignment,
+                entry["x"],
+                entry["y"],
+                entry["text"],
+                ha=entry["alignment"],
                 va="center",
                 fontsize=label_size,
                 fontname=font_family,
@@ -508,7 +555,7 @@ class BottleneckDetector:
                 zorder=5,
             )
 
-        limit = outer_radius + 0.4
+        limit = outer_radius + 0.75
         ax_flow.set_xlim(-limit, limit)
         ax_flow.set_ylim(-limit, limit)
         title = str(diagram_cfg.get("title", "Bottleneck flow (wait hotspots & handoffs)"))

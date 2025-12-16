@@ -78,7 +78,7 @@ def _summarize_unstarted(assignments: List[Dict[str, object]], tasks_df, employe
     tasks_by_id = tasks_df.set_index("id").to_dict("index")
     employees_by_id = employees_df.set_index("id").to_dict("index")
 
-    lines: List[str] = []
+    rows: List[List[str]] = []
     for assignment in assignments:
         task_id = assignment.get("task_id")
         task = tasks_by_id.get(task_id, {})
@@ -90,11 +90,17 @@ def _summarize_unstarted(assignments: List[Dict[str, object]], tasks_df, employe
         task_name = task.get("name", task_id)
         est_hours = task.get("est_hours", 0.0)
         rationale = assignment.get("rationale", "")
-        lines.append(
-            f"- {task_name} [{task_id}] → {assignee_label} | est {est_hours}h | rationale: {rationale}"
+        rows.append(
+            [
+                f"{task_name} [{task_id}]",
+                assignee_label,
+                f"{float(est_hours):.1f}h",
+                rationale,
+            ]
         )
 
-    return "\n".join(lines) if lines else "No unstarted tasks were routed in this run."
+    headers = ["Task", "Assignee", "Est. effort", "Rationale"]
+    return _format_table(headers, rows) if rows else "No unstarted tasks were routed in this run."
 
 
 def _summarize_ai_flags(ai_flags: List[Dict[str, object]], tasks_df, employees_df) -> str:
@@ -296,7 +302,7 @@ def _render_console_report(
     tasks_df,
     executive_summary: str | None = None,
 ) -> str:
-    """Compose the full CLI-friendly report."""
+    """Compose the full report."""
     workload_table = _build_workload_table(report.get("workloads", []), employees_df)
     unstarted_block = _summarize_unstarted(report.get("assignments", []), tasks_df, employees_df)
     ai_block = _summarize_ai_flags(report.get("ai_opportunities", []), tasks_df, employees_df)
