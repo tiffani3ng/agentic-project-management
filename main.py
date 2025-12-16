@@ -12,13 +12,21 @@ from mvp.llm_utils import safe_openai_json
 
 
 def _format_table(headers: Sequence[str], rows: Sequence[Sequence[str]]) -> str:
-    """Render a Markdown table for CLI readability."""
+    """Render a padded Markdown table for CLI readability."""
     if not rows:
         return "No rows to display."
 
-    header_line = "| " + " | ".join(headers) + " |"
-    separator = "| " + " | ".join("---" for _ in headers) + " |"
-    row_lines = ["| " + " | ".join(str(cell) for cell in row) + " |" for row in rows]
+    widths = [len(header) for header in headers]
+    for row in rows:
+        widths = [max(width, len(str(cell))) for width, cell in zip(widths, row)]
+
+    def _format_row(values: Sequence[object]) -> str:
+        padded = [str(value).ljust(width) for value, width in zip(values, widths)]
+        return "| " + " | ".join(padded) + " |"
+
+    header_line = _format_row(headers)
+    separator = "| " + " | ".join("-" * width for width in widths) + " |"
+    row_lines = [_format_row(row) for row in rows]
     return "\n".join([header_line, separator, *row_lines])
 
 
@@ -326,7 +334,7 @@ def _render_console_report(
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run the multi-agent workflow optimization CLI.")
     parser.add_argument(
-        "--test-mode",
+        "--test_mode",
         action="store_true",
         help="Limit LLM calls for AI opportunity scouting to the first 3 tasks and use fallback for the rest.",
     )
@@ -338,9 +346,6 @@ def main() -> None:
     if args.test_mode:
         print("[INFO] Running AI opportunity scout in test mode (LLM limited to first 3 tasks).")
     report = orchestrator.run()
-    bottleneck_map = report.get("bottleneck_map")
-    if bottleneck_map:
-        print(bottleneck_map)
     bottleneck_image = report.get("bottleneck_image")
     if bottleneck_image:
         print(f"Bottleneck map image saved to {bottleneck_image}")
@@ -350,7 +355,7 @@ def main() -> None:
 
     executive_summary = _generate_executive_summary(report, employees_df, tasks_df)
     console_report = _render_console_report(report, employees_df, tasks_df, executive_summary=executive_summary)
-    summary_path = reports_dir / "human_readable_summary.txt"
+    summary_path = reports_dir / "human_readable_summary.md"
     summary_path.write_text(console_report)
     print(f"Human-readable summary saved to {summary_path}")
     # print("\nRaw JSON payload (also written to reports/):")
