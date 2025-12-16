@@ -7,6 +7,14 @@ from typing import Any, Dict, Optional
 
 from openai import OpenAI
 
+_FORCE_OPENAI_FALLBACK = False
+
+
+def set_force_openai_fallback(force: bool) -> None:
+    """Toggle a global switch that bypasses OpenAI calls even if API keys are configured."""
+    global _FORCE_OPENAI_FALLBACK
+    _FORCE_OPENAI_FALLBACK = force
+
 
 def call_openai_json(
     system_prompt: str,
@@ -15,6 +23,9 @@ def call_openai_json(
     temperature: float = 0.2,
 ) -> Dict[str, Any]:
     """Returns parsed JSON from an OpenAI chat completion."""
+
+    if _FORCE_OPENAI_FALLBACK:
+        raise RuntimeError("OpenAI usage disabled via CLI flag; forcing fallback.")
 
     api_key = os.getenv("OPENAI_API_KEY")
     if not api_key:

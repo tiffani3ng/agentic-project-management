@@ -14,3 +14,6 @@ reports/.matplotlib_cache/
 # IDE files
 .vscode/
 .idea/
+# Data files
+data_test/
+synthetic_data_generator

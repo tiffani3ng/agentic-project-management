@@ -8,7 +8,7 @@ from typing import Dict, List, Sequence
 
 from mvp.data_loader import load_employees, load_tasks
 from mvp.orchestrator import Orchestrator
-from mvp.llm_utils import safe_openai_json
+from mvp.llm_utils import safe_openai_json, set_force_openai_fallback
 
 
 def _format_table(headers: Sequence[str], rows: Sequence[Sequence[str]]) -> str:
@@ -344,9 +344,18 @@ def main() -> None:
         action="store_true",
         help="Limit LLM calls for AI opportunity scouting to the first 3 tasks and use fallback for the rest.",
     )
+    parser.add_argument(
+        "--no_ai",
+        action="store_true",
+        help="Force fallback behavior for all AI calls even when an OpenAI API key is configured.",
+    )
     args = parser.parse_args()
 
-    data_dir = Path("data")
+    if args.no_ai:
+        set_force_openai_fallback(True)
+        print("[INFO] AI usage disabled via --no_ai; all agents will use deterministic fallbacks.")
+
+    data_dir = Path("data_test")
     reports_dir = Path("reports")
     orchestrator = Orchestrator(data_dir=data_dir, reports_dir=reports_dir, test_mode=args.test_mode)
     if args.test_mode:

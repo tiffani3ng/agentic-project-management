@@ -19,6 +19,7 @@ import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+from matplotlib import font_manager
 from matplotlib import patches
 from matplotlib.path import Path
 import matplotlib.colors as mcolors
@@ -98,16 +99,21 @@ class BottleneckDetector:
     def _compute_metrics(self) -> Dict[str, object]:
         role_lookup = self._role_lookup()
 
-        stage_stats: Dict[str, Dict[str, List[float]]] = defaultdict(lambda: {
-            "service_hours": [],
-            "wait_hours": [],
-            "handoffs": 0,
-        })
-        edge_stats: Dict[Tuple[str, str], Dict[str, List[float] | int]] = defaultdict(
-            lambda: {"wait_hours": [], "count": 0}
+        stage_stats: Dict[str, Dict[str, List[float] | int]] = defaultdict(
+            lambda: {
+                "service_hours": [],
+                "wait_hours": [],
+                "handoffs": 0,
+            }
+        )
+        edge_stats: Dict[Tuple[str, str], Dict[str, List[float] | int | float]] = defaultdict(
+            lambda: {"wait_hours": [], "count": 0, "wait_sum": 0.0}
         )
         utilization: Dict[str, float] = defaultdict(float)
+        stage_rework_counts: Dict[str, int] = defaultdict(int)
         task_paths: List[Dict[str, object]] = []
+        total_wait_hours = 0.0
+        total_service_hours = 0.0
 
         grouped = self.events.groupby("task_id")
         for task_id, evs in grouped:
@@ -115,6 +121,7 @@ class BottleneckDetector:
             prev_end_time = None
             prev_role = None
             stages_for_task: List[Dict[str, object]] = []
+            role_hits: Dict[str, int] = defaultdict(int)
 
             for idx, event in evs_sorted.iterrows():
                 event_type = str(event.get("type", ""))
@@ -140,10 +147,16 @@ class BottleneckDetector:
                 if event_type == "handoff":
                     stage_stats[stage_role]["handoffs"] += 1
                 utilization[stage_role] += service_hours
+                total_wait_hours += wait_hours
+                total_service_hours += service_hours
+                role_hits[stage_role] += 1
+                if role_hits[stage_role] > 1:
+                    stage_rework_counts[stage_role] += 1
 
                 if prev_role:
                     edge_stats[(prev_role, stage_role)]["wait_hours"].append(wait_hours)
                     edge_stats[(prev_role, stage_role)]["count"] += 1
+                    edge_stats[(prev_role, stage_role)]["wait_sum"] += wait_hours
 
                 stages_for_task.append(
                     {
@@ -176,9 +189,15 @@ class BottleneckDetector:
                 )
 
         stage_metrics: Dict[str, Dict[str, float]] = {}
+        stage_total_instances = 0.0
+        for stats in stage_stats.values():
+            stage_total_instances += float(len(stats["service_hours"]))  # type: ignore[arg-type]
+
         for stage, stats in stage_stats.items():
-            service_hours_list = stats["service_hours"]
-            wait_hours_list = stats["wait_hours"]
+            service_hours_list = stats["service_hours"]  # type: ignore[assignment]
+            wait_hours_list = stats["wait_hours"]  # type: ignore[assignment]
+            wait_sum = float(sum(wait_hours_list))
+            service_sum = float(sum(service_hours_list))
             stage_metrics[stage] = {
                 "mean_service_hours": float(sum(service_hours_list) / max(len(service_hours_list), 1)),
                 "p90_service_hours": self._percentile(service_hours_list, 0.9),
@@ -187,11 +206,34 @@ class BottleneckDetector:
                 "handoffs": float(stats["handoffs"]),
                 "instances": float(len(service_hours_list)),
                 "utilization_hours": float(utilization.get(stage, 0.0)),
+                "total_wait_hours": wait_sum,
+                "total_service_hours": service_sum,
+                "rework_count": float(stage_rework_counts.get(stage, 0)),
             }
+            stage_metrics[stage]["wait_share_pct"] = (
+                (wait_sum / total_wait_hours) * 100 if total_wait_hours > 0 else 0.0
+            )
+            stage_metrics[stage]["service_share_pct"] = (
+                (service_sum / total_service_hours) * 100 if total_service_hours > 0 else 0.0
+            )
+            stage_metrics[stage]["long_wait_instances"] = float(
+                sum(
+                    1
+                    for value in wait_hours_list
+                    if stage_metrics[stage]["p90_wait_hours"] > 0 and value >= stage_metrics[stage]["p90_wait_hours"]
+                )
+            )
+            total_activity = float(len(service_hours_list))
+            stage_metrics[stage]["share_of_activity_pct"] = (
+                (total_activity / stage_total_instances) * 100 if stage_total_instances else 0.0
+            )
+            denom = stage_metrics[stage]["mean_service_hours"] + 1e-6
+            stage_metrics[stage]["wait_to_service_ratio"] = stage_metrics[stage]["mean_wait_hours"] / denom
 
         edges = []
+        total_edge_wait = sum(float(stats["wait_sum"]) for stats in edge_stats.values())
         for (src, dst), stats in edge_stats.items():
-            waits = stats["wait_hours"]
+            waits = stats["wait_hours"]  # type: ignore[assignment]
             edges.append(
                 {
                     "from": src,
@@ -199,32 +241,114 @@ class BottleneckDetector:
                     "count": int(stats["count"]),
                     "mean_wait_hours": float(sum(waits) / max(len(waits), 1)),
                     "p90_wait_hours": self._percentile(waits, 0.9),
+                    "wait_share_pct": (
+                        float(stats["wait_sum"]) / total_edge_wait * 100 if total_edge_wait > 0 else 0.0
+                    ),
                 }
             )
 
         critical_paths = sorted(task_paths, key=lambda t: t.get("total_hours", 0.0), reverse=True)[:3]
+        overall_start = pd.to_datetime(self.events["timestamp"].min()) if not self.events.empty else None
+        overall_end = pd.to_datetime(self.events["timestamp"].max()) if not self.events.empty else None
+        timeline_hours = 0.0
+        if overall_start is not None and overall_end is not None:
+            timeline_hours = max((overall_end - overall_start).total_seconds() / 3600.0, 0.0)
+
+        stage_rankings = {
+            "longest_p90_wait": sorted(
+                stage_metrics.items(), key=lambda kv: kv[1].get("p90_wait_hours", 0.0), reverse=True
+            )[:3],
+            "highest_utilization": sorted(
+                stage_metrics.items(), key=lambda kv: kv[1].get("utilization_hours", 0.0), reverse=True
+            )[:3],
+            "most_rework": sorted(
+                stage_metrics.items(), key=lambda kv: kv[1].get("rework_count", 0.0), reverse=True
+            )[:3],
+        }
+
+        story_hints = []
+        if stage_rankings["longest_p90_wait"]:
+            stage_name, stats = stage_rankings["longest_p90_wait"][0]
+            story_hints.append(
+                f"{stage_name} hits p90 wait of {stats.get('p90_wait_hours', 0.0):.1f}h "
+                f"and soaks up {stats.get('wait_share_pct', 0.0):.1f}% of total queueing."
+            )
+        if stage_rankings["highest_utilization"]:
+            stage_name, stats = stage_rankings["highest_utilization"][0]
+            story_hints.append(
+                f"{stage_name} logged {stats.get('utilization_hours', 0.0):.1f}h of service time this run, "
+                "hinting at capacity saturation."
+            )
+        if stage_rankings["most_rework"] and stage_rankings["most_rework"][0][1].get("rework_count", 0.0) > 0:
+            stage_name, stats = stage_rankings["most_rework"][0]
+            story_hints.append(
+                f"{stage_name} was revisited {stats.get('rework_count', 0.0):.0f} times mid-task, "
+                "suggesting churn or unclear exit criteria."
+            )
+        if edges:
+            worst_edge = max(edges, key=lambda e: e.get("p90_wait_hours", 0.0))
+            story_hints.append(
+                f"Handoff {worst_edge['from']} -> {worst_edge['to']} shows p90 wait "
+                f"{worst_edge.get('p90_wait_hours', 0.0):.1f}h across {worst_edge.get('count', 0)} transfers."
+            )
 
         return {
             "stage_metrics": stage_metrics,
             "edges": edges,
             "critical_paths": critical_paths,
+            "aggregate": {
+                "total_wait_hours": total_wait_hours,
+                "total_service_hours": total_service_hours,
+                "timeline_hours": timeline_hours,
+                "overall_wait_ratio": (
+                    total_wait_hours / max(total_service_hours, 1e-6) if total_service_hours else 0.0
+                ),
+            },
+            "stage_rankings": {
+                key: [
+                    {
+                        "stage": stage,
+                        **{metric_key: metric_value for metric_key, metric_value in stats.items()},
+                    }
+                    for stage, stats in values
+                ]
+                for key, values in stage_rankings.items()
+            },
+            "story_hints": story_hints,
         }
 
     def _render_prompt(self, metrics: Dict[str, object]) -> str:
+        aggregate = metrics.get("aggregate", {})
+        stage_rankings = metrics.get("stage_rankings", {})
+        story_hints = metrics.get("story_hints", [])
+        instructions = (
+            "Analyze the provided metrics to surface the top bottlenecks. Prioritize roles with extreme wait/service "
+            "times, large utilization, or high rework counts, and handoffs with severe queues. For each bottleneck, "
+            "quantify it with a cited metric, then describe a plausible narrative for why the slowdown occurs based on "
+            "the data (e.g., async approvals, unclear inputs, timezone misalignment). Finally, recommend a targeted "
+            "solution (capacity, sequencing, AI assist, SLAs, etc.). The `issue` field should blend the metric plus the "
+            "story behind it. Stay grounded in the data."
+        )
+        analysis_notes = {
+            "aggregate": aggregate,
+            "story_hints": story_hints,
+            "rankings": stage_rankings,
+        }
         return json.dumps(
             {
                 "stage_metrics": metrics.get("stage_metrics", {}),
                 "edge_metrics": metrics.get("edges", []),
                 "critical_paths": metrics.get("critical_paths", []),
-                "instructions": "Identify up to 3 bottlenecks based on highest mean wait/processing time and excessive handoffs. Focus on roles and handoff edges with high p90 wait times or utilization. Provide remediation suggestions that target the affected roles or edges.",
+                "analysis_notes": analysis_notes,
+                "instructions": instructions,
                 "response_schema": {
                     "bottlenecks": [
                         {
                             "stage": "stage name",
-                            "issue": "description",
+                            "issue": "metric-backed story of the bottleneck",
                             "metric": 12.5,
                             "unit": "hours",
-                            "recommendation": "action",
+                            "recommendation": "solution with guardrails or process tweak",
                         }
                     ],
                 },
@@ -294,6 +418,23 @@ class BottleneckDetector:
             },
         }
 
+    def _font_available(self, family: str) -> bool:
+        if not family:
+            return False
+        try:
+            font_manager.findfont(font_manager.FontProperties(family=family), fallback_to_default=False)
+            return True
+        except (ValueError, RuntimeError):
+            return False
+
+    def _resolve_font_family(self, preferred: str, fallback: str = "Georgia") -> str:
+        if self._font_available(preferred):
+            return preferred
+        if fallback and self._font_available(fallback):
+            return fallback
+        # As a last resort, fall back to Matplotlib's bundled default font.
+        return "DejaVu Sans"
+
     def _resolve_node_color(self, value: float, scale: List[str], min_value: float, max_value: float) -> str:
         if not scale:
             return "#1f77b4"
@@ -334,7 +475,9 @@ class BottleneckDetector:
             palette = ["#a1c9f4", "#ffb482", "#8de5a1", "#ff9f9b", "#d0bbff", "#debb9b", "#fab0e4", "#cfcfcf"]
 
         font_cfg: Dict[str, object] = diagram_cfg.get("font", {})  # type: ignore[assignment]
-        font_family = str(font_cfg.get("family", "Cambria"))
+        preferred_font = str(font_cfg.get("family", "Cambria"))
+        fallback_font = str(font_cfg.get("fallback_family", "Georgia"))
+        font_family = self._resolve_font_family(preferred_font, fallback_font)
         title_size = float(font_cfg.get("title_size", font_cfg.get("size", 15)))
         label_size = float(font_cfg.get("label_size", font_cfg.get("size", 12)))
 
@@ -458,11 +601,6 @@ class BottleneckDetector:
                 )
                 ax_flow.add_patch(patch)
 
-        label_entries: List[Dict[str, object]] = []
-        label_radius = outer_radius + 0.2
-        label_x_offset = outer_radius + 0.65
-        min_label_gap = 0.12
-
         for idx, stage in enumerate(nodes):
             angles = arc_angles[stage]
             start = math.degrees(angles["start"])
@@ -497,57 +635,15 @@ class BottleneckDetector:
                 )
 
             mid_angle = (angles["start"] + angles["end"]) / 2
-            label_y = polar(mid_angle, label_radius)[1]
-            side = "right" if math.cos(mid_angle) >= 0 else "left"
-            alignment = "left" if side == "right" else "right"
-            label_entries.append(
-                {
-                    "stage": stage,
-                    "text": textwrap.fill(stage, width=18),
-                    "side": side,
-                    "alignment": alignment,
-                    "anchor": polar(mid_angle, outer_radius + 0.02),
-                    "color": node_colors[idx],
-                    "y": label_y,
-                }
-            )
-
-        for side in ("right", "left"):
-            subset = [entry for entry in label_entries if entry["side"] == side]
-            subset.sort(key=lambda e: e["y"], reverse=True)
-            for idx in range(1, len(subset)):
-                prev_entry = subset[idx - 1]
-                curr_entry = subset[idx]
-                delta = prev_entry["y"] - curr_entry["y"]
-                if delta < min_label_gap:
-                    curr_entry["y"] = prev_entry["y"] - min_label_gap
-            for idx in range(len(subset) - 2, -1, -1):
-                next_entry = subset[idx + 1]
-                curr_entry = subset[idx]
-                delta = curr_entry["y"] - next_entry["y"]
-                if delta < min_label_gap:
-                    curr_entry["y"] = next_entry["y"] + min_label_gap
-            x_value = label_x_offset if side == "right" else -label_x_offset
-            for entry in subset:
-                entry["x"] = x_value
-
-        label_pad = 0.08
-        for entry in label_entries:
-            anchor_x, anchor_y = entry["anchor"]
-            connector_x = entry["x"] - label_pad if entry["side"] == "right" else entry["x"] + label_pad
-            ax_flow.plot(
-                [anchor_x, connector_x, entry["x"]],
-                [anchor_y, entry["y"], entry["y"]],
-                color=darken(entry["color"], 0.75),
-                linewidth=0.7,
-                alpha=0.8,
-                zorder=4,
-            )
+            label_radius = outer_radius + 0.15
+            label_x, label_y = polar(mid_angle, label_radius)
+            alignment = "left" if math.cos(mid_angle) >= 0 else "right"
+            label = textwrap.fill(stage, width=18)
             ax_flow.text(
-                entry["x"],
-                entry["y"],
-                entry["text"],
-                ha=entry["alignment"],
+                label_x,
+                label_y,
+                label,
+                ha=alignment,
                 va="center",
                 fontsize=label_size,
                 fontname=font_family,
@@ -555,7 +651,7 @@ class BottleneckDetector:
                 zorder=5,
             )
 
-        limit = outer_radius + 0.75
+        limit = outer_radius + 0.4
         ax_flow.set_xlim(-limit, limit)
         ax_flow.set_ylim(-limit, limit)
         title = str(diagram_cfg.get("title", "Bottleneck flow (wait hotspots & handoffs)"))
@@ -590,10 +686,12 @@ class BottleneckDetector:
         bottleneck_image = self._generate_bottleneck_image(metrics)
 
         system_prompt = (
-            "You are a sober workflow diagnostics expert. Use only the provided metrics to "
-            "spot the top bottlenecks, quantify them, and suggest pragmatic fixes. Do not "
-            "invent stages or metrics. Respond with JSON that matches the schema and "
-            "nothing else."
+            "You are a workflow diagnostics expert who also acts like an investigative operations analyst. "
+            "Use the supplied metrics, rankings, and hints to explain WHY each bottleneck is happening, "
+            "tying numbers to plausible stories about process gaps, async delays, or capacity limits. "
+            "Each bottleneck must cite a concrete metric, a short narrative root-cause hypothesis, "
+            "and one actionable recommendation. Do not fabricate new roles or metrics. Respond strictly "
+            "with JSON that matches the provided schema."
         )
         user_prompt = self._render_prompt(metrics)
 
@@ -609,14 +707,27 @@ class BottleneckDetector:
 
             worst_stage, stats = max(stage_metric_values.items(), key=stage_score)
             metric_value = stats.get("p90_wait_hours", 0.0)
-            issue = "Longest tail wait time" if metric_value > 0 else "Sustained high service time/utilization"
+            wait_share = stats.get("wait_share_pct", 0.0)
+            rework = stats.get("rework_count", 0.0)
+            utilization = stats.get("utilization_hours", 0.0)
+            if metric_value > 0:
+                issue = (
+                    f"{worst_stage} shows p90 wait {metric_value:.1f}h "
+                    f"absorbing {wait_share:.1f}% of queueing."
+                )
+            else:
+                issue = f"{worst_stage} has sustained service load {stats.get('p90_service_hours', 0.0):.1f}h"
+            if rework:
+                issue += f" Likely churn: {rework:.0f} rework loops observed."
+            elif utilization > 0:
+                issue += f" Utilization logged at {utilization:.1f}h."
             fallback_bottlenecks.append(
                 {
                     "stage": worst_stage,
                     "issue": issue,
                     "metric": metric_value if metric_value > 0 else stats.get("p90_service_hours", 0.0),
                     "unit": "hours",
-                    "recommendation": "Add WIP limits, parallelize reviews, and boost capacity at this stage.",
+                    "recommendation": "Add WIP limits, parallelize reviews, and lend capacity/AI draft support here.",
                 }
             )
 
