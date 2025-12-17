@@ -1,7 +1,7 @@
 # Human-readable run summary
 - **Run ID:** `71fa62fa-822e-4d27-b1ba-e88c965371ac`
 
-## AI-generated executive summary
+## Executive Summary
 The run involved 33 employees with a total of 921.6 projected hours, but several team members exceeded their capacity, notably Zoe Kim, Sam Chen, and Ava Kim. Key pain points include significant wait times for the Creative Director, potential saturation of the Backend Engineer, and frequent rework by the Experimentation Analyst due to unclear criteria. To alleviate these issues, implementing a structured feedback process for approvals can reduce Creative Director wait times, while redistributing tasks or hiring additional engineers can help balance the Backend Engineer's workload. Additionally, establishing clearer guidelines for task completion can minimize rework for the Experimentation Analyst, improving overall workflow efficiency.
 
 ## Per-person workload (avg hrs/week vs capacity)
