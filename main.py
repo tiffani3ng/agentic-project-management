@@ -355,7 +355,7 @@ def main() -> None:
         set_force_openai_fallback(True)
         print("[INFO] AI usage disabled via --no_ai; all agents will use deterministic fallbacks.")
 
-    data_dir = Path("data_test")
+    data_dir = Path("data")
     reports_dir = Path("reports")
     orchestrator = Orchestrator(data_dir=data_dir, reports_dir=reports_dir, test_mode=args.test_mode)
     if args.test_mode:

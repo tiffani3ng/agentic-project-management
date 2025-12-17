@@ -698,38 +698,82 @@ class BottleneckDetector:
         fallback_bottlenecks = []
         stage_metric_values = metrics.get("stage_metrics", {})
         if stage_metric_values:
-            def stage_score(item: tuple[str, Dict[str, float]]) -> float:
-                _, data = item
-                wait = data.get("p90_wait_hours", 0.0)
-                service = data.get("p90_service_hours", 0.0)
-                utilization = data.get("utilization_hours", 0.0)
-                return wait + service * 0.1 + utilization * 0.01
+            # 8 hours ~= one workday of waiting, which surfaces material slowdowns without flagging minor gaps.
+            MIN_MEAN_WAIT_HOURS = 8.0
 
-            worst_stage, stats = max(stage_metric_values.items(), key=stage_score)
-            metric_value = stats.get("p90_wait_hours", 0.0)
-            wait_share = stats.get("wait_share_pct", 0.0)
-            rework = stats.get("rework_count", 0.0)
-            utilization = stats.get("utilization_hours", 0.0)
-            if metric_value > 0:
+            def build_issue(stage: str, stats: Dict[str, float]) -> Dict[str, object]:
+                mean_wait = stats.get("mean_wait_hours", 0.0)
+                p90_wait = stats.get("p90_wait_hours", 0.0)
+                wait_share = stats.get("wait_share_pct", 0.0)
+                rework = stats.get("rework_count", 0.0)
+                utilization = stats.get("utilization_hours", 0.0)
                 issue = (
-                    f"{worst_stage} shows p90 wait {metric_value:.1f}h "
-                    f"absorbing {wait_share:.1f}% of queueing."
+                    f"{stage} is stuck with mean wait {mean_wait:.1f}h "
+                    f"(p90 {p90_wait:.1f}h, {wait_share:.1f}% of total queueing)."
                 )
-            else:
-                issue = f"{worst_stage} has sustained service load {stats.get('p90_service_hours', 0.0):.1f}h"
-            if rework:
-                issue += f" Likely churn: {rework:.0f} rework loops observed."
-            elif utilization > 0:
-                issue += f" Utilization logged at {utilization:.1f}h."
-            fallback_bottlenecks.append(
-                {
-                    "stage": worst_stage,
+                if rework:
+                    issue += f" {rework:.0f} rework loops hint at churn."
+                elif utilization:
+                    issue += f" Utilization logged at {utilization:.1f}h."
+                recommendation = (
+                    "Tighten entry criteria, add surge capacity/AI drafting, and shorten review SLAs."
+                )
+                return {
+                    "stage": stage,
                     "issue": issue,
-                    "metric": metric_value if metric_value > 0 else stats.get("p90_service_hours", 0.0),
+                    "metric": mean_wait,
                     "unit": "hours",
-                    "recommendation": "Add WIP limits, parallelize reviews, and lend capacity/AI draft support here.",
+                    "recommendation": recommendation,
                 }
+
+            waiting_stages = [
+                (stage, stats)
+                for stage, stats in stage_metric_values.items()
+                if stats.get("mean_wait_hours", 0.0) >= MIN_MEAN_WAIT_HOURS
+            ]
+            waiting_stages.sort(
+                key=lambda item: (
+                    item[1].get("mean_wait_hours", 0.0),
+                    item[1].get("p90_wait_hours", 0.0),
+                ),
+                reverse=True,
             )
+            for stage, stats in waiting_stages[:8]:
+                fallback_bottlenecks.append(build_issue(stage, stats))
+
+            if not fallback_bottlenecks:
+                def stage_score(item: tuple[str, Dict[str, float]]) -> float:
+                    _, data = item
+                    wait = data.get("p90_wait_hours", 0.0)
+                    service = data.get("p90_service_hours", 0.0)
+                    utilization = data.get("utilization_hours", 0.0)
+                    return wait + service * 0.1 + utilization * 0.01
+
+                worst_stage, stats = max(stage_metric_values.items(), key=stage_score)
+                metric_value = stats.get("p90_wait_hours", 0.0)
+                wait_share = stats.get("wait_share_pct", 0.0)
+                rework = stats.get("rework_count", 0.0)
+                utilization = stats.get("utilization_hours", 0.0)
+                if metric_value > 0:
+                    issue = (
+                        f"{worst_stage} shows p90 wait {metric_value:.1f}h "
+                        f"absorbing {wait_share:.1f}% of queueing."
+                    )
+                else:
+                    issue = f"{worst_stage} has sustained service load {stats.get('p90_service_hours', 0.0):.1f}h"
+                if rework:
+                    issue += f" Likely churn: {rework:.0f} rework loops observed."
+                elif utilization > 0:
+                    issue += f" Utilization logged at {utilization:.1f}h."
+                fallback_bottlenecks.append(
+                    {
+                        "stage": worst_stage,
+                        "issue": issue,
+                        "metric": metric_value if metric_value > 0 else stats.get("p90_service_hours", 0.0),
+                        "unit": "hours",
+                        "recommendation": "Add WIP limits, parallelize reviews, and lend capacity/AI draft support here.",
+                    }
+                )
 
         result = safe_openai_json(
             system_prompt,
