@@ -1,5 +1,7 @@
 [
-  "Set WIP limits and add daily standups to relieve the top bottleneck stage.",
-  "Enable AI drafting for communication tasks with mandatory reviewer sign-off.",
-  "Rebalance workload by shifting low-skill tasks to underutilized team members."
+  "Implement a WIP limit for the Creative Director to manage the approval queue more effectively and reduce the p90 wait time of 114.95 hours.",
+  "Redistribute tasks among the engineering team to alleviate the Backend Engineer's workload, potentially hiring additional engineers to balance the capacity saturation of 501.38 hours.",
+  "Establish clearer exit criteria and guidelines for the Experimentation Analyst to minimize rework and streamline the workflow, addressing the rework count of 8 and mean wait time of 9.6 hours.",
+  "Enhance communication protocols for the E-commerce Platform Engineer by scheduling regular check-ins with dependent roles to address the p90 wait time of 26.45 hours and reduce handoffs.",
+  "Streamline the handoff process for the Warehouse Operations Associate by reducing dependencies and improving coordination among teams, targeting the mean wait time of 6.80 hours."
 ]

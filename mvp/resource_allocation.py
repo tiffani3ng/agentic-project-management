@@ -44,6 +44,9 @@ class ResourceAllocationAgent:
         self.availability = availability.copy()
         self.run_store = run_store
         self.run_id = run_id
+        # Pre-compute normalized department metadata for fairness heuristics.
+        self.employees["department_normalized"] = self.employees["department"].apply(self._normalize_department)
+        self.employees["department_tokens"] = self.employees["department"].apply(self._department_tokens)
 
     @staticmethod
     def _normalize_skill_text(value: object) -> str:
@@ -172,13 +175,53 @@ class ResourceAllocationAgent:
         unstarted_markers = {"", "not_started", "not started", "todo", "pending", "backlog"}
         return normalized in unstarted_markers
 
+    @staticmethod
+    def _normalize_department(value: object) -> str:
+        text = "" if value is None else str(value).strip().lower()
+        text = re.sub(r"\s+", " ", text)
+        return text
+
+    @classmethod
+    def _department_tokens(cls, value: object) -> List[str]:
+        normalized = cls._normalize_department(value)
+        if not normalized:
+            return []
+        return [token for token in re.split(r"[^a-z0-9]+", normalized) if token]
+
+    @staticmethod
+    def _hours_per_week(est_hours: object, start: object, due: object) -> float:
+        """
+        Normalize task effort into weekly load so comparisons against max_hours (per-week) are meaningful.
+        If no schedule is provided, assume the work lands within a single week.
+        """
+        hours = float(est_hours or 0.0)
+        if hours <= 0.0:
+            return 0.0
+
+        start_ts = pd.to_datetime(start, errors="coerce")
+        due_ts = pd.to_datetime(due, errors="coerce")
+        if pd.isna(start_ts) or pd.isna(due_ts):
+            return hours
+
+        duration_seconds = (due_ts - start_ts).total_seconds()
+        if duration_seconds <= 0:
+            return hours
+
+        weeks = max(duration_seconds / (7 * 24 * 3600), 1.0)
+        return hours / weeks
+
     def _existing_open_workload(self, tasks: pd.DataFrame) -> Dict[str, float]:
         open_tasks = tasks[
             tasks["assignee"].notna()
             & (tasks["assignee"] != "")
             & (tasks["status"].str.lower() != "completed")
         ]
-        return open_tasks.groupby("assignee")["est_hours"].sum().to_dict()
+        rollup: Dict[str, float] = {}
+        for _, task in open_tasks.iterrows():
+            emp_id = str(task["assignee"])
+            weekly_hours = self._hours_per_week(task.get("est_hours", 0.0), task.get("start"), task.get("due"))
+            rollup[emp_id] = rollup.get(emp_id, 0.0) + weekly_hours
+        return rollup
 
     def _heuristic_assign(self, tasks: pd.DataFrame) -> List[Assignment]:
         existing_workload = self._existing_open_workload(tasks)
@@ -190,10 +233,12 @@ class ResourceAllocationAgent:
             best_candidate: Optional[str] = None
             best_score = -1.0
             rationale = ""
+            weekly_hours = self._hours_per_week(task.get("est_hours", 0.0), task.get("start"), task.get("due"))
 
+            candidate_rows: List[Dict] = []
+            best_skill_score = 0.0
             for _, employee in self.employees.iterrows():
                 emp_id = employee["id"]
-                needed = str(task["skill_needed"]).lower()
                 max_hours = float(employee["max_hours"])
                 current_load = existing_workload.get(emp_id, 0.0) + incremental_load.get(emp_id, 0.0)
                 est_hours = float(task["est_hours"])
@@ -203,7 +248,7 @@ class ResourceAllocationAgent:
                 remaining_capacity = max_hours - current_load
                 balance_score = max(0.0, remaining_capacity / max_hours)
                 timezone_score = self._timezone_overlap_score(task["start"], task["due"], employee.get("timezone", "UTC"))
-                projected_load = current_load + est_hours
+                projected_load = current_load + weekly_hours
                 if max_hours <= 0:
                     overload_ratio = float("inf")
                 else:
@@ -212,22 +257,65 @@ class ResourceAllocationAgent:
                     penalty = 2.0 + overload_ratio * 4
                 else:
                     penalty = overload_ratio * 2
-                score = (skill_score + availability_score + balance_score + timezone_score) - penalty
 
-                if remaining_capacity <= 0:
+                candidate_rows.append(
+                    {
+                        "emp_id": emp_id,
+                        "skill_score": skill_score,
+                        "availability_score": availability_score,
+                        "balance_score": balance_score,
+                        "timezone_score": timezone_score,
+                        "penalty": penalty,
+                        "remaining_capacity": remaining_capacity,
+                        "projected_load": projected_load,
+                        "max_hours": max_hours,
+                        "dept_normalized": employee.get("department_normalized", self._normalize_department(employee.get("department", ""))),
+                        "dept_tokens": employee.get("department_tokens", self._department_tokens(employee.get("department", ""))),
+                    }
+                )
+                best_skill_score = max(best_skill_score, skill_score)
+
+            primary_departments = {
+                row["dept_normalized"]
+                for row in candidate_rows
+                if row["skill_score"] >= best_skill_score - 1e-6 and row["skill_score"] > 0.0
+            }
+            primary_tokens: set[str] = set()
+            for row in candidate_rows:
+                if row["dept_normalized"] in primary_departments:
+                    primary_tokens.update(row["dept_tokens"])
+            specialist_saturated = any(
+                row["dept_normalized"] in primary_departments
+                and row["max_hours"] > 0
+                and (row["projected_load"] / row["max_hours"]) >= 1.05
+                for row in candidate_rows
+            )
+
+            for row in candidate_rows:
+                score = (
+                    row["skill_score"]
+                    + row["availability_score"]
+                    + row["balance_score"]
+                    + row["timezone_score"]
+                    - row["penalty"]
+                )
+                if row["remaining_capacity"] <= 0:
                     score -= 5.0
+                score += self._fairness_adjustment(
+                    row, primary_departments, primary_tokens, specialist_saturated, best_skill_score
+                )
 
                 if score > best_score:
                     best_score = score
-                    best_candidate = emp_id
+                    best_candidate = row["emp_id"]
                     rationale = (
-                        f"skill_score={skill_score:.2f}, availability_score={availability_score:.2f}, "
-                        f"balance_score={balance_score:.2f}, timezone_overlap={timezone_score:.2f}, "
-                        f"capacity_penalty={penalty:.2f}"
+                        f"skill_score={row['skill_score']:.2f}, availability_score={row['availability_score']:.2f}, "
+                        f"balance_score={row['balance_score']:.2f}, timezone_overlap={row['timezone_score']:.2f}, "
+                        f"capacity_penalty={row['penalty']:.2f}"
                     )
 
             if best_candidate:
-                incremental_load[best_candidate] = incremental_load.get(best_candidate, 0.0) + est_hours
+                incremental_load[best_candidate] = incremental_load.get(best_candidate, 0.0) + weekly_hours
                 assignments.append(
                     Assignment(
                         task_id=str(task["id"]),
@@ -244,11 +332,14 @@ class ResourceAllocationAgent:
         self, assignments: List[Assignment], tasks: pd.DataFrame, baseline: Optional[Dict[str, float]] = None
     ) -> List[WorkloadRollup]:
         baseline_load = baseline if baseline is not None else self._existing_open_workload(tasks)
-        tasks_by_id = {str(row["id"]): float(row["est_hours"]) for _, row in tasks.iterrows()}
+        task_weekly_hours = {
+            str(row["id"]): self._hours_per_week(row.get("est_hours", 0.0), row.get("start"), row.get("due"))
+            for _, row in tasks.iterrows()
+        }
 
         incremental: Dict[str, float] = {}
         for assignment in assignments:
-            incremental[assignment.assignee] = incremental.get(assignment.assignee, 0.0) + tasks_by_id.get(
+            incremental[assignment.assignee] = incremental.get(assignment.assignee, 0.0) + task_weekly_hours.get(
                 assignment.task_id, 0.0
             )
 
@@ -351,3 +442,36 @@ class ResourceAllocationAgent:
             outputs={"assignments": [a.__dict__ for a in assignments], "workloads": [w.__dict__ for w in workloads]},
         )
         return {"assignments": assignments, "workloads": workloads}
+
+    def _fairness_adjustment(
+        self,
+        candidate_row: Dict,
+        primary_departments: set,
+        primary_tokens: set,
+        specialist_saturated: bool,
+        best_skill_score: float,
+    ) -> float:
+        """Bias against saturated specialists and reward adjacent peers with capacity."""
+        max_hours = candidate_row.get("max_hours", 0.0)
+        if max_hours <= 0:
+            return 0.0
+        utilization = candidate_row["projected_load"] / max_hours if max_hours > 0 else 1.0
+        fairness = 0.0
+
+        if specialist_saturated and primary_departments:
+            same_dept = candidate_row["dept_normalized"] in primary_departments
+            adjacent_dept = bool(primary_tokens.intersection(candidate_row["dept_tokens"]))
+
+            if same_dept and utilization > 1.0:
+                fairness -= min(4.0, (utilization - 1.0) * 3.0)
+
+            eligible_for_boost = (
+                not same_dept or candidate_row["skill_score"] < best_skill_score
+            ) and adjacent_dept and utilization < 0.95
+            if eligible_for_boost:
+                spare_capacity = max(0.0, 0.95 - utilization)
+                adjacency_weight = 1.0 if same_dept else 0.6
+                skill_headroom = max(0.2, 1.0 - candidate_row["skill_score"])
+                fairness += spare_capacity * adjacency_weight * skill_headroom
+
+        return fairness

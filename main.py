@@ -3,6 +3,8 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
+from collections import defaultdict
 from pathlib import Path
 from typing import Dict, List, Sequence
 
@@ -58,11 +60,11 @@ def _build_workload_table(workloads: List[Dict[str, object]], employees_df) -> s
     rows.sort(key=lambda r: float(r[3]), reverse=True)
     headers = [
         "Employee",
-        "Baseline (hrs)",
-        "New (hrs)",
-        "Projected (hrs)",
-        "Capacity (hrs)",
-        "Load",
+        "Baseline (hrs/wk)",
+        "New (hrs/wk)",
+        "Projected (hrs/wk)",
+        "Capacity (hrs/wk)",
+        "Load (weekly)",
         "Note",
     ]
     return _format_table(headers, rows) if rows else "No workload data available."
@@ -132,6 +134,51 @@ def _summarize_ai_flags(ai_flags: List[Dict[str, object]], tasks_df, employees_d
     return "\n".join(lines) if lines else "No AI-assist recommendations flagged."
 
 
+def _extract_department_from_stage(stage: str) -> str:
+    """Get the department from the final parenthetical segment of a stage label."""
+    matches = re.findall(r"\(([^()]+)\)", stage)
+    return matches[-1].strip() if matches else "General"
+
+
+def _aggregate_delays_by_department(stage_delays: List[Dict[str, object]]) -> List[List[str]]:
+    """Collapse stage delays to department-level rollups."""
+    aggregates: Dict[str, Dict[str, float]] = defaultdict(lambda: {"service": 0.0, "wait": 0.0, "handoffs": 0, "count": 0})
+    for delay in stage_delays:
+        stage = str(delay.get("stage", ""))
+        dept = _extract_department_from_stage(stage) if stage else "General"
+        record = aggregates[dept]
+        record["service"] += float(delay.get("mean_service_hours", 0.0))
+        record["wait"] += float(delay.get("mean_wait_hours", 0.0))
+        record["handoffs"] += int(delay.get("handoffs", 0))
+        record["count"] += 1
+
+    rows = []
+    for dept, stats in aggregates.items():
+        count = stats["count"] or 1
+        mean_service = stats["service"] / count
+        mean_wait = stats["wait"] / count
+        rows.append(
+            (
+                dept or "General",
+                mean_service,
+                mean_wait,
+                int(stats["handoffs"]),
+                count,
+            )
+        )
+    rows.sort(key=lambda row: row[1], reverse=True)
+    return [
+        [
+            dept,
+            f"{mean_service:.1f}h",
+            f"{mean_wait:.1f}h",
+            str(total_handoffs),
+            str(role_count),
+        ]
+        for dept, mean_service, mean_wait, total_handoffs, role_count in rows
+    ]
+
+
 def _summarize_bottlenecks(bottlenecks: List[Dict[str, object]], stage_delays: List[Dict[str, object]]) -> str:
     """Highlight flagged bottlenecks first, then list throughput metrics for all stages."""
     flagged_lines: List[str] = []
@@ -154,34 +201,19 @@ def _summarize_bottlenecks(bottlenecks: List[Dict[str, object]], stage_delays: L
     if not flagged_lines:
         flagged_lines = ["No bottlenecks flagged; continue monitoring throughput."]
 
-    sorted_delays = sorted(stage_delays, key=lambda s: float(s.get("mean_service_hours", 0.0)), reverse=True)
-    delay_rows: List[List[str]] = []
-    for delay in sorted_delays:
-        stage = str(delay.get("stage"))
-        mean_service = float(delay.get("mean_service_hours", 0.0))
-        mean_wait = float(delay.get("mean_wait_hours", 0.0))
-        handoffs = int(delay.get("handoffs", 0))
-        delay_rows.append(
-            [
-                stage,
-                f"{mean_service:.1f}h",
-                f"{mean_wait:.1f}h",
-                str(handoffs),
-            ]
-        )
-
-    delay_table = _format_table(
-        ["Stage", "Mean service", "Mean wait", "Handoffs"],
-        delay_rows,
-    ) if delay_rows else "No stage-level delay metrics available."
+    department_rows = _aggregate_delays_by_department(stage_delays)
+    department_table = _format_table(
+        ["Department", "Mean service", "Mean wait", "Total handoffs", "Roles"],
+        department_rows,
+    ) if department_rows else "No department-level delay metrics available."
 
     return "\n".join(
         [
             "### Flagged bottlenecks",
             "\n".join(flagged_lines),
             "",
-            "### Stage service + wait by role",
-            delay_table,
+            "### Stage service + wait by department",
+            department_table,
         ]
     )
 
@@ -284,7 +316,9 @@ def _generate_executive_summary(report: Dict[str, object], employees_df, tasks_d
         " Provide crisp highlights that balance workload, AI guardrails, and process risks."
     )
     user_prompt = (
-        "Summarize the run context in 2-3 sentences for busy executives. Mention key risks or next steps."
+        "Summarize the run context in 4-6 sentences (never exceed 6)."
+        " Include: (1) a high-level overview of this run, (2) key pain points or risks,"
+        " and (3) suggestions to alleviate those issues (capacity shifts, AI guardrails, or process tweaks)."
         " Respond as JSON with a 'sentences' array of strings."
         f"\n\nRun context:\n```json\n{json.dumps(context, indent=2)}\n```"
     )
@@ -293,7 +327,7 @@ def _generate_executive_summary(report: Dict[str, object], employees_df, tasks_d
     sentences = [str(s).strip() for s in result.get("sentences", []) if str(s).strip()]
     if not sentences:
         return ""
-    return " ".join(sentences[:3])
+    return " ".join(sentences[:6])
 
 
 def _render_console_report(
@@ -322,7 +356,8 @@ def _render_console_report(
         )
     sections += [
         "",
-        "## Per-person workload (assigned vs capacity)",
+        "## Per-person workload (avg hrs/week vs capacity)",
+        "_Load = weekly average; task hours divided across scheduled duration (min 1 week)._",
         workload_table,
         "",
         "## Unstarted task routing (with rationales)",

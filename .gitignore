@@ -19,3 +19,5 @@ data_test/
 data_OLD/
 to_be_published/
 synthetic_data_generator.py
+
+reports/.

@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 from dataclasses import dataclass
+import ast
 from typing import Dict, List, Optional
 
 import pandas as pd
@@ -46,20 +47,52 @@ class AIOpportunityScout:
         self._skill_department_map = self._build_skill_department_map()
         self._attach_department_metadata()
 
+
     def _build_skill_department_map(self) -> Dict[str, str]:
+        """Construct a mapping from skill keywords to departments."""
         mapping: Dict[str, str] = {}
-        if self.employees is None:
-            return mapping
-        for _, row in self.employees.iterrows():
-            dept = str(row.get("department", "")).strip()
-            if not dept:
-                continue
-            skills = row.get("skills", [])
-            for skill in skills:
-                key = str(skill).strip().lower()
-                if key and key not in mapping:
-                    mapping[key] = dept
+        if self.employees is not None and "skills" in self.employees.columns:
+            for _, row in self.employees.iterrows():
+                department = str(row.get("department", "")).strip()
+                if not department:
+                    continue
+                skills_raw = row.get("skills", "")
+                parsed_skills: List[str]
+                if isinstance(skills_raw, (list, tuple, set)):
+                    parsed_skills = [str(skill).strip() for skill in skills_raw if str(skill).strip()]
+                else:
+                    if skills_raw is None:
+                        continue
+                    try:
+                        if pd.isna(skills_raw):
+                            continue
+                    except Exception:
+                        # Non-scalar; treat as generic iterable in fallback below.
+                        pass
+                    text_value = str(skills_raw).strip()
+                    if not text_value:
+                        continue
+                    try:
+                        parsed_skills = json.loads(text_value)
+                    except Exception:
+                        try:
+                            parsed_skills = ast.literal_eval(text_value)
+                        except Exception:
+                            parsed_skills = [s.strip() for s in text_value.split(",") if s.strip()]
+                for skill in parsed_skills:
+                    skill_key = str(skill).lower().strip()
+                    if skill_key and skill_key not in mapping:
+                        mapping[skill_key] = department
+
+        if "skill_needed" in self.tasks.columns and "department" in self.tasks.columns:
+            for _, row in self.tasks.iterrows():
+                department = str(row.get("department", "")).strip()
+                skill = str(row.get("skill_needed", "")).lower().strip()
+                if department and skill and skill not in mapping:
+                    mapping[skill] = department
+
         return mapping
+
 
     def _department_keyword_hints(self) -> Dict[str, List[str]]:
         return {
@@ -165,6 +198,58 @@ class AIOpportunityScout:
             "review_requirement": "All AI drafts must be sent for human reviewer sign-off before distribution.",
         }
 
+    def _build_rule_based_suggestion(
+        self,
+        task: pd.Series,
+        department_templates: Dict[str, str],
+        reviewers: Dict[str, str],
+        policy: Dict[str, object],
+    ) -> Dict[str, object]:
+        name = str(task.get("name", "")).lower()
+        risky = any(k in name for k in ["fraud", "payment", "chargeback", "finance", "checkout", "pii"])
+        ai_friendly = any(k in name for k in ["email", "deck", "presentation", "summary", "documentation", "brief"])
+        department = str(task.get("department", "")).strip() or "General"
+        reviewer = reviewers.get(department, "Department lead")
+        redaction_instructions = str(policy["pii_redaction"])
+        prohibited_scope = list(policy["prohibited_autonomy"])
+        safe_use_notes = (
+            f"{redaction_instructions} Avoid autonomy on {', '.join(prohibited_scope)}. Send draft to {reviewer} for sign-off."
+        )
+        return {
+            "task_id": str(task.get("id")),
+            "project_id": str(task.get("project_id")),
+            "department": department,
+            "recommended": bool(ai_friendly and not risky),
+            "reviewer_required": True,
+            "reviewer": reviewer,
+            "reason": "Rule-based fallback classification",
+            "suggested_prompt": (
+                f"{department_templates.get(department, 'Draft the first version tailored to the audience.')} "
+                f"Include a risk log and route to {reviewer} for approval. {redaction_instructions}"
+            ).strip(),
+            "safe_use_notes": safe_use_notes,
+            "redaction_instructions": redaction_instructions,
+            "prohibited_scope": prohibited_scope,
+        }
+
+    def _build_fallback_suggestions(
+        self,
+        department_templates: Dict[str, str],
+        reviewers: Dict[str, str],
+        policy: Dict[str, object],
+    ) -> Dict[str, Dict[str, object]]:
+        fallback: Dict[str, Dict[str, object]] = {}
+        for _, task in self.tasks.iterrows():
+            suggestion = self._build_rule_based_suggestion(task, department_templates, reviewers, policy)
+            fallback[suggestion["task_id"]] = suggestion
+        return fallback
+
+    def _iter_task_batches(self, tasks: pd.DataFrame, batch_size: int):
+        if batch_size <= 0:
+            batch_size = len(tasks) or 1
+        for start in range(0, len(tasks), batch_size):
+            yield tasks.iloc[start : start + batch_size]
+
     def _render_prompt(self, tasks_subset: pd.DataFrame) -> str:
         department_templates = self._department_templates()
         reviewers = self._department_reviewers()
@@ -224,47 +309,41 @@ class AIOpportunityScout:
         llm_tasks = self.tasks
         if self.test_mode:
             llm_tasks = llm_tasks.head(3)
-        user_prompt = self._render_prompt(llm_tasks)
         department_templates = self._department_templates()
         reviewers = self._department_reviewers()
         policy = self._guardrail_policy()
-        fallback_suggestions = []
-        for _, task in self.tasks.iterrows():
-            name = str(task["name"]).lower()
-            risky = any(k in name for k in ["fraud", "payment", "chargeback", "finance", "checkout", "pii"])
-            ai_friendly = any(k in name for k in ["email", "deck", "presentation", "summary", "documentation", "brief"])
-            department = str(task.get("department", "")).strip() or "General"
-            reviewer = reviewers.get(department, "Department lead")
-            redaction_instructions = policy["pii_redaction"]
-            prohibited_scope = policy["prohibited_autonomy"]
-            safe_use_notes = (
-                f"{redaction_instructions} Avoid autonomy on {', '.join(prohibited_scope)}. Send draft to {reviewer} for sign-off."
-            )
-            fallback_suggestions.append(
-                {
-                    "task_id": str(task["id"]),
-                    "project_id": str(task["project_id"]),
-                    "department": department,
-                    "recommended": bool(ai_friendly and not risky),
-                    "reviewer_required": True,
-                    "reviewer": reviewer,
-                    "reason": "Rule-based fallback classification",
-                    "suggested_prompt": f"{department_templates.get(department, 'Draft the first version tailored to the audience.')} Include a risk log and route to {reviewer} for approval. {redaction_instructions}",
-                    "safe_use_notes": safe_use_notes,
-                    "redaction_instructions": redaction_instructions,
-                    "prohibited_scope": prohibited_scope,
-                }
-            )
+        fallback_by_id = self._build_fallback_suggestions(department_templates, reviewers, policy)
 
-        result = safe_openai_json(system_prompt, user_prompt, fallback={"suggestions": fallback_suggestions})
-        payload_items = list(result.get("suggestions", []))
-        if self.test_mode:
-            seen_ids = {str(item.get("task_id")) for item in payload_items}
-            for fallback in fallback_suggestions:
-                task_id = str(fallback.get("task_id"))
-                if task_id not in seen_ids:
-                    payload_items.append(fallback)
-                    seen_ids.add(task_id)
+        payload_items: List[Dict[str, object]] = []
+        batch_size = len(llm_tasks) if self.test_mode else 20
+        for batch in self._iter_task_batches(llm_tasks, batch_size):
+            user_prompt = self._render_prompt(batch)
+            fallback_payload = {
+                "suggestions": [
+                    dict(fallback_by_id[str(row["id"])])
+                    for _, row in batch.iterrows()
+                    if str(row["id"]) in fallback_by_id
+                ]
+            }
+            result = safe_openai_json(system_prompt, user_prompt, fallback=fallback_payload)
+            chunk_items = list(result.get("suggestions", []))
+            batch_ids = [str(row["id"]) for _, row in batch.iterrows()]
+            seen_chunk_ids = {str(item.get("task_id")) for item in chunk_items}
+            for task_id in batch_ids:
+                if task_id not in seen_chunk_ids and task_id in fallback_by_id:
+                    chunk_items.append(dict(fallback_by_id[task_id]))
+                    seen_chunk_ids.add(task_id)
+            payload_items.extend(chunk_items)
+
+        deduped_items: List[Dict[str, object]] = []
+        seen_ids = set()
+        for item in payload_items:
+            task_id = str(item.get("task_id"))
+            if not task_id or task_id in seen_ids:
+                continue
+            seen_ids.add(task_id)
+            deduped_items.append(item)
+        payload_items = deduped_items
 
         suggestions: List[AISuggestion] = []
         default_safe_use = (

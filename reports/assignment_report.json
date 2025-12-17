@@ -3,210 +3,210 @@
     "task_id": "T0121",
     "project_id": "P009",
     "assignee": "E015",
-    "score": 2.4749999609375024,
-    "rationale": "skill_score=1.00, availability_score=0.62, balance_score=0.35, timezone_overlap=0.50, capacity_penalty=0.00"
+    "score": 0.9,
+    "rationale": "E015 has skills in JavaScript/TypeScript which aligns with the task requirement, and has sufficient availability."
   },
   {
     "task_id": "T0122",
     "project_id": "P009",
     "assignee": "E014",
-    "score": 2.269230710059176,
-    "rationale": "skill_score=0.00, availability_score=0.77, balance_score=1.00, timezone_overlap=0.50, capacity_penalty=0.00"
+    "score": 0.85,
+    "rationale": "E014 has skills in CI/CD which is relevant for this task, and has enough hours available."
   },
   {
     "task_id": "T0123",
     "project_id": "P009",
-    "assignee": "E006",
-    "score": 2.993368641093659,
-    "rationale": "skill_score=1.00, availability_score=0.77, balance_score=0.72, timezone_overlap=0.50, capacity_penalty=0.00"
+    "assignee": "E015",
+    "score": 0.9,
+    "rationale": "E015's expertise in JavaScript/TypeScript makes them a strong fit for this task, and they have the capacity."
   },
   {
     "task_id": "T0124",
     "project_id": "P009",
-    "assignee": "E014",
-    "score": 2.5680447752576008,
-    "rationale": "skill_score=1.00, availability_score=0.37, balance_score=0.70, timezone_overlap=0.50, capacity_penalty=0.00"
+    "assignee": "E019",
+    "score": 0.8,
+    "rationale": "E019 has data modeling skills which are essential for this task and has sufficient availability."
   },
   {
     "task_id": "T0125",
     "project_id": "P009",
-    "assignee": "E003",
-    "score": 1.8214285599489801,
-    "rationale": "skill_score=0.00, availability_score=0.32, balance_score=1.00, timezone_overlap=0.50, capacity_penalty=0.00"
+    "assignee": "E006",
+    "score": 0.85,
+    "rationale": "E006 has skills in data integrations and sufficient availability to take on this task."
   },
   {
     "task_id": "T0126",
     "project_id": "P009",
-    "assignee": "E029",
-    "score": 2.0999999942857146,
-    "rationale": "skill_score=0.40, availability_score=0.20, balance_score=1.00, timezone_overlap=0.50, capacity_penalty=0.00"
+    "assignee": "E015",
+    "score": 0.9,
+    "rationale": "E015's expertise in CI/CD aligns well with this task, and they have the capacity to handle it."
   },
   {
     "task_id": "T0127",
     "project_id": "P009",
-    "assignee": "E009",
-    "score": 2.071428530612248,
-    "rationale": "skill_score=0.00, availability_score=0.57, balance_score=1.00, timezone_overlap=0.50, capacity_penalty=0.00"
+    "assignee": "E014",
+    "score": 0.85,
+    "rationale": "E014's skills in JavaScript/TypeScript make them a suitable candidate for this task, with enough availability."
   },
   {
     "task_id": "T0128",
     "project_id": "P009",
-    "assignee": "E023",
-    "score": 2.484415518299888,
-    "rationale": "skill_score=0.40, availability_score=0.73, balance_score=0.86, timezone_overlap=0.50, capacity_penalty=0.00"
+    "assignee": "E015",
+    "score": 0.9,
+    "rationale": "E015's expertise in React is a perfect match for this task, and they have the required availability."
   },
   {
     "task_id": "T0129",
     "project_id": "P009",
-    "assignee": "E005",
-    "score": 2.4454544958677733,
-    "rationale": "skill_score=0.40, availability_score=0.55, balance_score=1.00, timezone_overlap=0.50, capacity_penalty=0.00"
+    "assignee": "E006",
+    "score": 0.85,
+    "rationale": "E006 has skills in category strategy which aligns with this task, and they have sufficient availability."
   },
   {
     "task_id": "T0130",
     "project_id": "P009",
-    "assignee": "E002",
-    "score": 2.3374999726562518,
-    "rationale": "skill_score=0.40, availability_score=0.44, balance_score=1.00, timezone_overlap=0.50, capacity_penalty=0.00"
+    "assignee": "E013",
+    "score": 0.8,
+    "rationale": "E013's skills in observability (logs/metrics) are relevant for this task, and they have the capacity."
   },
   {
     "task_id": "T0131",
     "project_id": "P009",
-    "assignee": "E010",
-    "score": 2.635848889937135,
-    "rationale": "skill_score=0.40, availability_score=1.00, balance_score=0.74, timezone_overlap=0.50, capacity_penalty=0.00"
+    "assignee": "E013",
+    "score": 0.8,
+    "rationale": "E013's expertise in QA automation aligns well with this task, and they have sufficient availability."
   },
   {
     "task_id": "T0132",
     "project_id": "P009",
-    "assignee": "E012",
-    "score": 2.118287313832761,
-    "rationale": "skill_score=0.00, availability_score=0.77, balance_score=0.85, timezone_overlap=0.50, capacity_penalty=0.00"
+    "assignee": "E006",
+    "score": 0.85,
+    "rationale": "E006's skills in performance optimization make them a suitable candidate for this task, with enough availability."
   },
   {
     "task_id": "T0133",
     "project_id": "P009",
-    "assignee": "E012",
-    "score": 2.503773442048538,
-    "rationale": "skill_score=0.40, availability_score=1.00, balance_score=0.60, timezone_overlap=0.50, capacity_penalty=0.00"
+    "assignee": "E027",
+    "score": 0.75,
+    "rationale": "E027 has skills in privacy (GDPR/CCPA) basics which are relevant for this task, and they have the capacity."
   },
   {
     "task_id": "T0134",
     "project_id": "P009",
-    "assignee": "E022",
-    "score": 2.2630951936507966,
-    "rationale": "skill_score=0.40, availability_score=0.67, balance_score=0.70, timezone_overlap=0.50, capacity_penalty=0.00"
+    "assignee": "E027",
+    "score": 0.75,
+    "rationale": "E027's skills in incident response align with this task, and they have sufficient availability."
   },
   {
     "task_id": "T0135",
     "project_id": "P009",
-    "assignee": "E023",
-    "score": 2.732652936224506,
-    "rationale": "skill_score=0.60, availability_score=1.00, balance_score=0.63, timezone_overlap=0.50, capacity_penalty=0.00"
+    "assignee": "E027",
+    "score": 0.75,
+    "rationale": "E027's expertise in documentation is a good match for this task, and they have the capacity."
   },
   {
     "task_id": "T0136",
     "project_id": "P010",
-    "assignee": "E005",
-    "score": 2.610526149122835,
-    "rationale": "skill_score=0.40, availability_score=1.00, balance_score=0.71, timezone_overlap=0.50, capacity_penalty=0.00"
+    "assignee": "E010",
+    "score": 0.8,
+    "rationale": "E010's skills in KPI definition align with this task, and they have sufficient availability."
   },
   {
     "task_id": "T0137",
     "project_id": "P010",
-    "assignee": "E004",
-    "score": 2.2333332433333424,
-    "rationale": "skill_score=0.00, availability_score=0.90, balance_score=0.83, timezone_overlap=0.50, capacity_penalty=0.00"
+    "assignee": "E005",
+    "score": 0.85,
+    "rationale": "E005's expertise in vendor negotiations makes them a strong fit for this task, and they have the capacity."
   },
   {
     "task_id": "T0138",
     "project_id": "P010",
-    "assignee": "E022",
-    "score": 2.9285711785714907,
-    "rationale": "skill_score=1.00, availability_score=1.00, balance_score=0.43, timezone_overlap=0.50, capacity_penalty=0.00"
+    "assignee": "E001",
+    "score": 0.9,
+    "rationale": "E001's skills in product storytelling align well with this task, and they have sufficient availability."
   },
   {
     "task_id": "T0139",
     "project_id": "P010",
-    "assignee": "E026",
-    "score": 2.6831830967634396,
-    "rationale": "skill_score=1.00, availability_score=0.78, balance_score=0.41, timezone_overlap=0.50, capacity_penalty=0.00"
+    "assignee": "E005",
+    "score": 0.85,
+    "rationale": "E005's skills in compliance are relevant for this task, and they have the capacity."
   },
   {
     "task_id": "T0140",
     "project_id": "P010",
-    "assignee": "E030",
-    "score": 2.1916666545138894,
-    "rationale": "skill_score=0.40, availability_score=0.29, balance_score=1.00, timezone_overlap=0.50, capacity_penalty=0.00"
+    "assignee": "E005",
+    "score": 0.85,
+    "rationale": "E005's expertise in tax aligns with this task, and they have sufficient availability."
   },
   {
     "task_id": "T0141",
     "project_id": "P010",
-    "assignee": "E001",
-    "score": 1.7187499931640629,
-    "rationale": "skill_score=0.00, availability_score=0.22, balance_score=1.00, timezone_overlap=0.50, capacity_penalty=0.00"
+    "assignee": "E010",
+    "score": 0.8,
+    "rationale": "E010's skills in UX writing are a good match for this task, and they have the capacity."
   },
   {
     "task_id": "T0142",
     "project_id": "P010",
-    "assignee": "E010",
-    "score": 2.955974773322857,
-    "rationale": "skill_score=1.00, availability_score=0.83, balance_score=0.62, timezone_overlap=0.50, capacity_penalty=0.00"
+    "assignee": "E014",
+    "score": 0.85,
+    "rationale": "E014's skills in REST APIs align with this task, and they have sufficient availability."
   },
   {
     "task_id": "T0143",
     "project_id": "P010",
-    "assignee": "E023",
-    "score": 2.969387588435402,
-    "rationale": "skill_score=1.00, availability_score=1.00, balance_score=0.47, timezone_overlap=0.50, capacity_penalty=0.00"
+    "assignee": "E014",
+    "score": 0.85,
+    "rationale": "E014's expertise in data integrations makes them a strong fit for this task, and they have the capacity."
   },
   {
     "task_id": "T0144",
     "project_id": "P010",
-    "assignee": "E023",
-    "score": 1.862323343557545,
-    "rationale": "skill_score=0.40, availability_score=0.62, balance_score=0.35, timezone_overlap=0.50, capacity_penalty=0.00"
+    "assignee": "E005",
+    "score": 0.85,
+    "rationale": "E005's skills in SOP documentation align well with this task, and they have sufficient availability."
   },
   {
     "task_id": "T0145",
     "project_id": "P010",
-    "assignee": "E002",
-    "score": 2.5678732617473057,
-    "rationale": "skill_score=1.00, availability_score=0.54, balance_score=0.53, timezone_overlap=0.50, capacity_penalty=0.00"
+    "assignee": "E005",
+    "score": 0.85,
+    "rationale": "E005's expertise in order troubleshooting is relevant for this task, and they have the capacity."
   },
   {
     "task_id": "T0146",
     "project_id": "P010",
-    "assignee": "E020",
-    "score": 2.6789473084210584,
-    "rationale": "skill_score=1.00, availability_score=0.60, balance_score=0.58, timezone_overlap=0.50, capacity_penalty=0.00"
+    "assignee": "E019",
+    "score": 0.8,
+    "rationale": "E019's skills in knowledge base are a good match for this task, and they have sufficient availability."
   },
   {
     "task_id": "T0147",
     "project_id": "P010",
-    "assignee": "E011",
-    "score": 2.9285712619047897,
-    "rationale": "skill_score=1.00, availability_score=1.00, balance_score=0.43, timezone_overlap=0.50, capacity_penalty=0.00"
+    "assignee": "E014",
+    "score": 0.85,
+    "rationale": "E014's skills in event tracking specs align with this task, and they have sufficient availability."
   },
   {
     "task_id": "T0148",
     "project_id": "P010",
-    "assignee": "E006",
-    "score": 2.169230710059176,
-    "rationale": "skill_score=0.40, availability_score=0.77, balance_score=0.50, timezone_overlap=0.50, capacity_penalty=0.00"
+    "assignee": "E014",
+    "score": 0.85,
+    "rationale": "E014's expertise in incident triage is relevant for this task, and they have the capacity."
   },
   {
     "task_id": "T0149",
     "project_id": "P010",
-    "assignee": "E024",
-    "score": 2.24999980000004,
-    "rationale": "skill_score=0.00, availability_score=1.00, balance_score=0.75, timezone_overlap=0.50, capacity_penalty=0.00"
+    "assignee": "E005",
+    "score": 0.85,
+    "rationale": "E005's skills in reporting align with this task, and they have sufficient availability."
   },
   {
     "task_id": "T0150",
     "project_id": "P010",
-    "assignee": "E027",
-    "score": 2.385775834725217,
-    "rationale": "skill_score=1.00, availability_score=0.44, balance_score=0.52, timezone_overlap=0.50, capacity_penalty=0.07"
+    "assignee": "E005",
+    "score": 0.85,
+    "rationale": "E005's expertise in escalation process is relevant for this task, and they have the capacity."
   }
 ]

@@ -444,17 +444,117 @@ class BottleneckDetector:
         idx = min(int(ratio * (len(scale) - 1)), len(scale) - 1)
         return scale[idx]
 
+    def _stage_department(self, stage: str) -> str:
+        label = str(stage)
+        start = label.rfind("(")
+        end = label.rfind(")")
+        if start != -1 and end != -1 and end > start:
+            dept = label[start + 1 : end].strip()
+            if dept:
+                return dept
+        return label.strip() or "General"
+
+    def _aggregate_departments(
+        self,
+        stage_metrics: Dict[str, Dict[str, float]],
+        edges: List[Dict[str, object]],
+    ) -> Tuple[Dict[str, Dict[str, float]], List[Dict[str, object]]]:
+        dept_metrics: Dict[str, Dict[str, float]] = {}
+        for stage, stats in stage_metrics.items():
+            dept = self._stage_department(stage)
+            entry = dept_metrics.setdefault(
+                dept,
+                {
+                    "wait_weighted": 0.0,
+                    "service_weighted": 0.0,
+                    "instances": 0.0,
+                    "utilization_hours": 0.0,
+                    "handoffs": 0.0,
+                    "max_p90_wait": 0.0,
+                    "max_p90_service": 0.0,
+                    "total_wait_hours": 0.0,
+                    "total_service_hours": 0.0,
+                },
+            )
+            instances = max(float(stats.get("instances", 0.0)), 1.0)
+            entry["wait_weighted"] += float(stats.get("mean_wait_hours", 0.0)) * instances
+            entry["service_weighted"] += float(stats.get("mean_service_hours", 0.0)) * instances
+            entry["instances"] += instances
+            entry["utilization_hours"] += float(stats.get("utilization_hours", 0.0))
+            entry["handoffs"] += float(stats.get("handoffs", 0.0))
+            entry["max_p90_wait"] = max(entry["max_p90_wait"], float(stats.get("p90_wait_hours", 0.0)))
+            entry["max_p90_service"] = max(entry["max_p90_service"], float(stats.get("p90_service_hours", 0.0)))
+            entry["total_wait_hours"] += float(stats.get("total_wait_hours", 0.0))
+            entry["total_service_hours"] += float(stats.get("total_service_hours", 0.0))
+
+        aggregated_metrics: Dict[str, Dict[str, float]] = {}
+        for dept, entry in dept_metrics.items():
+            instances = entry["instances"] or 1.0
+            total_wait = entry["total_wait_hours"]
+            total_service = entry["total_service_hours"]
+            aggregated_metrics[dept] = {
+                "mean_wait_hours": entry["wait_weighted"] / instances,
+                "mean_service_hours": entry["service_weighted"] / instances,
+                "p90_wait_hours": entry["max_p90_wait"],
+                "p90_service_hours": entry["max_p90_service"],
+                "handoffs": entry["handoffs"],
+                "instances": entry["instances"],
+                "utilization_hours": entry["utilization_hours"],
+                "total_wait_hours": total_wait,
+                "total_service_hours": total_service,
+            }
+
+        dept_edges_map: Dict[Tuple[str, str], Dict[str, float]] = {}
+        for edge in edges:
+            src = self._stage_department(edge.get("from"))
+            dst = self._stage_department(edge.get("to"))
+            key = (src, dst)
+            entry = dept_edges_map.setdefault(
+                key,
+                {
+                    "count": 0.0,
+                    "wait_weighted": 0.0,
+                    "max_p90": 0.0,
+                },
+            )
+            count = float(edge.get("count", 0.0))
+            weight = count if count > 0 else 1.0
+            entry["count"] += count
+            entry["wait_weighted"] += float(edge.get("mean_wait_hours", 0.0)) * weight
+            entry["max_p90"] = max(entry["max_p90"], float(edge.get("p90_wait_hours", 0.0)))
+
+        aggregated_edges: List[Dict[str, object]] = []
+        for (src, dst), entry in dept_edges_map.items():
+            if src == dst:
+                continue
+            weight = entry["count"] if entry["count"] > 0 else 1.0
+            aggregated_edges.append(
+                {
+                    "from": src,
+                    "to": dst,
+                    "count": entry["count"],
+                    "mean_wait_hours": entry["wait_weighted"] / weight,
+                    "p90_wait_hours": entry["max_p90"],
+                }
+            )
+
+        return aggregated_metrics, aggregated_edges
+
     def _generate_bottleneck_image(self, metrics: Dict[str, object]) -> str | None:
         stage_metrics: Dict[str, Dict[str, float]] = metrics.get("stage_metrics", {})  # type: ignore[assignment]
         edges: List[Dict[str, object]] = metrics.get("edges", [])  # type: ignore[assignment]
         if not stage_metrics:
             return None
 
+        dept_metrics, dept_edges = self._aggregate_departments(stage_metrics, edges)
+        if not dept_metrics:
+            return None
+
         template = self._load_image_template()
         diagram_cfg: Dict[str, object] = template.get("diagram", {})  # type: ignore[assignment]
         max_nodes = int(diagram_cfg.get("max_nodes", 12))
         sorted_stages = sorted(
-            stage_metrics.items(),
+            dept_metrics.items(),
             key=lambda kv: kv[1].get("mean_wait_hours", 0.0),
             reverse=True,
         )[:max_nodes]
@@ -463,9 +563,7 @@ class BottleneckDetector:
 
         nodes = [stage for stage, _ in sorted_stages]
         filtered_edges = [
-            edge
-            for edge in edges
-            if str(edge.get("from")) in nodes and str(edge.get("to")) in nodes
+            edge for edge in dept_edges if str(edge.get("from")) in nodes and str(edge.get("to")) in nodes
         ]
         if not filtered_edges:
             return None
