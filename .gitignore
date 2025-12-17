@@ -16,4 +16,6 @@ reports/.matplotlib_cache/
 .idea/
 # Data files
 data_test/
-synthetic_data_generator
+data_OLD/
+to_be_published/
+synthetic_data_generator.py
