@@ -12,7 +12,7 @@ SEED = 42
 random.seed(SEED)
 
 TYPE_OF_COMPANY = "a mid-sized e-commerce/fashion/retail company selling apparel, accessories, and beauty"
-NUMBER_OF_EMPLOYEES = 30
+NUMBER_OF_EMPLOYEES = 33
 
 TOTAL_PROJECTS = 10
 COMPLETED_PROJECTS = 4
@@ -37,7 +37,7 @@ TIMEZONES = [
 WORKDAY_START_LOCAL = time(9, 0)
 WORKDAY_END_LOCAL = time(18, 0)
 
-OUTPUT_DIR = "/Users/tiffanie/code/agentic-project-management/data_test"
+OUTPUT_DIR = "/Users/tiffanie/code/agentic-project-management/data"
 # EXCEL_PATH = f"{OUTPUT_DIR}/synthetic_retail_dataset.xlsx"
 JSON_PATH = f"{OUTPUT_DIR}/synthetic_retail_dataset.json"
 
@@ -141,64 +141,67 @@ DEPARTMENTS = [
     "Legal & Compliance",
 ]
 
-# 30 roles spanning all departments (ensure coverage)
+# 33 roles spanning all departments (ensure coverage)
 ROLES = [
     # Brand Marketing (2)
-    ("Brand Marketing", "Brand Partnerships & Influencer Manager"),
     ("Brand Marketing", "PR & Communications Manager"),
+    ("Brand Marketing", "Brand Partnerships & Influencer Associate"),
 
     # Performance Marketing (2)
-    ("Performance Marketing", "Paid Social Manager (Meta/TikTok)"),
+    ("Performance Marketing", "Performance Marketing Specialist"),
     ("Performance Marketing", "Growth Marketing Manager (CRO/LP Testing)"),
 
     # Merchandising & Buying (2)
     ("Merchandising & Buying", "Merchandise Planner"),
     ("Merchandising & Buying", "Pricing & Markdown Analyst"),
 
-    # Product Management (2)
-    ("Product Management", "Product Manager (Personalization and Loyalty)"),
+    # Product Management (3)
+    ("Product Management", "Product Manager (Personalization)"),
+    ("Product Management", "Product Manager (Loyalty)"),
     ("Product Management", "Technical Product Manager (Integrations)"),
 
     # Product Design (UX/UI) (2)
     ("Product Design (UX/UI)", "UX/UI Designer"),
     ("Product Design (UX/UI)", "Product Designer (Design Systems)"),
 
-    # Creative Studio (2)
+    # Creative Studio (1)
     ("Creative Studio", "Creative Director"),
-    ("Creative Studio", "Copywriter"),
 
-    # Engineering (3)
+    # Engineering (4)
+    ("Engineering", "Engineering Manager"),
     ("Engineering", "Frontend Engineer"),
     ("Engineering", "Backend Engineer"),
     ("Engineering", "E-commerce Platform Engineer (Shopify)"),
 
-    # Data & Analytics (3)
+    # Data & Analytics (4)
     ("Data & Analytics", "Data Analyst"),
     ("Data & Analytics", "Analytics Engineer (dbt)"),
     ("Data & Analytics", "Data Engineer"),
+    ("Data & Analytics", "Experimentation Analyst"),
 
-    # Supply Chain (2)
+    # Supply Chain (3)
     ("Supply Chain", "Demand Forecast Analyst"),
+    ("Supply Chain", "Supply Planner"),
     ("Supply Chain", "Vendor Management Lead"),
 
-    # Warehouse & Fulfillment Ops (2)
-    ("Warehouse & Fulfillment Ops", "Warehouse Operations Lead"),
+    # Warehouse & Fulfillment Ops (3)
+    ("Warehouse & Fulfillment Ops", "Warehouse Operations Associate"),
+    ("Warehouse & Fulfillment Ops", "Fulfillment Process Improvement Specialist"),
     ("Warehouse & Fulfillment Ops", "Returns Operations Supervisor"),
 
-    # Customer Experience (CX) (2)
-    ("Customer Experience (CX)", "Customer Support Specialist"),
+    # Customer Experience (CX) (1)
     ("Customer Experience (CX)", "CX Operations Manager"),
 
-    # Sales & Partnerships (2)
+    # Sales & Partnerships (1)
     ("Sales & Partnerships", "Partnerships Manager"),
-    ("Sales & Partnerships", "Affiliate & Channel Manager"),
 
-    # Finance (2)
+    # Finance (3)
     ("Finance", "FP&A Analyst"),
+    ("Finance", "Budget Analyst"),
     ("Finance", "Accounting Manager"),
 
     # Legal & Compliance (2)
-    ("Legal & Compliance", "Legal & Compliance Manager"),
+    ("Legal & Compliance", "Legal & Compliance Associate"),
     ("Legal & Compliance", "Privacy & Data Compliance Specialist"),
 ]
 
@@ -207,72 +210,58 @@ DEPT_SKILLS: Dict[str, List[str]] = {
     "Brand Marketing": [
         "Brand positioning", "Campaign planning", "Creative briefing", "Brand voice", "Influencer strategy",
         "Content calendar", "Product storytelling", "Go-to-market (GTM)", "PR coordination", "Launch planning",
-        "Consumer insights", "Brand guidelines", "Copy editing", "Stakeholder management", "Brief-to-launch execution",
     ],
     "Performance Marketing": [
         "Paid social (Meta)", "Google Ads", "TikTok Ads", "CAC/LTV analysis", "Attribution basics",
         "Creative testing", "Budget pacing", "Landing page CRO", "Pixel troubleshooting", "UTM governance",
-        "GA4 reporting", "Experiment design", "Incrementality thinking", "Looker dashboards", "SQL for marketing",
     ],
     "Merchandising & Buying": [
         "Assortment planning", "Open-to-buy (OTB)", "SKU rationalization", "Pricing strategy", "Markdown optimization",
         "Vendor negotiations", "Trend analysis", "Category strategy", "Sell-through analysis", "Allocation",
-        "Forecasting basics", "Margin management", "Seasonal planning", "PLM coordination", "Newness cadence",
     ],
     "Product Management": [
         "Roadmapping", "PRDs", "Backlog grooming", "Experimentation", "User stories",
         "Stakeholder alignment", "KPI definition", "Launch management", "Requirements gathering", "Cross-functional leadership",
-        "Customer interviews", "Analytics interpretation", "Prioritization (RICE)", "Incident triage", "Postmortems",
     ],
     "Product Design (UX/UI)": [
         "Figma", "Wireframing", "Prototyping", "Design systems", "Usability testing",
         "Interaction design", "Information architecture", "Accessibility basics", "Visual hierarchy", "UX writing",
-        "Journey mapping", "Heuristic evaluation", "Mobile-first design", "Handoff to engineering", "Component libraries",
     ],
     "Creative Studio": [
         "Graphic design", "Art direction", "Adobe Photoshop", "Adobe Illustrator", "Brand identity",
         "Email design", "PDP imagery", "Retouching", "Social content design", "Storyboarding",
-        "Copywriting", "Creative QA", "Asset versioning", "Production coordination", "UGC curation",
     ],
     "Engineering": [
         "JavaScript/TypeScript", "React", "Node.js", "Python", "REST APIs",
         "Shopify Liquid", "Kubernetes", "Docker", "CI/CD", "Observability (logs/metrics)",
-        "QA automation", "Feature flags", "Performance optimization", "Data integrations", "Incident response",
     ],
     "Data & Analytics": [
         "SQL", "Looker", "dbt", "Metric definitions", "Experimentation analysis",
         "GA4", "Data modeling", "ETL pipelines", "Warehouse (Snowflake/BigQuery)", "Data QA",
-        "Dashboards", "Cohort analysis", "Event tracking specs", "Documentation", "Stakeholder enablement",
     ],
     "Supply Chain": [
         "Supply planning", "Demand forecasting", "Lead time management", "PO management", "Vendor management",
         "MOQ analysis", "Inbound scheduling", "Inventory health", "Safety stock", "S&OP basics",
-        "Cross-dock coordination", "Constraint management", "Expedite workflows", "ERP basics", "KPI tracking",
     ],
     "Warehouse & Fulfillment Ops": [
         "Warehouse slotting", "Cycle counts", "Pick/pack optimization", "3PL management", "Returns processing",
         "Labor planning", "SOP documentation", "Process improvement", "Scanner rollout", "Shipping exceptions",
-        "Carrier coordination", "Damage control", "WMS basics", "Root cause analysis", "Escalation handling",
     ],
     "Customer Experience (CX)": [
         "Zendesk", "Macros & automation", "Escalations", "Returns policy support", "Tone-of-voice support",
         "QA rubrics", "CSAT analysis", "Knowledge base", "Refund workflows", "Fraud screening basics",
-        "Order troubleshooting", "Tagging taxonomy", "Call/chat handling", "Process documentation", "Cross-team feedback loops",
     ],
     "Sales & Partnerships": [
         "Partnership development", "Outbound prospecting", "Negotiation", "Co-marketing", "Affiliate programs",
         "Wholesale basics", "Account management", "Contract basics", "Pipeline management", "ROI modeling",
-        "Relationship building", "Pitch decks", "Partner onboarding", "Reporting", "Stakeholder management",
     ],
     "Finance": [
         "FP&A", "Budgeting", "Forecasting", "Variance analysis", "Unit economics",
         "Gross margin analysis", "Inventory accounting basics", "Month-end close coordination", "Excel modeling", "Financial reporting",
-        "Pricing analysis", "Cash flow awareness", "AP/AR basics", "KPI decks", "Scenario modeling",
     ],
     "Legal & Compliance": [
         "Contracting", "Legal review", "Compliance", "Privacy (GDPR/CCPA) basics", "Claims substantiation",
         "IP basics", "Vendor terms", "Risk assessment", "Policy drafting", "Template governance",
-        "Advertising compliance", "Data processing addenda", "Escalation process", "Recordkeeping", "Training enablement",
     ],
 }
 
@@ -281,7 +270,7 @@ LAST_NAMES  = ["Nguyen","Patel","Kim","Garcia","Lopez","Chen","Singh","Rodriguez
 
 def generate_employees_py() -> List[Dict]:
     employee_rows = []
-    # Build E001..E030 and assign roles 1:1 from ROLES list (already 30)
+    # Build E001..E033 and assign roles 1:1 from ROLES list (already 33)
     for i in range(1, NUMBER_OF_EMPLOYEES + 1):
         eid = f"E{i:03d}"
         dept, role = ROLES[i-1]
@@ -558,183 +547,183 @@ Projects:
 PROJECT_TASK_ROADMAPS: Dict[str, List[List[str]]] = {
 
     "Returns Experience Overhaul (Self-Service + Policy Simplification)": [
-        ["Audit current returns flow and ticket drivers", "Returns policy support"],
-        ["Analyze top return reasons and deflection opportunities", "SQL"],
-        ["Review existing returns policy for clarity gaps", "Policy drafting"],
-        ["Draft simplified returns policy language", "Copywriting"],
-        ["Validate policy changes with Legal", "Legal review"],
-        ["Map new self-service returns UX flow", "Journey mapping"],
-        ["Design self-service returns UI wireframes", "Wireframing"],
-        ["Run usability testing on returns flow prototype", "Usability testing"],
-        ["Implement self-service returns logic", "REST APIs"],
-        ["Integrate refund/exchange automation", "Data integrations"],
-        ["Update Zendesk macros and automation rules", "Macros & automation"],
-        ["QA end-to-end returns scenarios", "QA automation"],
-        ["Train CX team on new returns workflow", "Training enablement"],
-        ["Launch updated returns experience", "Launch management"],
-        ["Monitor ticket volume and return CSAT post-launch", "CSAT analysis"],
+        ["Kickoff + align success metrics (refund time, ticket rate, CSAT)", "KPI definition"],
+        ["Audit current returns flows + policy touchpoints (site + email + help center)", "Journey mapping"],
+        ["Pull baseline returns drivers + ticket tags analysis", "CSAT analysis"],
+        ["Map event tracking gaps for returns funnel (view policy → start return → label)", "Event tracking specs"],
+        ["Draft updated returns policy copy + tone guidelines", "Brand voice"],
+        ["Legal review of policy wording + claims substantiation", "Legal review"],
+        ["Design self-serve returns IA + new entry points (order page, email)", "Information architecture"],
+        ["Create Figma prototypes for new returns UX (refund/exchange paths)", "Prototyping"],
+        ["Write PRD + requirements + edge cases (partial refunds, bundles, final sale)", "PRDs"],
+        ["Implement returns UX updates in storefront/account", "Shopify Liquid"],
+        ["Integrate returns logic with backend/refund workflows", "REST APIs"],
+        ["Update Zendesk macros/automation + KB articles for new policy", "Macros & automation"],
+        ["QA end-to-end returns flow + support escalation scenarios", "QA rubrics"],
+        ["Launch plan + internal enablement (CX training + comms)", "Training enablement"],
+        ["Post-launch monitoring + iterate based on ticket/returns metrics", "Dashboards"],
     ],
 
     "Warehouse Slotting Optimization for Peak Season": [
-        ["Analyze historical pick data for top SKUs", "SQL"],
-        ["Identify high-velocity SKUs for re-slotting", "Sell-through analysis"],
-        ["Assess current warehouse layout constraints", "Warehouse slotting"],
-        ["Design optimized slotting plan", "Pick/pack optimization"],
-        ["Review labor impact with ops leadership", "Labor planning"],
-        ["Coordinate re-slotting schedule with 3PL", "3PL management"],
-        ["Update WMS slotting rules", "WMS basics"],
-        ["Execute physical re-slotting in warehouse", "Process improvement"],
-        ["Run pilot pick tests on new layout", "Root cause analysis"],
-        ["Measure pick time and error rate deltas", "KPI tracking"],
-        ["Adjust slotting based on pilot feedback", "Constraint management"],
-        ["Finalize slotting SOP documentation", "SOP documentation"],
-        ["Roll out optimized slotting to full warehouse", "Warehouse slotting"],
-        ["Train warehouse staff on new layout", "Training enablement"],
-        ["Track fulfillment cycle time during peak", "KPI tracking"],
+        ["Kickoff with Ops + define target metrics (pick rate, travel time, mis-picks)", "KPI tracking"],
+        ["Extract top-SKU velocity + ABC classification for peak assortment", "Data modeling"],
+        ["Analyze current pick paths + congestion zones", "Root cause analysis"],
+        ["Propose new slotting strategy + zone layout changes", "Warehouse slotting"],
+        ["Validate constraints (hazmat, fragility, replenishment cadence)", "Constraint management"],
+        ["Coordinate with Merch on peak assortment changes + substitutions", "Stakeholder management"],
+        ["Create re-slotting SOP + safety checklist", "SOP documentation"],
+        ["Labor plan for re-slotting weekend/overnight shifts", "Labor planning"],
+        ["Pilot re-slotting in 1 zone + capture before/after performance", "Process improvement"],
+        ["Update WMS location mappings + bin labels", "WMS basics"],
+        ["Scanner workflow checks for new locations + exception handling", "Shipping exceptions"],
+        ["Train leads + floor staff on new pick paths and replenishment triggers", "Training enablement"],
+        ["Scale re-slotting across remaining zones", "Pick/pack optimization"],
+        ["Peak readiness dry run + escalation playbook", "Escalation handling"],
+        ["Post-peak retro + codify improvements for next season", "Documentation"],
     ],
 
     "Holiday Paid Social + Influencer Launch Campaign": [
-        ["Define holiday campaign objectives and KPIs", "Campaign planning"],
-        ["Develop creative brief for holiday messaging", "Creative briefing"],
-        ["Identify influencer partners and negotiate terms", "Influencer strategy"],
-        ["Design paid social creative concepts", "Art direction"],
-        ["Produce holiday ad assets", "Graphic design"],
-        ["Write paid social and influencer copy", "Copywriting"],
-        ["Set up campaign tracking and UTMs", "UTM governance"],
-        ["Configure paid social campaigns", "Paid social (Meta)"],
-        ["QA creative and links before launch", "Creative QA"],
-        ["Launch holiday paid campaigns", "Launch planning"],
-        ["Monitor spend pacing and performance", "Budget pacing"],
-        ["Optimize creatives based on early results", "Creative testing"],
-        ["Coordinate influencer posting schedule", "Production coordination"],
-        ["Report mid-campaign performance insights", "Looker dashboards"],
-        ["Conduct post-campaign performance analysis", "Incrementality thinking"],
+        ["Campaign kickoff + creative brief + channel plan", "Creative briefing"],
+        ["Define target audience segments + offers + positioning", "Consumer insights"],
+        ["Influencer shortlist + outreach + negotiation", "Influencer strategy"],
+        ["Draft influencer contracts + deliverable terms", "Contracting"],
+        ["Build content calendar + launch timeline across channels", "Content calendar"],
+        ["Develop paid social test matrix (hooks, formats, landing pages)", "Creative testing"],
+        ["Design key visual system (static + video templates)", "Graphic design"],
+        ["Write copy variants + brand voice checks", "Copywriting"],
+        ["Set up tracking (UTMs, pixels) + measurement plan", "UTM governance"],
+        ["Analytics spec: events + naming conventions for holiday funnel", "Event tracking specs"],
+        ["Launch creator content production + asset QA", "Creative QA"],
+        ["Configure ad sets + budget pacing rules + guardrails", "Budget pacing"],
+        ["Daily performance readouts + creative iteration loop", "GA4 reporting"],
+        ["Cross-functional standup (CX, Ops) for peak comms + inventory risks", "Stakeholder management"],
+        ["Post-campaign wrap: results, learnings, and next-holiday playbook", "Documentation"],
     ],
 
     "Fraud Rules Refresh + Chargeback Reduction": [
-        ["Review current fraud rules and chargeback data", "Fraud screening basics"],
-        ["Analyze fraud patterns and false positives", "Cohort analysis"],
-        ["Benchmark fraud settings against industry norms", "Risk assessment"],
-        ["Propose updated fraud rule set", "Policy drafting"],
-        ["Review fraud changes with Finance and Legal", "Compliance"],
-        ["Implement updated fraud rules", "Data integrations"],
-        ["Configure fraud monitoring dashboards", "Looker"],
-        ["QA fraud rule changes in staging", "QA automation"],
-        ["Deploy fraud updates to production", "Launch management"],
-        ["Monitor approval rate and chargebacks", "Metric definitions"],
-        ["Tune rules based on early results", "Experimentation analysis"],
-        ["Update fraud response SOPs", "Process documentation"],
-        ["Train CX team on new fraud workflows", "Cross-team feedback loops"],
-        ["Report chargeback reduction impact", "Financial reporting"],
-        ["Document learnings and next iterations", "Postmortems"],
+        ["Kickoff + define chargeback KPIs and decision thresholds", "KPI definition"],
+        ["Pull baseline fraud signals + chargeback reasons by segment", "Cohort analysis"],
+        ["Audit current fraud rules + manual review SOP", "Process documentation"],
+        ["Identify false positive drivers impacting conversion", "Analytics interpretation"],
+        ["Design new fraud ruleset + risk tiers", "Risk assessment"],
+        ["Implement rule updates in fraud tooling / checkout logic", "Feature flags"],
+        ["Add monitoring dashboard for fraud + CB alerts", "Looker dashboards"],
+        ["Instrument events for fraud decisions (approve/deny/manual review)", "Event tracking specs"],
+        ["Create CX guidance for fraud holds + escalation paths", "Escalations"],
+        ["Legal/compliance review (privacy, data handling, adverse actions)", "Privacy (GDPR/CCPA) basics"],
+        ["Run shadow test (new rules) against historical orders", "Experimentation analysis"],
+        ["Roll out new rules with staged exposure + rollback plan", "Incident response"],
+        ["Train CX + Ops on updated playbooks and documentation", "Training enablement"],
+        ["Weekly review cadence for tuning + exception cases", "Stakeholder enablement"],
+        ["Postmortem + finalize ongoing governance + templates", "Template governance"],
     ],
 
     "Checkout Performance & Conversion Sprint": [
-        ["Audit checkout funnel performance metrics", "GA4"],
-        ["Identify top checkout friction points", "Analytics interpretation"],
-        ["Define checkout performance KPIs", "KPI definition"],
-        ["Design improved checkout UX concepts", "Interaction design"],
-        ["Prototype checkout UX changes", "Prototyping"],
-        ["Implement frontend checkout optimizations", "React"],
-        ["Optimize backend checkout APIs", "Performance optimization"],
-        ["Add event tracking to checkout flow", "Event tracking specs"],
-        ["QA checkout changes across devices", "QA automation"],
-        ["Launch checkout performance updates", "Launch management"],
-        ["Run checkout A/B tests", "Experiment design"],
-        ["Monitor page speed and conversion impact", "Observability (logs/metrics)"],
-        ["Iterate based on experiment results", "Backlog grooming"],
-        ["Document checkout improvements", "Documentation"],
-        ["Share learnings with stakeholders", "Stakeholder enablement"],
+        ["Sprint kickoff + define performance and conversion targets", "KPI definition"],
+        ["Baseline checkout metrics + error rates + device breakdown", "GA4"],
+        ["Create event tracking spec for checkout funnel (step-level)", "Event tracking specs"],
+        ["Audit client-side performance + bundle size hot spots", "Performance optimization"],
+        ["Implement frontend optimizations (lazy load, code split, caching)", "React"],
+        ["Backend profiling for checkout APIs + latency sources", "Observability (logs/metrics)"],
+        ["Optimize API performance + add timeouts/retries where needed", "REST APIs"],
+        ["Add feature flags for risky changes + staged rollout", "Feature flags"],
+        ["Design UX improvements (payment options, error messaging)", "Interaction design"],
+        ["Usability test new checkout UX with 5–8 users", "Usability testing"],
+        ["Set up experiment plan (A/B) for top UX hypotheses", "Experimentation"],
+        ["QA automation for regression coverage (happy path + edge cases)", "QA automation"],
+        ["Launch changes + monitor incidents + conversions", "Incident triage"],
+        ["Daily war-room + cross-team comms (CX, Finance, Ops)", "Stakeholder alignment"],
+        ["Post-sprint report + next backlog and follow-up PRDs", "Postmortems"],
     ],
 
     "Inventory Accuracy Program (Cycle Counts + Scanner Rollout)": [
-        ["Assess current inventory accuracy baseline", "Inventory health"],
-        ["Identify root causes of inventory variance", "Root cause analysis"],
-        ["Define cycle count strategy by SKU class", "Cycle counts"],
-        ["Select scanner hardware and software", "Scanner rollout"],
-        ["Coordinate scanner procurement", "Vendor management"],
-        ["Design cycle count SOPs", "SOP documentation"],
-        ["Pilot scanner usage in one warehouse zone", "Process improvement"],
-        ["Train warehouse staff on scanners", "Training enablement"],
-        ["Execute pilot cycle counts", "Cycle counts"],
-        ["Analyze pilot accuracy improvements", "KPI tracking"],
-        ["Refine SOPs based on pilot feedback", "Process documentation"],
-        ["Roll out scanners warehouse-wide", "Scanner rollout"],
-        ["Implement recurring cycle count schedule", "Inventory health"],
-        ["Monitor oversells and adjustments", "ERP basics"],
-        ["Report inventory accuracy gains", "Financial reporting"],
+        ["Kickoff + define accuracy KPIs and governance cadence", "KPI tracking"],
+        ["Select scanner hardware + vendor coordination", "Vendor management"],
+        ["Define cycle-count SOPs by zone + cadence", "Cycle counts"],
+        ["Build training materials + quick-reference guides", "Training enablement"],
+        ["Configure scanner workflows + exception codes", "Scanner rollout"],
+        ["Update WMS processes for adjustments + approvals", "WMS basics"],
+        ["Data capture spec (scan events, adjustments, reasons)", "Event tracking specs"],
+        ["Run pilot in 1 site/zone + measure discrepancy reduction", "Process improvement"],
+        ["Root-cause analysis on top discrepancy categories", "Root cause analysis"],
+        ["Integrate inventory adjustments into reporting dashboards", "Dashboards"],
+        ["CX + Merch comms process for oversells/backorders", "Cross-team feedback loops"],
+        ["Scale scanner rollout across sites + staffing plan", "Labor planning"],
+        ["Implement escalation path for repeated discrepancies", "Escalation handling"],
+        ["Finance review for shrink and accounting implications", "Inventory accounting basics"],
+        ["Program retro + finalize playbook + continuous improvement loop", "Documentation"],
     ],
 
     "Lifecycle Email Personalization MVP": [
-        ["Audit current lifecycle email performance", "GA4 reporting"],
-        ["Define lifecycle segmentation strategy", "Segmentation"],
-        ["Identify key lifecycle moments", "Customer interviews"],
-        ["Design email templates for lifecycle journeys", "Email design"],
-        ["Write lifecycle email copy", "Copywriting"],
-        ["Build segmentation logic", "SQL for marketing"],
-        ["Configure lifecycle flows in ESP", "Email marketing"],
-        ["QA personalization rules", "Data QA"],
-        ["Launch lifecycle email MVP", "Launch management"],
-        ["Monitor engagement metrics", "Metric definitions"],
-        ["A/B test subject lines and content", "Experiment design"],
-        ["Optimize segments based on results", "Cohort analysis"],
-        ["Document lifecycle playbook", "Documentation"],
-        ["Train marketing team on lifecycle flows", "Training enablement"],
-        ["Report lifecycle lift to leadership", "Looker dashboards"],
+        ["Kickoff + define success metrics (CTR, CVR, unsub, revenue)", "KPI definition"],
+        ["Audit current lifecycle journeys + gaps (welcome, abandon, post-purchase)", "Journey mapping"],
+        ["Define segmentation strategy + data requirements", "Requirements gathering"],
+        ["Pull customer cohorts + baseline engagement by segment", "Cohort analysis"],
+        ["Draft experiment plan for personalization hypotheses", "Experiment design"],
+        ["Create email template system + modular blocks", "Email design"],
+        ["Write copy variants per segment + brand voice guardrails", "Brand voice"],
+        ["Define event tracking + attribution for lifecycle conversions", "Attribution basics"],
+        ["Implement segmentation queries/views in warehouse", "SQL"],
+        ["Build activation pipeline to ESP (audiences + triggers)", "Data integrations"],
+        ["Set up dashboards for lifecycle performance monitoring", "Looker dashboards"],
+        ["QA journeys end-to-end (rendering, links, suppression, edge cases)", "Creative QA"],
+        ["Legal/compliance review (opt-in, privacy, claims)", "Advertising compliance"],
+        ["Launch MVP + weekly optimization cadence", "Stakeholder enablement"],
+        ["Post-launch report + backlog for Phase 2 improvements", "Roadmapping"],
     ],
 
     "Product Detail Page Creative Refresh (UGC + Image System)": [
-        ["Audit current PDP creative performance", "Analytics interpretation"],
-        ["Define new PDP visual guidelines", "Brand guidelines"],
-        ["Curate UGC for PDP inclusion", "UGC curation"],
-        ["Design updated PDP image layouts", "Visual hierarchy"],
-        ["Produce new PDP imagery", "PDP imagery"],
-        ["QA imagery for brand compliance", "Creative QA"],
-        ["Implement PDP layout changes", "Shopify Liquid"],
-        ["Optimize PDP image performance", "Performance optimization"],
-        ["Test PDP updates across devices", "QA automation"],
-        ["Launch refreshed PDPs", "Launch planning"],
-        ["Monitor PDP engagement metrics", "Dashboards"],
-        ["Iterate on UGC placement", "Experimentation"],
-        ["Document PDP image standards", "Documentation"],
-        ["Train creative team on new system", "Training enablement"],
-        ["Report PDP conversion impact", "Looker dashboards"],
+        ["Kickoff + define PDP goals (engagement, conversion, returns)", "KPI definition"],
+        ["Audit current PDP components + creative inconsistencies", "Heuristic evaluation"],
+        ["Define new PDP image guidelines + shot list standards", "Brand guidelines"],
+        ["UGC sourcing plan + rights management approach", "UGC curation"],
+        ["Design updated PDP modules (UGC carousel, image zoom, gallery)", "Design systems"],
+        ["Prototype in Figma + align on component behaviors", "Prototyping"],
+        ["Engineering handoff + implementation specs", "Handoff to engineering"],
+        ["Implement new PDP modules in theme/components", "Shopify Liquid"],
+        ["Set up asset versioning + naming conventions for images", "Asset versioning"],
+        ["Creative production coordination for refreshed imagery", "Production coordination"],
+        ["QA across devices + accessibility checks", "Accessibility basics"],
+        ["Set up experiment to measure uplift vs control", "Experimentation"],
+        ["Launch wave 1 on top SKUs + monitor performance", "Dashboards"],
+        ["Expand rollout + update internal playbook", "Documentation"],
+        ["Post-launch retro + finalize governance for ongoing refreshes", "Template governance"],
     ],
 
     "Shopify Replatform Phase 1 (Catalog + Theme Architecture)": [
-        ["Audit current Shopify theme and catalog structure", "Shopify Liquid"],
-        ["Define future-state theme architecture", "Information architecture"],
-        ["Design scalable catalog taxonomy", "SKU rationalization"],
-        ["Set up new theme repository", "CI/CD"],
-        ["Implement core theme components", "React"],
-        ["Migrate catalog data", "Data integrations"],
-        ["Configure deployment pipeline", "Feature flags"],
-        ["QA theme rendering across templates", "QA automation"],
-        ["Optimize theme performance", "Performance optimization"],
-        ["Launch theme to staging", "Launch management"],
-        ["Conduct stakeholder review", "Stakeholder alignment"],
-        ["Iterate on feedback", "Backlog grooming"],
-        ["Prepare production rollout plan", "Incident triage"],
-        ["Launch Phase 1 replatform", "Launch management"],
-        ["Document theme architecture", "Documentation"],
+        ["Kickoff + scope Phase 1 deliverables + risks", "Roadmapping"],
+        ["Audit current theme + tech debt + performance issues", "Performance optimization"],
+        ["Define new theme architecture + component library plan", "Component libraries"],
+        ["Catalog data model review + required schema changes", "Data modeling"],
+        ["Integration mapping (ERP/WMS/3PL) + data flow diagrams", "Data integrations"],
+        ["Set up CI/CD + preview environments", "CI/CD"],
+        ["Implement foundational theme scaffolding + routing", "JavaScript/TypeScript"],
+        ["Build core PDP/PLP components with reusable patterns", "React"],
+        ["Migrate catalog structure + collections/tags strategy", "Category strategy"],
+        ["Implement observability + logging for key storefront events", "Observability (logs/metrics)"],
+        ["QA automation baseline (smoke tests, critical paths)", "QA automation"],
+        ["Performance budget + load testing plan", "Performance optimization"],
+        ["Security/privacy review for integrations and data handling", "Privacy (GDPR/CCPA) basics"],
+        ["Pilot launch on a limited traffic slice + rollback plan", "Incident response"],
+        ["Postmortem + finalize Phase 2 backlog + documentation", "Documentation"],
     ],
 
     "International Shipping Expansion (Duties/Taxes + Carriers)": [
-        ["Identify target international markets", "Market analysis"],
-        ["Assess duties and tax requirements", "Tax"],
-        ["Select international carriers", "Carrier coordination"],
-        ["Negotiate carrier contracts", "Negotiation"],
-        ["Configure duties/taxes calculation logic", "Data integrations"],
-        ["Update checkout for international shipping", "Frontend"],
-        ["Design international shipping CX flows", "Journey mapping"],
-        ["Update CX macros for international orders", "Macros & automation"],
-        ["QA international checkout scenarios", "QA automation"],
-        ["Pilot international shipping launch", "Launch planning"],
-        ["Monitor delivery SLAs and costs", "KPI tracking"],
-        ["Resolve carrier issues from pilot", "Escalation handling"],
-        ["Roll out international shipping broadly", "Launch management"],
-        ["Train CX team on international workflows", "Training enablement"],
-        ["Report international expansion performance", "Financial reporting"],
+        ["Kickoff + define target countries, timelines, and KPIs", "KPI definition"],
+        ["Carrier evaluation + negotiations + onboarding requirements", "Vendor negotiations"],
+        ["Define duties/taxes approach + customer messaging", "Product storytelling"],
+        ["Legal/compliance review (cross-border policies, privacy, claims)", "Compliance"],
+        ["Finance review for tax/VAT implications + reporting needs", "Tax"],
+        ["Update checkout UX for intl shipping options + pricing transparency", "UX writing"],
+        ["Engineering: integrate carriers + rate shopping + labels", "REST APIs"],
+        ["Implement duties/taxes calculation workflow", "Data integrations"],
+        ["Update warehouse ops SOPs for intl packing + documentation", "SOP documentation"],
+        ["CX workflows for intl tracking, delays, returns, and exceptions", "Order troubleshooting"],
+        ["Update help center + macros for intl FAQs", "Knowledge base"],
+        ["Event tracking spec for intl checkout and delivery funnel", "Event tracking specs"],
+        ["Pilot launch to 1–2 countries + monitor incidents", "Incident triage"],
+        ["Expand rollout + partner performance reporting", "Reporting"],
+        ["Post-launch retro + finalize escalation paths + governance", "Escalation process"],
     ],
 }
 
@@ -935,6 +924,82 @@ def skill_group(skill_needed: str) -> str:
     if any(k in s for k in FINLEGAL_SKILLS):  return "finlegal"
     return "other"
 
+dept_by_id = {e["id"]: e["department"] for e in employees}
+all_employee_ids = [e["id"] for e in employees]
+
+# Department guardrails keep lifecycle/creative work inside the right swim lane.
+GROUP_DEPARTMENT_RULES = {
+    "creative": {
+        "core": {
+            "Creative Studio",
+            "Brand Marketing",
+            "Performance Marketing",
+        },
+        "adjacent": {
+            "Product Design (UX/UI)",
+            "Product Management",
+        },
+    },
+    "analytics": {
+        "core": {"Data & Analytics"},
+        "adjacent": {
+            "Product Management",
+            "Performance Marketing",
+            "Engineering",
+        },
+    },
+    "engineering": {
+        "core": {"Engineering"},
+        "adjacent": {
+            "Product Management",
+            "Data & Analytics",
+            "Product Design (UX/UI)",
+        },
+    },
+    "ops": {
+        "core": {
+            "Supply Chain",
+            "Warehouse & Fulfillment Ops",
+        },
+        "adjacent": {
+            "Customer Experience (CX)",
+            "Merchandising & Buying",
+            "Finance",
+        },
+    },
+    "finlegal": {
+        "core": {
+            "Finance",
+            "Legal & Compliance",
+        },
+        "adjacent": {
+            "Product Management",
+            "Supply Chain",
+            "Brand Marketing",
+        },
+    },
+    "other": {
+        "core": set(DEPARTMENTS),
+        "adjacent": set(DEPARTMENTS),
+    },
+}
+
+def _pool_for_group(group: str, include_adjacent: bool=False, adjacent_only: bool=False) -> List[str]:
+    rules = GROUP_DEPARTMENT_RULES.get(group, GROUP_DEPARTMENT_RULES["other"])
+    if adjacent_only:
+        depts = set(rules.get("adjacent", set()))
+    else:
+        depts = set(rules.get("core", set()))
+        if include_adjacent:
+            depts |= set(rules.get("adjacent", set()))
+    if not depts:
+        depts = set(rules.get("core", set()) | rules.get("adjacent", set()))
+    pool = [eid for eid in all_employee_ids if dept_by_id.get(eid) in depts]
+    if not pool and include_adjacent and not adjacent_only:
+        depts |= set(rules.get("adjacent", set()))
+        pool = [eid for eid in all_employee_ids if dept_by_id.get(eid) in depts]
+    return pool or all_employee_ids[:]
+
 def rand_business_ts(base: datetime, min_hour=10, max_hour=16) -> datetime:
     dt = base.replace(hour=random.randint(min_hour, max_hour),
                       minute=random.choice([0,15,30,45]),
@@ -954,10 +1019,12 @@ def nearest_burst_anchor(ts: datetime) -> datetime:
     anchor += timedelta(minutes=random.choice([0,10,20,30,40]))
     return anchor
 
-def best_fit_assignee(skill_needed: str, exclude: Optional[str]=None) -> Optional[str]:
+def best_fit_assignee(skill_needed: str, exclude: Optional[str]=None, pool: Optional[List[str]]=None) -> Optional[str]:
     candidates = []
+    pool_ids = set(pool) if pool else None
     for eid, sks in emp_skills_map.items():
         if exclude and eid == exclude: continue
+        if pool_ids is not None and eid not in pool_ids: continue
         if _skill_match(sks, skill_needed):
             candidates.append(eid)
     if not candidates:
@@ -1020,13 +1087,26 @@ def add_idle_and_handoff(
     return pickup_ts, queue_label
 
 # Start with a "default initial owner" based on skill match (can be mismatched sometimes)
-def initial_owner_for_task(skill_needed: str) -> str:
-    # 20% chance of deliberate misallocation to enable bottleneck #6
-    if random.random() < 0.20:
-        return random.choice([e["id"] for e in employees])
-    # otherwise best fit
-    bf = best_fit_assignee(skill_needed)
-    return bf or random.choice([e["id"] for e in employees])
+def initial_owner_for_task(skill_needed: str, group: str) -> str:
+    core_pool = _pool_for_group(group, include_adjacent=False)
+    adjacent_only_pool = _pool_for_group(group, adjacent_only=True)
+    misalign_prob = 0.15 if group != "other" else 0.10
+
+    if random.random() < misalign_prob and adjacent_only_pool:
+        pick_pool = adjacent_only_pool
+    else:
+        pick_pool = core_pool
+
+    bf = best_fit_assignee(skill_needed, pool=pick_pool)
+    if bf:
+        return bf
+    return random.choice(pick_pool or all_employee_ids)
+
+def _random_owner_from_group(group: str, exclude: Optional[str]=None) -> str:
+    pool = [eid for eid in _pool_for_group(group, include_adjacent=True) if eid != exclude]
+    if not pool:
+        pool = [eid for eid in all_employee_ids if eid != exclude]
+    return random.choice(pool)
 
 # Build events for each task row
 task_row_by_id = {r["id"]: r for r in tasks_rows}
@@ -1046,7 +1126,7 @@ for row in tasks_rows:
     due_dt = parse_iso_dt(row["due"])
 
     # initial assignee (may be mismatched)
-    current = initial_owner_for_task(skill_needed)
+    current = initial_owner_for_task(skill_needed, group)
     add_event(tid, "start", start_dt, None, current)
     last_ts = start_dt
 
@@ -1065,8 +1145,10 @@ for row in tasks_rows:
             # occasional bounce
             if random.random() < 0.25:
                 bounce_ts = rand_business_ts(add_hours(last_ts, random.randint(12, 36)))
-                add_event(tid, "handoff", bounce_ts, current, random.choice([e["id"] for e in employees if e["id"] != current]))
+                bounce_owner = _random_owner_from_group(group, exclude=current)
+                add_event(tid, "handoff", bounce_ts, current, bounce_owner)
                 last_ts = bounce_ts
+                current = bounce_owner
 
     # ---------------------------------------------
     # Bottleneck #1: Analytics backlog + queue burst
@@ -1307,6 +1389,18 @@ for row in tasks_rows:
 
     # default end for completed
     if status == "completed":
+        # Inject a small backlog wait so every task sees at least one queue gap
+        backlog_wait = (1, 4)
+        backlog_service = (1, 2)
+        last_ts, _ = add_idle_and_handoff(
+            tid,
+            current,
+            last_ts,
+            current,
+            backlog_wait,
+            tag="GENERAL_BACKLOG",
+            service_range=backlog_service,
+        )
         end_ts = rand_business_ts(due_dt - timedelta(hours=random.randint(1, 12)))
         if end_ts <= last_ts:
             end_ts = rand_business_ts(add_hours(last_ts, random.randint(6, 24)))

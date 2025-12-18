@@ -1,151 +1,151 @@
 id,project_id,name,skill_needed,est_hours,assignee,start,due,status
-T0001,P001,Audit current returns flow and ticket drivers,Returns policy support,10,E040,2025-06-25T09:00:00,2025-06-27T13:15:00,completed
-T0002,P001,Analyze top return reasons and deflection opportunities,SQL,11,E006,2025-06-27T18:00:00,2025-06-30T13:45:00,completed
-T0003,P001,Review existing returns policy for clarity gaps,Policy drafting,5,E021,2025-06-29T15:57:00,2025-06-30T14:00:00,completed
-T0004,P001,Draft simplified returns policy language,Copywriting,10,E021,2025-07-05T18:00:00,2025-07-07T10:00:00,completed
-T0005,P001,Validate policy changes with Legal,Legal review,8,E037,2025-07-09T18:00:00,2025-07-11T14:00:00,completed
-T0006,P001,Map new self-service returns UX flow,Journey mapping,7,E021,2025-07-13T09:00:00,2025-07-14T15:00:00,completed
-T0007,P001,Design self-service returns UI wireframes,Wireframing,14,E015,2025-07-18T14:02:00,2025-07-20T14:00:00,completed
-T0008,P001,Run usability testing on returns flow prototype,Usability testing,10,E017,2025-07-18T18:00:00,2025-07-21T11:30:00,completed
-T0009,P001,Implement self-service returns logic,REST APIs,29,E022,2025-07-14T09:00:00,2025-07-21T15:15:00,completed
-T0010,P001,Integrate refund/exchange automation,Data integrations,27,E023,2025-07-17T15:49:00,2025-07-22T13:30:00,completed
-T0011,P001,Update Zendesk macros and automation rules,Macros & automation,11,E008,2025-07-20T18:00:00,2025-07-23T12:00:00,completed
-T0012,P001,QA end-to-end returns scenarios,QA automation,4,E022,2025-07-24T13:48:00,2025-07-25T15:00:00,completed
-T0013,P001,Train CX team on new returns workflow,Training enablement,5,E039,2025-07-25T15:27:00,2025-07-26T12:00:00,completed
-T0014,P001,Launch updated returns experience,Launch management,16,E012,2025-07-27T18:00:00,2025-07-30T13:30:00,completed
-T0015,P001,Monitor ticket volume and return CSAT post-launch,CSAT analysis,12,E008,2025-07-30T18:00:00,2025-08-02T12:30:00,completed
-T0016,P002,Analyze historical pick data for top SKUs,SQL,20,E031,2025-08-06T09:00:00,2025-08-10T13:15:00,completed
-T0017,P002,Identify high-velocity SKUs for re-slotting,Sell-through analysis,11,E010,2025-08-09T12:33:00,2025-08-11T12:15:00,completed
-T0018,P002,Assess current warehouse layout constraints,Warehouse slotting,11,E038,2025-08-11T09:00:00,2025-08-13T13:30:00,completed
-T0019,P002,Design optimized slotting plan,Pick/pack optimization,4,E026,2025-08-26T13:40:00,2025-08-27T12:15:00,completed
-T0020,P002,Review labor impact with ops leadership,Labor planning,12,E007,2025-08-26T14:38:00,2025-08-28T11:00:00,completed
-T0021,P002,Coordinate re-slotting schedule with 3PL,3PL management,8,E015,2025-08-27T09:00:00,2025-08-28T15:30:00,completed
-T0022,P002,Update WMS slotting rules,WMS basics,7,E036,2025-08-29T09:00:00,2025-08-30T11:15:00,completed
-T0023,P002,Execute physical re-slotting in warehouse,Process improvement,5,E037,2025-08-31T14:42:00,2025-09-01T16:30:00,completed
-T0024,P002,Run pilot pick tests on new layout,Root cause analysis,13,E030,2025-08-30T18:00:00,2025-09-02T14:45:00,completed
-T0025,P002,Measure pick time and error rate deltas,KPI tracking,13,E033,2025-09-05T18:00:00,2025-09-08T14:30:00,completed
-T0026,P002,Adjust slotting based on pilot feedback,Constraint management,16,E033,2025-09-07T10:22:00,2025-09-11T11:15:00,completed
-T0027,P002,Finalize slotting SOP documentation,SOP documentation,8,E031,2025-09-13T09:00:00,2025-09-14T14:30:00,completed
-T0028,P002,Roll out optimized slotting to full warehouse,Warehouse slotting,10,E038,2025-09-14T09:08:00,2025-09-16T10:15:00,completed
-T0029,P002,Train warehouse staff on new layout,Training enablement,11,E039,2025-09-16T09:00:00,2025-09-18T11:00:00,completed
-T0030,P002,Track fulfillment cycle time during peak,KPI tracking,5,E012,2025-09-16T18:00:00,2025-09-18T11:30:00,completed
-T0031,P003,Define holiday campaign objectives and KPIs,Campaign planning,5,E003,2025-09-11T09:02:00,2025-09-12T16:30:00,completed
-T0032,P003,Develop creative brief for holiday messaging,Creative briefing,10,E003,2025-09-12T15:08:00,2025-09-14T12:45:00,completed
-T0033,P003,Identify influencer partners and negotiate terms,Influencer strategy,11,E003,2025-09-11T18:00:00,2025-09-14T14:15:00,completed
-T0034,P003,Design paid social creative concepts,Art direction,16,E008,2025-09-16T18:00:00,2025-09-19T12:45:00,completed
-T0035,P003,Produce holiday ad assets,Graphic design,7,E030,2025-09-18T09:00:00,2025-09-19T16:30:00,completed
-T0036,P003,Write paid social and influencer copy,Copywriting,13,E021,2025-09-17T09:00:00,2025-09-20T15:45:00,completed
-T0037,P003,Set up campaign tracking and UTMs,UTM governance,5,E028,2025-09-20T10:14:00,2025-09-21T16:45:00,completed
-T0038,P003,Configure paid social campaigns,Paid social (Meta),9,E033,2025-09-25T15:11:00,2025-09-27T12:30:00,completed
-T0039,P003,QA creative and links before launch,Creative QA,15,E019,2025-09-26T16:45:00,2025-09-29T14:00:00,completed
-T0040,P003,Launch holiday paid campaigns,Launch planning,8,E002,2025-10-02T17:39:00,2025-10-04T11:00:00,completed
-T0041,P003,Monitor spend pacing and performance,Budget pacing,11,E032,2025-10-05T18:00:00,2025-10-08T16:00:00,completed
-T0042,P003,Optimize creatives based on early results,Creative testing,7,E032,2025-10-09T09:00:00,2025-10-10T12:45:00,completed
-T0043,P003,Coordinate influencer posting schedule,Production coordination,15,E019,2025-10-08T13:29:00,2025-10-11T16:45:00,completed
-T0044,P003,Report mid-campaign performance insights,Looker dashboards,10,E033,2025-10-10T18:00:00,2025-10-12T11:45:00,completed
-T0045,P003,Conduct post-campaign performance analysis,Incrementality thinking,4,E029,2025-10-11T17:18:00,2025-10-12T16:00:00,completed
-T0046,P004,Review current fraud rules and chargeback data,Fraud screening basics,7,E039,2025-10-01T09:08:00,2025-10-02T11:15:00,completed
-T0047,P004,Analyze fraud patterns and false positives,Cohort analysis,15,E008,2025-10-01T09:00:00,2025-10-03T15:00:00,completed
-T0048,P004,Benchmark fraud settings against industry norms,Risk assessment,7,E022,2025-10-02T09:16:00,2025-10-03T15:00:00,completed
-T0049,P004,Propose updated fraud rule set,Policy drafting,7,E031,2025-10-03T13:21:00,2025-10-04T15:30:00,completed
-T0050,P004,Review fraud changes with Finance and Legal,Compliance,7,E009,2025-10-04T09:00:00,2025-10-05T14:30:00,completed
-T0051,P004,Implement updated fraud rules,Data integrations,36,E023,2025-10-07T09:00:00,2025-10-15T12:30:00,completed
-T0052,P004,Configure fraud monitoring dashboards,Looker,4,E005,2025-10-19T15:45:00,2025-10-20T12:15:00,completed
-T0053,P004,QA fraud rule changes in staging,QA automation,11,E022,2025-10-21T18:00:00,2025-10-24T12:15:00,completed
-T0054,P004,Deploy fraud updates to production,Launch management,4,E012,2025-10-24T11:26:00,2025-10-25T11:00:00,completed
-T0055,P004,Monitor approval rate and chargebacks,Metric definitions,4,E030,2025-10-27T09:00:00,2025-10-28T10:15:00,completed
-T0056,P004,Tune rules based on early results,Experimentation analysis,18,E036,2025-10-25T18:00:00,2025-10-29T14:30:00,completed
-T0057,P004,Update fraud response SOPs,Process documentation,11,E008,2025-11-01T18:00:00,2025-11-03T12:30:00,completed
-T0058,P004,Train CX team on new fraud workflows,Cross-team feedback loops,8,E034,2025-11-03T11:07:00,2025-11-04T15:00:00,completed
-T0059,P004,Report chargeback reduction impact,Financial reporting,8,E024,2025-11-03T16:14:00,2025-11-05T10:30:00,completed
-T0060,P004,Document learnings and next iterations,Postmortems,16,E004,2025-11-03T09:00:00,2025-11-05T12:30:00,completed
-T0061,P005,Audit checkout funnel performance metrics,GA4,9,E031,2025-12-30T15:09:00,2026-01-01T11:45:00,in_progress
-T0062,P005,Identify top checkout friction points,Analytics interpretation,8,E011,2025-12-31T09:00:00,2026-01-02T10:30:00,in_progress
-T0063,P005,Define checkout performance KPIs,KPI definition,10,E009,2026-01-01T18:00:00,2026-01-03T10:15:00,in_progress
-T0064,P005,Design improved checkout UX concepts,Interaction design,5,E015,2026-01-02T09:00:00,2026-01-03T13:45:00,in_progress
-T0065,P005,Prototype checkout UX changes,Prototyping,16,E011,2026-01-01T09:49:00,2026-01-04T13:30:00,in_progress
-T0066,P005,Implement frontend checkout optimizations,React,33,E023,2025-12-30T12:26:00,2026-01-05T14:15:00,in_progress
-T0067,P005,Optimize backend checkout APIs,Performance optimization,4,E020,2026-01-08T09:00:00,2026-01-09T16:00:00,in_progress
-T0068,P005,Add event tracking to checkout flow,Event tracking specs,11,E030,2026-01-13T09:00:00,2026-01-15T13:00:00,in_progress
-T0069,P005,QA checkout changes across devices,QA automation,10,E023,2026-01-14T14:02:00,2026-01-16T12:15:00,in_progress
-T0070,P005,Launch checkout performance updates,Launch management,14,E012,2026-01-14T13:25:00,2026-01-17T15:45:00,completed
-T0071,P005,Run checkout A/B tests,Experiment design,5,E006,2026-01-17T17:36:00,2026-01-18T16:15:00,completed
-T0072,P005,Monitor page speed and conversion impact,Observability (logs/metrics),10,E025,2026-01-21T09:22:00,2026-01-23T15:00:00,completed
-T0073,P005,Iterate based on experiment results,Backlog grooming,5,E011,2026-01-23T09:00:00,2026-01-24T14:00:00,completed
-T0074,P005,Document checkout improvements,Documentation,6,E031,2026-01-25T17:13:00,2026-01-26T14:30:00,blocked
-T0075,P005,Share learnings with stakeholders,Stakeholder enablement,7,E008,2026-01-25T10:24:00,2026-01-26T16:45:00,blocked
-T0076,P006,Assess current inventory accuracy baseline,Inventory health,13,E006,2026-01-22T18:00:00,2026-01-25T11:15:00,in_progress
-T0077,P006,Identify root causes of inventory variance,Root cause analysis,6,E034,2026-01-26T14:26:00,2026-01-27T16:00:00,in_progress
-T0078,P006,Define cycle count strategy by SKU class,Cycle counts,10,E031,2026-01-28T12:06:00,2026-01-30T11:45:00,in_progress
-T0079,P006,Select scanner hardware and software,Scanner rollout,5,E002,2026-01-29T09:00:00,2026-01-30T14:30:00,in_progress
-T0080,P006,Coordinate scanner procurement,Vendor management,23,E034,2026-01-26T11:59:00,2026-01-31T13:00:00,in_progress
-T0081,P006,Design cycle count SOPs,SOP documentation,14,E031,2026-01-29T15:12:00,2026-02-01T12:00:00,in_progress
-T0082,P006,Pilot scanner usage in one warehouse zone,Process improvement,11,E002,2026-01-31T09:00:00,2026-02-02T12:00:00,in_progress
-T0083,P006,Train warehouse staff on scanners,Training enablement,6,E007,2026-02-01T09:00:00,2026-02-02T13:45:00,in_progress
-T0084,P006,Execute pilot cycle counts,Cycle counts,10,E038,2026-02-03T18:00:00,2026-02-05T13:45:00,in_progress
-T0085,P006,Analyze pilot accuracy improvements,KPI tracking,13,E033,2026-02-06T09:00:00,2026-02-09T10:15:00,completed
-T0086,P006,Refine SOPs based on pilot feedback,Process documentation,13,E004,2026-02-07T15:59:00,2026-02-10T13:00:00,completed
-T0087,P006,Roll out scanners warehouse-wide,Scanner rollout,16,E016,2026-02-07T12:56:00,2026-02-11T15:45:00,completed
-T0088,P006,Implement recurring cycle count schedule,Inventory health,18,E018,2026-02-11T18:00:00,2026-02-14T14:45:00,completed
-T0089,P006,Monitor oversells and adjustments,ERP basics,13,E033,2026-02-13T15:07:00,2026-02-15T12:30:00,blocked
-T0090,P006,Report inventory accuracy gains,Financial reporting,9,E010,2026-02-13T18:00:00,2026-02-15T13:30:00,blocked
-T0091,P007,Audit current lifecycle email performance,GA4 reporting,4,E031,2026-02-16T09:00:00,2026-02-17T12:45:00,in_progress
-T0092,P007,Define lifecycle segmentation strategy,Segmentation,13,E040,2026-02-17T14:01:00,2026-02-19T13:15:00,in_progress
-T0093,P007,Identify key lifecycle moments,Customer interviews,9,E025,2026-02-19T09:00:00,2026-02-20T15:45:00,in_progress
-T0094,P007,Design email templates for lifecycle journeys,Email design,15,E001,2026-02-19T18:00:00,2026-02-23T10:45:00,in_progress
-T0095,P007,Write lifecycle email copy,Copywriting,13,E021,2026-02-21T09:00:00,2026-02-23T13:15:00,in_progress
-T0096,P007,Build segmentation logic,SQL for marketing,13,E006,2026-02-21T11:16:00,2026-02-24T12:45:00,in_progress
-T0097,P007,Configure lifecycle flows in ESP,Email marketing,14,E039,2026-02-23T09:00:00,2026-02-26T15:00:00,in_progress
-T0098,P007,QA personalization rules,Data QA,12,E032,2026-02-24T15:08:00,2026-02-27T11:15:00,in_progress
-T0099,P007,Launch lifecycle email MVP,Launch management,10,E012,2026-02-26T09:00:00,2026-02-28T12:15:00,in_progress
-T0100,P007,Monitor engagement metrics,Metric definitions,9,E030,2026-02-28T09:00:00,2026-03-01T12:00:00,completed
-T0101,P007,A/B test subject lines and content,Experiment design,14,E006,2026-02-27T09:00:00,2026-03-01T16:00:00,completed
-T0102,P007,Optimize segments based on results,Cohort analysis,12,E030,2026-03-01T09:00:00,2026-03-03T11:00:00,completed
-T0103,P007,Document lifecycle playbook,Documentation,16,E031,2026-02-28T09:00:00,2026-03-03T15:30:00,completed
-T0104,P007,Train marketing team on lifecycle flows,Training enablement,4,E039,2026-03-05T09:00:00,2026-03-06T12:30:00,blocked
-T0105,P007,Report lifecycle lift to leadership,Looker dashboards,18,E018,2026-03-03T09:00:00,2026-03-07T12:45:00,blocked
-T0106,P008,Audit current PDP creative performance,Analytics interpretation,14,E011,2026-03-19T09:00:00,2026-03-22T10:30:00,in_progress
-T0107,P008,Define new PDP visual guidelines,Brand guidelines,5,E032,2026-03-26T10:43:00,2026-03-27T13:45:00,in_progress
-T0108,P008,Curate UGC for PDP inclusion,UGC curation,15,E020,2026-03-26T09:00:00,2026-03-29T15:45:00,in_progress
-T0109,P008,Design updated PDP image layouts,Visual hierarchy,7,E018,2026-03-29T09:13:00,2026-03-30T11:00:00,in_progress
-T0110,P008,Produce new PDP imagery,PDP imagery,17,E033,2026-03-27T09:00:00,2026-03-30T11:30:00,in_progress
-T0111,P008,QA imagery for brand compliance,Creative QA,7,E020,2026-03-30T09:00:00,2026-03-31T14:15:00,in_progress
-T0112,P008,Implement PDP layout changes,Shopify Liquid,38,E022,2026-03-23T17:32:00,2026-03-31T16:45:00,in_progress
-T0113,P008,Optimize PDP image performance,Performance optimization,16,E026,2026-03-29T14:18:00,2026-04-02T15:00:00,in_progress
-T0114,P008,Test PDP updates across devices,QA automation,8,E022,2026-04-03T09:00:00,2026-04-04T16:45:00,in_progress
-T0115,P008,Launch refreshed PDPs,Launch planning,5,E028,2026-04-06T12:13:00,2026-04-07T12:30:00,completed
-T0116,P008,Monitor PDP engagement metrics,Dashboards,5,E031,2026-04-06T09:00:00,2026-04-07T13:30:00,completed
-T0117,P008,Iterate on UGC placement,Experimentation,12,E027,2026-04-07T09:00:00,2026-04-09T10:30:00,completed
-T0118,P008,Document PDP image standards,Documentation,13,E031,2026-04-07T14:58:00,2026-04-10T14:15:00,completed
-T0119,P008,Train creative team on new system,Training enablement,16,E039,2026-04-07T18:00:00,2026-04-11T16:00:00,blocked
-T0120,P008,Report PDP conversion impact,Looker dashboards,9,E031,2026-04-12T09:00:00,2026-04-14T10:15:00,blocked
-T0121,P009,Audit current Shopify theme and catalog structure,Shopify Liquid,34,,,2026-07-05T11:30:00,not_started
-T0122,P009,Define future-state theme architecture,Information architecture,10,,,2026-07-13T14:00:00,not_started
-T0123,P009,Design scalable catalog taxonomy,SKU rationalization,5,,,2026-07-14T10:30:00,not_started
-T0124,P009,Set up new theme repository,CI/CD,38,,,2026-07-14T15:30:00,not_started
-T0125,P009,Implement core theme components,React,17,,,2026-07-14T16:30:00,not_started
-T0126,P009,Migrate catalog data,Data integrations,34,,,2026-07-15T11:30:00,not_started
-T0127,P009,Configure deployment pipeline,Feature flags,8,,,2026-07-18T11:45:00,not_started
-T0128,P009,QA theme rendering across templates,QA automation,12,,,2026-07-18T16:45:00,not_started
-T0129,P009,Optimize theme performance,Performance optimization,5,,,2026-07-19T16:15:00,not_started
-T0130,P009,Launch theme to staging,Launch management,9,,,2026-07-21T10:45:00,not_started
-T0131,P009,Conduct stakeholder review,Stakeholder alignment,10,,,2026-07-21T13:30:00,not_started
-T0132,P009,Iterate on feedback,Backlog grooming,13,,,2026-07-23T10:15:00,not_started
-T0133,P009,Prepare production rollout plan,Incident triage,15,,,2026-07-23T14:15:00,not_started
-T0134,P009,Launch Phase 1 replatform,Launch management,12,,,2026-07-24T10:00:00,not_started
-T0135,P009,Document theme architecture,Documentation,15,,,2026-07-24T12:45:00,not_started
-T0136,P010,Identify target international markets,Market analysis,5,,,2026-09-29T14:15:00,not_started
-T0137,P010,Assess duties and tax requirements,Tax,9,,,2026-09-30T12:30:00,not_started
-T0138,P010,Select international carriers,Carrier coordination,15,,,2026-10-01T11:45:00,not_started
-T0139,P010,Negotiate carrier contracts,Negotiation,7,,,2026-10-02T12:30:00,not_started
-T0140,P010,Configure duties/taxes calculation logic,Data integrations,18,,,2026-10-06T11:15:00,not_started
-T0141,P010,Update checkout for international shipping,Frontend,39,,,2026-10-06T12:15:00,not_started
-T0142,P010,Design international shipping CX flows,Journey mapping,16,,,2026-10-06T13:15:00,not_started
-T0143,P010,Update CX macros for international orders,Macros & automation,8,,,2026-10-11T16:00:00,not_started
-T0144,P010,QA international checkout scenarios,QA automation,8,,,2026-10-12T11:30:00,not_started
-T0145,P010,Pilot international shipping launch,Launch planning,15,,,2026-10-14T13:45:00,not_started
-T0146,P010,Monitor delivery SLAs and costs,KPI tracking,11,,,2026-10-14T15:45:00,not_started
-T0147,P010,Resolve carrier issues from pilot,Escalation handling,10,,,2026-10-17T16:30:00,not_started
-T0148,P010,Roll out international shipping broadly,Launch management,6,,,2026-10-18T11:30:00,not_started
-T0149,P010,Train CX team on international workflows,Training enablement,10,,,2026-10-18T14:15:00,not_started
-T0150,P010,Report international expansion performance,Financial reporting,7,,,2026-10-18T16:45:00,not_started
+T0001,P001,"Kickoff + align success metrics (refund time, ticket rate, CSAT)",KPI definition,7,E020,2025-06-27T09:00:00,2025-06-28T14:15:00,completed
+T0002,P001,Audit current returns flows + policy touchpoints (site + email + help center),Journey mapping,9,E010,2025-06-28T09:00:00,2025-06-29T11:15:00,completed
+T0003,P001,Pull baseline returns drivers + ticket tags analysis,CSAT analysis,16,E027,2025-06-30T11:16:00,2025-07-03T15:00:00,completed
+T0004,P001,Map event tracking gaps for returns funnel (view policy → start return → label),Event tracking specs,12,E015,2025-07-04T13:26:00,2025-07-07T11:00:00,completed
+T0005,P001,Draft updated returns policy copy + tone guidelines,Brand voice,11,E002,2025-07-07T09:00:00,2025-07-09T14:30:00,completed
+T0006,P001,Legal review of policy wording + claims substantiation,Legal review,11,E032,2025-07-17T18:00:00,2025-07-19T13:30:00,completed
+T0007,P001,"Design self-serve returns IA + new entry points (order page, email)",Information architecture,10,E011,2025-07-17T14:29:00,2025-07-19T14:15:00,completed
+T0008,P001,Create Figma prototypes for new returns UX (refund/exchange paths),Prototyping,6,E012,2025-07-20T17:15:00,2025-07-21T16:15:00,completed
+T0009,P001,"Write PRD + requirements + edge cases (partial refunds, bundles, final sale)",PRDs,7,E026,2025-07-21T16:19:00,2025-07-22T16:30:00,completed
+T0010,P001,Implement returns UX updates in storefront/account,Shopify Liquid,36,E009,2025-07-15T10:50:00,2025-07-24T16:15:00,completed
+T0011,P001,Integrate returns logic with backend/refund workflows,REST APIs,20,E016,2025-07-24T12:19:00,2025-07-29T14:15:00,completed
+T0012,P001,Update Zendesk macros/automation + KB articles for new policy,Macros & automation,7,E008,2025-07-28T09:00:00,2025-07-29T15:15:00,completed
+T0013,P001,QA end-to-end returns flow + support escalation scenarios,QA rubrics,7,E004,2025-07-30T18:00:00,2025-08-01T11:30:00,completed
+T0014,P001,Launch plan + internal enablement (CX training + comms),Training enablement,5,E028,2025-08-01T11:31:00,2025-08-02T10:45:00,completed
+T0015,P001,Post-launch monitoring + iterate based on ticket/returns metrics,Dashboards,16,E033,2025-07-31T16:01:00,2025-08-04T13:45:00,completed
+T0016,P002,"Kickoff with Ops + define target metrics (pick rate, travel time, mis-picks)",KPI tracking,15,E027,2025-08-17T09:00:00,2025-08-20T15:15:00,completed
+T0017,P002,Extract top-SKU velocity + ABC classification for peak assortment,Data modeling,12,E020,2025-08-18T18:00:00,2025-08-21T12:30:00,completed
+T0018,P002,Analyze current pick paths + congestion zones,Root cause analysis,6,E005,2025-08-21T09:00:00,2025-08-22T11:15:00,completed
+T0019,P002,Propose new slotting strategy + zone layout changes,Warehouse slotting,20,E025,2025-08-27T18:00:00,2025-08-30T15:45:00,completed
+T0020,P002,"Validate constraints (hazmat, fragility, replenishment cadence)",Constraint management,6,E033,2025-09-01T18:00:00,2025-09-03T10:15:00,completed
+T0021,P002,Coordinate with Merch on peak assortment changes + substitutions,Stakeholder management,13,E024,2025-08-31T09:00:00,2025-09-03T13:15:00,completed
+T0022,P002,Create re-slotting SOP + safety checklist,SOP documentation,6,E025,2025-09-03T15:02:00,2025-09-04T14:00:00,completed
+T0023,P002,Labor plan for re-slotting weekend/overnight shifts,Labor planning,6,E024,2025-09-04T16:44:00,2025-09-05T16:00:00,completed
+T0024,P002,Pilot re-slotting in 1 zone + capture before/after performance,Process improvement,15,E025,2025-09-08T10:08:00,2025-09-10T14:45:00,completed
+T0025,P002,Update WMS location mappings + bin labels,WMS basics,8,E020,2025-09-11T09:00:00,2025-09-12T11:45:00,completed
+T0026,P002,Scanner workflow checks for new locations + exception handling,Shipping exceptions,16,E025,2025-09-10T10:57:00,2025-09-14T13:00:00,completed
+T0027,P002,Train leads + floor staff on new pick paths and replenishment triggers,Training enablement,8,E021,2025-09-13T17:26:00,2025-09-15T10:45:00,completed
+T0028,P002,Scale re-slotting across remaining zones,Pick/pack optimization,5,E011,2025-09-16T09:00:00,2025-09-17T14:45:00,completed
+T0029,P002,Peak readiness dry run + escalation playbook,Escalation handling,7,E019,2025-09-17T15:24:00,2025-09-18T15:00:00,completed
+T0030,P002,Post-peak retro + codify improvements for next season,Documentation,16,E025,2025-09-20T18:00:00,2025-09-23T13:45:00,completed
+T0031,P003,Campaign kickoff + creative brief + channel plan,Creative briefing,12,E001,2025-09-02T09:00:00,2025-09-04T15:30:00,completed
+T0032,P003,Define target audience segments + offers + positioning,Consumer insights,9,E006,2025-09-04T18:00:00,2025-09-06T12:45:00,completed
+T0033,P003,Influencer shortlist + outreach + negotiation,Influencer strategy,13,E032,2025-09-06T09:00:00,2025-09-09T14:15:00,completed
+T0034,P003,Draft influencer contracts + deliverable terms,Contracting,11,E032,2025-09-10T18:00:00,2025-09-13T15:30:00,completed
+T0035,P003,Build content calendar + launch timeline across channels,Content calendar,13,E002,2025-09-14T18:00:00,2025-09-17T10:45:00,completed
+T0036,P003,"Develop paid social test matrix (hooks, formats, landing pages)",Creative testing,14,E004,2025-09-14T10:33:00,2025-09-17T15:00:00,completed
+T0037,P003,Design key visual system (static + video templates),Graphic design,13,E009,2025-09-15T09:00:00,2025-09-17T15:30:00,completed
+T0038,P003,Write copy variants + brand voice checks,Copywriting,8,E003,2025-09-20T12:00:00,2025-09-22T11:15:00,completed
+T0039,P003,"Set up tracking (UTMs, pixels) + measurement plan",UTM governance,7,E004,2025-09-21T18:00:00,2025-09-23T11:45:00,completed
+T0040,P003,Analytics spec: events + naming conventions for holiday funnel,Event tracking specs,7,E011,2025-09-22T14:26:00,2025-09-23T14:00:00,completed
+T0041,P003,Launch creator content production + asset QA,Creative QA,6,E024,2025-09-26T12:18:00,2025-09-27T16:30:00,completed
+T0042,P003,Configure ad sets + budget pacing rules + guardrails,Budget pacing,16,E004,2025-09-28T09:00:00,2025-09-30T14:00:00,completed
+T0043,P003,Daily performance readouts + creative iteration loop,GA4 reporting,8,E015,2025-10-02T14:56:00,2025-10-04T12:15:00,completed
+T0044,P003,"Cross-functional standup (CX, Ops) for peak comms + inventory risks",Stakeholder management,10,E017,2025-10-08T14:28:00,2025-10-10T12:00:00,completed
+T0045,P003,"Post-campaign wrap: results, learnings, and next-holiday playbook",Documentation,9,E025,2025-10-09T09:00:00,2025-10-10T16:00:00,completed
+T0046,P004,Kickoff + define chargeback KPIs and decision thresholds,KPI definition,16,E005,2025-10-08T18:00:00,2025-10-12T13:00:00,completed
+T0047,P004,Pull baseline fraud signals + chargeback reasons by segment,Cohort analysis,15,E031,2025-10-17T18:00:00,2025-10-21T14:30:00,completed
+T0048,P004,Audit current fraud rules + manual review SOP,Process documentation,15,E027,2025-10-25T10:14:00,2025-10-27T14:00:00,completed
+T0049,P004,Identify false positive drivers impacting conversion,Analytics interpretation,10,E003,2025-10-27T09:00:00,2025-10-28T15:45:00,completed
+T0050,P004,Design new fraud ruleset + risk tiers,Risk assessment,7,E033,2025-10-28T09:00:00,2025-10-29T16:00:00,completed
+T0051,P004,Implement rule updates in fraud tooling / checkout logic,Feature flags,8,E032,2025-11-07T09:00:00,2025-11-08T15:15:00,completed
+T0052,P004,Add monitoring dashboard for fraud + CB alerts,Looker dashboards,11,E020,2025-11-06T18:00:00,2025-11-08T16:30:00,completed
+T0053,P004,Instrument events for fraud decisions (approve/deny/manual review),Event tracking specs,9,E033,2025-11-07T09:00:00,2025-11-09T10:30:00,completed
+T0054,P004,Create CX guidance for fraud holds + escalation paths,Escalations,16,E027,2025-11-06T18:00:00,2025-11-09T10:30:00,completed
+T0055,P004,"Legal/compliance review (privacy, data handling, adverse actions)",Privacy (GDPR/CCPA) basics,5,E033,2025-11-08T11:40:00,2025-11-09T15:30:00,completed
+T0056,P004,Run shadow test (new rules) against historical orders,Experimentation analysis,2,E020,2025-11-09T09:00:00,2025-11-10T15:00:00,completed
+T0057,P004,Roll out new rules with staged exposure + rollback plan,Incident response,12,E011,2025-11-09T15:21:00,2025-11-11T13:00:00,completed
+T0058,P004,Train CX + Ops on updated playbooks and documentation,Training enablement,9,E011,2025-11-10T09:00:00,2025-11-12T12:45:00,completed
+T0059,P004,Weekly review cadence for tuning + exception cases,Stakeholder enablement,15,E003,2025-11-10T09:00:00,2025-11-13T16:15:00,completed
+T0060,P004,Postmortem + finalize ongoing governance + templates,Template governance,8,E004,2025-11-13T15:15:00,2025-11-15T12:00:00,completed
+T0061,P005,Sprint kickoff + define performance and conversion targets,KPI definition,15,E003,2025-12-06T09:00:00,2025-12-09T13:00:00,in_progress
+T0062,P005,Baseline checkout metrics + error rates + device breakdown,GA4,19,E019,2025-12-06T17:36:00,2025-12-09T13:45:00,in_progress
+T0063,P005,Create event tracking spec for checkout funnel (step-level),Event tracking specs,16,E025,2025-12-05T18:00:00,2025-12-09T15:00:00,in_progress
+T0064,P005,Audit client-side performance + bundle size hot spots,Performance optimization,13,E021,2025-12-08T13:23:00,2025-12-10T14:00:00,in_progress
+T0065,P005,"Implement frontend optimizations (lazy load, code split, caching)",React,38,E014,2025-12-03T13:00:00,2025-12-12T12:30:00,in_progress
+T0066,P005,Backend profiling for checkout APIs + latency sources,Observability (logs/metrics),15,E013,2025-12-09T14:07:00,2025-12-12T12:45:00,in_progress
+T0067,P005,Optimize API performance + add timeouts/retries where needed,REST APIs,26,E015,2025-12-10T09:00:00,2025-12-14T14:45:00,in_progress
+T0068,P005,Add feature flags for risky changes + staged rollout,Feature flags,14,E021,2025-12-12T09:00:00,2025-12-15T12:15:00,in_progress
+T0069,P005,"Design UX improvements (payment options, error messaging)",Interaction design,11,E011,2025-12-13T11:22:00,2025-12-15T15:15:00,in_progress
+T0070,P005,Usability test new checkout UX with 5–8 users,Usability testing,7,E010,2025-12-15T13:49:00,2025-12-16T16:15:00,completed
+T0071,P005,Set up experiment plan (A/B) for top UX hypotheses,Experimentation,10,E020,2025-12-15T09:00:00,2025-12-17T15:00:00,completed
+T0072,P005,QA automation for regression coverage (happy path + edge cases),QA automation,10,E016,2025-12-17T18:00:00,2025-12-19T12:30:00,completed
+T0073,P005,Launch changes + monitor incidents + conversions,Incident triage,14,E003,2025-12-19T09:00:00,2025-12-21T16:15:00,completed
+T0074,P005,"Daily war-room + cross-team comms (CX, Finance, Ops)",Stakeholder alignment,9,E008,2025-12-25T16:30:00,2025-12-27T10:30:00,blocked
+T0075,P005,Post-sprint report + next backlog and follow-up PRDs,Postmortems,4,E006,2026-01-01T14:57:00,2026-01-02T12:15:00,blocked
+T0076,P006,Kickoff + define accuracy KPIs and governance cadence,KPI tracking,16,E020,2026-01-25T09:00:00,2026-01-27T14:00:00,in_progress
+T0077,P006,Select scanner hardware + vendor coordination,Vendor management,12,E021,2026-01-26T09:00:00,2026-01-28T15:45:00,in_progress
+T0078,P006,Define cycle-count SOPs by zone + cadence,Cycle counts,8,E024,2026-01-29T09:00:00,2026-01-30T16:15:00,in_progress
+T0079,P006,Build training materials + quick-reference guides,Training enablement,13,E021,2026-01-28T18:00:00,2026-01-31T12:00:00,in_progress
+T0080,P006,Configure scanner workflows + exception codes,Scanner rollout,7,E025,2026-02-05T09:00:00,2026-02-06T15:00:00,in_progress
+T0081,P006,Update WMS processes for adjustments + approvals,WMS basics,9,E025,2026-02-06T09:00:00,2026-02-07T14:15:00,in_progress
+T0082,P006,"Data capture spec (scan events, adjustments, reasons)",Event tracking specs,16,E016,2026-02-04T13:24:00,2026-02-08T13:15:00,in_progress
+T0083,P006,Run pilot in 1 site/zone + measure discrepancy reduction,Process improvement,8,E025,2026-02-06T14:57:00,2026-02-08T15:00:00,in_progress
+T0084,P006,Root-cause analysis on top discrepancy categories,Root cause analysis,10,E007,2026-02-07T09:00:00,2026-02-09T13:45:00,in_progress
+T0085,P006,Integrate inventory adjustments into reporting dashboards,Dashboards,13,E018,2026-02-08T09:00:00,2026-02-11T10:00:00,completed
+T0086,P006,CX + Merch comms process for oversells/backorders,Cross-team feedback loops,13,E010,2026-02-09T18:00:00,2026-02-11T14:45:00,completed
+T0087,P006,Scale scanner rollout across sites + staffing plan,Labor planning,12,E024,2026-02-09T10:12:00,2026-02-11T16:30:00,completed
+T0088,P006,Implement escalation path for repeated discrepancies,Escalation handling,6,E026,2026-02-15T09:00:00,2026-02-16T13:00:00,completed
+T0089,P006,Finance review for shrink and accounting implications,Inventory accounting basics,9,E023,2026-02-17T09:00:00,2026-02-18T16:30:00,blocked
+T0090,P006,Program retro + finalize playbook + continuous improvement loop,Documentation,12,E025,2026-02-16T14:58:00,2026-02-19T16:45:00,blocked
+T0091,P007,"Kickoff + define success metrics (CTR, CVR, unsub, revenue)",KPI definition,5,E012,2026-02-14T09:00:00,2026-02-15T10:15:00,in_progress
+T0092,P007,"Audit current lifecycle journeys + gaps (welcome, abandon, post-purchase)",Journey mapping,15,E009,2026-02-17T09:00:00,2026-02-19T12:00:00,in_progress
+T0093,P007,Define segmentation strategy + data requirements,Requirements gathering,15,E008,2026-02-16T09:00:00,2026-02-19T13:45:00,in_progress
+T0094,P007,Pull customer cohorts + baseline engagement by segment,Cohort analysis,16,E020,2026-02-20T18:00:00,2026-02-24T13:30:00,in_progress
+T0095,P007,Draft experiment plan for personalization hypotheses,Experiment design,16,E006,2026-02-22T09:00:00,2026-02-25T13:00:00,in_progress
+T0096,P007,Create email template system + modular blocks,Email design,14,E008,2026-02-24T09:00:00,2026-02-27T11:15:00,in_progress
+T0097,P007,Write copy variants per segment + brand voice guardrails,Brand voice,5,E002,2026-02-26T16:21:00,2026-02-27T16:45:00,in_progress
+T0098,P007,Define event tracking + attribution for lifecycle conversions,Attribution basics,14,E004,2026-02-25T09:00:00,2026-02-28T12:00:00,in_progress
+T0099,P007,Implement segmentation queries/views in warehouse,SQL,4,E019,2026-03-03T09:00:00,2026-03-04T11:30:00,in_progress
+T0100,P007,Build activation pipeline to ESP (audiences + triggers),Data integrations,29,E015,2026-02-28T18:00:00,2026-03-07T16:15:00,completed
+T0101,P007,Set up dashboards for lifecycle performance monitoring,Looker dashboards,11,E020,2026-03-06T09:00:00,2026-03-08T12:45:00,completed
+T0102,P007,"QA journeys end-to-end (rendering, links, suppression, edge cases)",Creative QA,11,E028,2026-03-07T09:00:00,2026-03-09T13:15:00,completed
+T0103,P007,"Legal/compliance review (opt-in, privacy, claims)",Advertising compliance,6,E032,2026-03-08T11:14:00,2026-03-09T15:30:00,completed
+T0104,P007,Launch MVP + weekly optimization cadence,Stakeholder enablement,12,E023,2026-03-07T13:37:00,2026-03-10T13:15:00,blocked
+T0105,P007,Post-launch report + backlog for Phase 2 improvements,Roadmapping,13,E009,2026-03-09T12:35:00,2026-03-12T11:45:00,blocked
+T0106,P008,"Kickoff + define PDP goals (engagement, conversion, returns)",KPI definition,6,E003,2026-03-16T09:00:00,2026-03-17T11:15:00,in_progress
+T0107,P008,Audit current PDP components + creative inconsistencies,Heuristic evaluation,11,E033,2026-03-18T16:44:00,2026-03-20T15:15:00,in_progress
+T0108,P008,Define new PDP image guidelines + shot list standards,Brand guidelines,15,E020,2026-03-16T18:00:00,2026-03-20T16:30:00,in_progress
+T0109,P008,UGC sourcing plan + rights management approach,UGC curation,12,E024,2026-03-20T11:36:00,2026-03-22T12:00:00,in_progress
+T0110,P008,"Design updated PDP modules (UGC carousel, image zoom, gallery)",Design systems,14,E003,2026-03-22T09:00:00,2026-03-25T11:15:00,in_progress
+T0111,P008,Prototype in Figma + align on component behaviors,Prototyping,11,E017,2026-03-23T17:13:00,2026-03-25T14:30:00,in_progress
+T0112,P008,Engineering handoff + implementation specs,Handoff to engineering,12,E032,2026-03-28T14:06:00,2026-03-31T12:30:00,in_progress
+T0113,P008,Implement new PDP modules in theme/components,Shopify Liquid,12,E016,2026-03-29T13:11:00,2026-03-31T15:30:00,in_progress
+T0114,P008,Set up asset versioning + naming conventions for images,Asset versioning,16,E008,2026-03-30T09:00:00,2026-04-02T10:00:00,in_progress
+T0115,P008,Creative production coordination for refreshed imagery,Production coordination,14,E009,2026-04-02T09:00:00,2026-04-04T16:30:00,completed
+T0116,P008,QA across devices + accessibility checks,Accessibility basics,12,E011,2026-04-03T18:00:00,2026-04-06T11:00:00,completed
+T0117,P008,Set up experiment to measure uplift vs control,Experimentation,3,E020,2026-04-06T13:39:00,2026-04-07T11:30:00,completed
+T0118,P008,Launch wave 1 on top SKUs + monitor performance,Dashboards,19,E006,2026-04-04T09:00:00,2026-04-08T10:45:00,completed
+T0119,P008,Expand rollout + update internal playbook,Documentation,10,E025,2026-04-07T09:34:00,2026-04-09T12:45:00,blocked
+T0120,P008,Post-launch retro + finalize governance for ongoing refreshes,Template governance,14,E012,2026-04-07T09:00:00,2026-04-10T13:45:00,blocked
+T0121,P009,Kickoff + scope Phase 1 deliverables + risks,Roadmapping,8,,,2026-06-19T13:30:00,not_started
+T0122,P009,Audit current theme + tech debt + performance issues,Performance optimization,6,,,2026-06-19T14:15:00,not_started
+T0123,P009,Define new theme architecture + component library plan,Component libraries,11,,,2026-06-20T11:00:00,not_started
+T0124,P009,Catalog data model review + required schema changes,Data modeling,5,,,2026-06-22T13:15:00,not_started
+T0125,P009,Integration mapping (ERP/WMS/3PL) + data flow diagrams,Data integrations,27,,,2026-06-27T10:30:00,not_started
+T0126,P009,Set up CI/CD + preview environments,CI/CD,18,,,2026-06-28T10:30:00,not_started
+T0127,P009,Implement foundational theme scaffolding + routing,JavaScript/TypeScript,31,,,2026-07-01T12:00:00,not_started
+T0128,P009,Build core PDP/PLP components with reusable patterns,React,24,,,2026-07-03T15:45:00,not_started
+T0129,P009,Migrate catalog structure + collections/tags strategy,Category strategy,6,,,2026-07-05T13:30:00,not_started
+T0130,P009,Implement observability + logging for key storefront events,Observability (logs/metrics),14,,,2026-07-05T16:15:00,not_started
+T0131,P009,"QA automation baseline (smoke tests, critical paths)",QA automation,11,,,2026-07-06T11:30:00,not_started
+T0132,P009,Performance budget + load testing plan,Performance optimization,5,,,2026-07-07T12:30:00,not_started
+T0133,P009,Security/privacy review for integrations and data handling,Privacy (GDPR/CCPA) basics,6,,,2026-07-07T15:00:00,not_started
+T0134,P009,Pilot launch on a limited traffic slice + rollback plan,Incident response,12,,,2026-07-08T10:45:00,not_started
+T0135,P009,Postmortem + finalize Phase 2 backlog + documentation,Documentation,16,,,2026-07-08T12:00:00,not_started
+T0136,P010,"Kickoff + define target countries, timelines, and KPIs",KPI definition,11,,,2026-09-25T13:15:00,not_started
+T0137,P010,Carrier evaluation + negotiations + onboarding requirements,Vendor negotiations,10,,,2026-09-28T12:30:00,not_started
+T0138,P010,Define duties/taxes approach + customer messaging,Product storytelling,14,,,2026-10-01T15:45:00,not_started
+T0139,P010,"Legal/compliance review (cross-border policies, privacy, claims)",Compliance,13,,,2026-10-03T13:00:00,not_started
+T0140,P010,Finance review for tax/VAT implications + reporting needs,Tax,17,,,2026-10-04T10:30:00,not_started
+T0141,P010,Update checkout UX for intl shipping options + pricing transparency,UX writing,7,,,2026-10-06T10:45:00,not_started
+T0142,P010,Engineering: integrate carriers + rate shopping + labels,REST APIs,16,,,2026-10-08T12:00:00,not_started
+T0143,P010,Implement duties/taxes calculation workflow,Data integrations,13,,,2026-10-08T16:00:00,not_started
+T0144,P010,Update warehouse ops SOPs for intl packing + documentation,SOP documentation,7,,,2026-10-09T13:45:00,not_started
+T0145,P010,"CX workflows for intl tracking, delays, returns, and exceptions",Order troubleshooting,4,,,2026-10-10T10:00:00,not_started
+T0146,P010,Update help center + macros for intl FAQs,Knowledge base,15,,,2026-10-10T15:00:00,not_started
+T0147,P010,Event tracking spec for intl checkout and delivery funnel,Event tracking specs,13,,,2026-10-11T15:00:00,not_started
+T0148,P010,Pilot launch to 1–2 countries + monitor incidents,Incident triage,7,,,2026-10-13T12:15:00,not_started
+T0149,P010,Expand rollout + partner performance reporting,Reporting,11,,,2026-10-13T12:15:00,not_started
+T0150,P010,Post-launch retro + finalize escalation paths + governance,Escalation process,10,,,2026-10-14T14:00:00,not_started

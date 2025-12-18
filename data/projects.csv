@@ -1,11 +1,11 @@
 id,name,description,deadline,priority
-P001,Returns Experience Overhaul (Self-Service + Policy Simplification),"Improve self-serve returns flows, clarify policy copy, and reduce ticket volume by streamlining refunds/exchanges.",2025-08-05,5
-P002,Warehouse Slotting Optimization for Peak Season,"Re-slot top SKUs, improve pick paths, and reduce fulfillment cycle time ahead of peak demand.",2025-09-19,4
-P003,Holiday Paid Social + Influencer Launch Campaign,Launch holiday campaign with paid social + creators; deliver creative system and measurement plan.,2025-10-19,4
-P004,Fraud Rules Refresh + Chargeback Reduction,Tune fraud rules and implement monitoring to reduce chargebacks while maintaining conversion.,2025-11-09,5
-P005,Checkout Performance & Conversion Sprint,Improve checkout speed and UX; ship instrumentation and experiments to lift conversion.,2026-01-27,5
-P006,Inventory Accuracy Program (Cycle Counts + Scanner Rollout),Deploy scanners and cycle-count SOPs to improve inventory accuracy and reduce oversells.,2026-02-17,4
-P007,Lifecycle Email Personalization MVP,Build segmentation + templates for lifecycle journeys and measure engagement lifts.,2026-03-10,4
-P008,Product Detail Page Creative Refresh (UGC + Image System),Refresh PDP visual system including UGC modules and updated image guidelines.,2026-04-16,3
-P009,Shopify Replatform Phase 1 (Catalog + Theme Architecture),Re-architect theme and catalog structure for scalability; establish deployment pipeline.,2026-07-25,5
-P010,International Shipping Expansion (Duties/Taxes + Carriers),"Add carriers and duties/taxes handling for international customers, with updated CX workflows.",2026-10-19,4
+P001,Returns Experience Overhaul (Self-Service + Policy Simplification),"Improve self-serve returns flows, clarify policy copy, and reduce ticket volume by streamlining refunds/exchanges.",2025-08-06,5
+P002,Warehouse Slotting Optimization for Peak Season,"Re-slot top SKUs, improve pick paths, and reduce fulfillment cycle time ahead of peak demand.",2025-09-25,4
+P003,Holiday Paid Social + Influencer Launch Campaign,Launch holiday campaign with paid social + creators; deliver creative system and measurement plan.,2025-10-13,4
+P004,Fraud Rules Refresh + Chargeback Reduction,Tune fraud rules and implement monitoring to reduce chargebacks while maintaining conversion.,2025-11-17,5
+P005,Checkout Performance & Conversion Sprint,Improve checkout speed and UX; ship instrumentation and experiments to lift conversion.,2026-01-05,5
+P006,Inventory Accuracy Program (Cycle Counts + Scanner Rollout),Deploy scanners and cycle-count SOPs to improve inventory accuracy and reduce oversells.,2026-02-22,4
+P007,Lifecycle Email Personalization MVP,Build segmentation + templates for lifecycle journeys and measure engagement lifts.,2026-03-13,4
+P008,Product Detail Page Creative Refresh (UGC + Image System),Refresh PDP visual system including UGC modules and updated image guidelines.,2026-04-12,3
+P009,Shopify Replatform Phase 1 (Catalog + Theme Architecture),Re-architect theme and catalog structure for scalability; establish deployment pipeline.,2026-07-09,5
+P010,International Shipping Expansion (Duties/Taxes + Carriers),"Add carriers and duties/taxes handling for international customers, with updated CX workflows.",2026-10-15,4
